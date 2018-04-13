@@ -1,0 +1,89 @@
+body{
+	background:black;
+	font-family:arial;
+	margin:0;
+}
+
+.Baseball_Background{
+    background-image: url("Ubaldo_Background10.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+header{
+	background:black;
+}
+
+header h3{
+	margin:1;
+	display:inline;
+	padding:10px 20px;
+}
+
+.Main_Nav_UL{
+	margin:0;
+	display:inline;
+	padding:0 35px 0 0;
+}
+
+.Stats_Img{
+	display: block;
+	margin:10px auto;
+}
+
+.Main_Nav_LI{
+	margin: 0;
+	background:#444;
+	color:white;
+	display: inline-block;
+	list-style-type:none;
+	padding:10px 12px;
+}
+
+.Main_Nav_A{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px;
+	color:white;	
+}
+
+.Weeks_Nav_UL{
+	list-style-type: none;
+	padding:22px 0px 0 0;
+	overflow: hidden;
+	width: 550px;
+	margin:0px auto;
+}
+
+.Weeks_LI{
+	background:none;
+	display: inline-block;
+	list-style-type:none;
+	padding:0px 1px;
+}
+
+.Weeks_A{
+	color:white;	
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20px;
+	text-align: center;
+
+}
+
+
+
+.row:after{
+	clear:both;
+}
+
+.col{
+	float:left;
+	border-radius:5px;
+	padding:.5%;
+	background:#888;
+	margin:.5%;
+	width:31%;
+}
+
+
