@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>
+			Home
+		</title>
+		<link href="../Baseball.css" rel="stylesheet" type="text/css" />
+		<link href="TeamStats.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body class="Baseball_Background">
+
+		<header>
+			<nav>
+				<ul class="Main_Nav_UL">
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Fantasy18_Home.html">Home</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href= "../Matchups_Season.html">Matchups</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Leaders_Season.html">Stat Leaders</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Unbeaten.html">Unbeaten</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" >Team Stats</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="chart_container"> 
+
+			<div class="StatsButtons">
+				<button type="button" onclick="ToggleStatPlot(0)";>Run</button>
+				<button type="button" onclick="ToggleStatPlot(1)";>HR</button>
+				<button type="button" onclick="ToggleStatPlot(2)";>RBI</button>
+				<button type="button" onclick="ToggleStatPlot(3)";>SB</button>
+				<button type="button" onclick="ToggleStatPlot(4)";>OBP</button>
+				<button type="button" onclick="ToggleStatPlot(5)";>SLG</button>
+				<button type="button" onclick="ToggleStatPlot(6)";>K</button>
+				<button type="button" onclick="ToggleStatPlot(7)";>QS</button>
+				<button type="button" onclick="ToggleStatPlot(8)";>SV</button>
+				<button type="button" onclick="ToggleStatPlot(9)";>ERA</button>
+				<button type="button" onclick="ToggleStatPlot(10)";>WHIP</button>
+				<button type="button" onclick="ToggleStatPlot(11)";>K/9</button>
+			</div>
+			<div class="StatsChart">
+				<canvas id="myChart" height="550" width="1000"></canvas>
+				<script src="TeamStats.js"></script>
+				<script src="Chart.min.js"></script>
+				<script src="PlottingStats.js"></script>
+			</div>
+
+			<div class="ResetButton">
+				<button type="button" onclick="ToggleReset()";>Reset</button>
+			</div>
+
+			<div class="TeamsButtons" align="center">
+				<button type="button" class="WillButton"    onclick="ToggleTeamPlot(0)";>Playa Haters</button>
+				<button type="button" class="ClintButton"   onclick="ToggleTeamPlot(1)";>Thunder Catz</button>
+				<button type="button" class="BrianButton"   onclick="ToggleTeamPlot(2)";>Dicks Out</button>
+				<button type="button" class="DanButton"     onclick="ToggleTeamPlot(3)";>EZ Game EZ Life</button>
+				<button type="button" class="MikeButton"    onclick="ToggleTeamPlot(4)";>Tall Sexy Tyrian</button>
+				<button type="button" class="CullenButton"  onclick="ToggleTeamPlot(5)";>Dumpster Fires</button>
+				<button type="button" class="CharlieButton" onclick="ToggleTeamPlot(6)";>Confortably Numb</button>
+				<button type="button" class="AllenButton"   onclick="ToggleTeamPlot(7)";>MN ISlanders</button>
+				<button type="button" class="JoshButton"    onclick="ToggleTeamPlot(8)";>Ozuna Matata</button>
+				<button type="button" class="MattButton"    onclick="ToggleTeamPlot(9)";>Ctrl Altuve Dlt</button>
+				<button type="button" class="McDButton"     onclick="ToggleTeamPlot(10)";>Johto Hoe-Ohs</button>
+				<button type="button" class="NateButton"    onclick="ToggleTeamPlot(11)";>Ventura Gulls</button>
+			</div>
+		</div>
+
+	</body>
+
+
+
+</html>

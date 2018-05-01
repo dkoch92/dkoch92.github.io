@@ -87,3 +87,8 @@ header h3{
 }
 
 
+.Matchups_Frame{
+	border:none;
+	width: 1000;
+	height: 400;
+}
