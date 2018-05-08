@@ -1,8 +1,5 @@
 var ctx = document.getElementById("myChart").getContext('2d');
 
-var test_labels = ["2009","2010","2011","2012","2013","2014","2015"]
-
-
 var stats_options = {
   scales: {
     xAxes: [{
@@ -30,22 +27,24 @@ var stats_options = {
   }
 }
 
-
-
+// Setting all the Initial Components
+//----------------------------------------------------------------
 var TeamsboolArray = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
 var StatsboolArray = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var AVGbool = true
 
 var AllTeamsMat = GetAllTeams()
-console.log(AllTeamsMat[0])
-
+var AvgMat = GetAvg()
 var week = GetWeek()
 
 var Week_Labels = WeekLabels(week)
 
-NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels);
+NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
 CreatePlot(NewDataSet);
 
 
+// Defining Functions
+//-----------------------------------------------------------------
 function CorrectTeamIndex(num){
     var correct = [2,0,1,11,6,3,9,8,7,5,4,10]
     var correct_num = correct[num]
@@ -79,6 +78,28 @@ function CreateDataset(team_num,data_array){
     return dataset
 }
 
+function CreateAvgDataset(data_array){
+    var fill_color = 'rbga(255,0,0,.1)'
+
+    var dataset ={
+    label: 'League Average',
+    data: data_array,
+    backgroundColor: fill_color,
+    borderColor: 'red', // The main line color
+    borderWidth: 1.5,
+    fill: false,
+    pointBorderColor: "red",
+    pointBorderWidth: 2.5,
+    pointHoverRadius: 12.5,
+    pointHoverBackgroundColor: "white",
+    pointHoverBorderColor: "red",
+    pointHoverBorderWidth: 4,
+    pointRadius: 8,
+    pointHitRadius: 25,
+    }
+    return dataset
+}
+
 
 function CreatePlot(d){
     myChart = new Chart(ctx, {
@@ -96,19 +117,41 @@ function CreateTeamDataArray(team_index,StatsBool,All,week){
                 stats_array.push(All[team_index][i][j])
         }
     }
-    console.log(stats_array)
     return stats_array
+}
+
+function CreateAvgArray(StatsBool,AVG,week){
+    var avg_array = []
+    for ( var i = 0; i < StatsBool.length; i++ ) {
+        if( StatsBool[i] === true ){
+            for(var j=0; j<week; j++)
+                avg_array.push(AVG[i][j])
+        }
+    }
+    return avg_array
 }
 
 function ToggleReset(){
     myChart.destroy();
     TeamsboolArray = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     StatsboolArray = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels);
+    AVGbool = false
+    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
     CreatePlot(NewDataSet);
 }
 
-function CreateData(TeamsBool,StatsBool,All,week,Wlabels) {
+function ToggleAVG(){
+    myChart.destroy();
+    if(AVGbool === true){
+        AVGbool = false
+    }else{
+        AVGbool = true
+    }
+    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
+    CreatePlot(NewDataSet);
+}
+
+function CreateData(TeamsBool,StatsBool,All,week,Wlabels,AvgBool,AVG) {
     var NewDataset = []
     for ( var i = 0; i < TeamsBool.length; i++ ) {
         if( TeamsBool[i] === true ){
@@ -117,6 +160,11 @@ function CreateData(TeamsBool,StatsBool,All,week,Wlabels) {
             var team_dataset = CreateDataset(i,d_array)
             NewDataset.push(team_dataset)
         }
+    }
+    if(AvgBool === true){
+        var a_array = CreateAvgArray(StatsBool,AVG,week)
+        var a_dataset = CreateAvgDataset(a_array)
+        NewDataset.push(a_dataset)
     }
     var NewData = {
     labels: Wlabels,
@@ -147,14 +195,14 @@ function ToggleStatBool(num){
 function ToggleTeamPlot(num) {
     myChart.destroy();
     ToggleTeamBool(num,TeamsboolArray);
-    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels);
+    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
     CreatePlot(NewDataSet);
 }
 
 function ToggleStatPlot(num){
     myChart.destroy();
     StatsboolArray = ToggleStatBool(num);
-    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels);
+    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
     CreatePlot(NewDataSet);
 }
 

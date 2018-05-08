@@ -1,4 +1,4 @@
-var week = 4  //Needs to be updted weekly
+var week = 5  //Needs to be updted weekly
 
 var Week1Stats = [
 [51,	17,	55,	6,	0.3085,	0.4108,	59,		5,	5,	3.553,	1.326,	8.384],
@@ -59,6 +59,20 @@ var Week4Stats = [
 [55,	16,	48,	5,	0.3697,	0.5505,	80,	4,	6,	3.857,	1.020,	10.640],
 [49,	12,	32,	7,	0.3112,	0.4321,	39,	4,	3,	5.694,	1.490,	7.163]
 ]
+var Week5Stats = [
+[38,	14,	44,	6,	0.3197,	0.4812,	47,	3,	3,	4.478,	1.434,	6.190],
+[47,	11,	26,	5,	0.3722,	0.4774,	65,	5,	2,	3.176,	1.157,	11.471],
+[44,	11,	44,	4,	0.3175,	0.4181,	66,	6,	0,	4.371,	1.257,	8.486],
+[27,	8,	32,	4,	0.3054,	0.4059,	65,	7,	4,	2.712,	0.996,	7.664],
+[36,	8,	44,	1,	0.3505,	0.4751,	73,	6,	4,	2.109,	1.047,	10.266],
+[39,	12,	41,	0,	0.3121,	0.4758,	54,	4,	1,	3.947,	1.351,	8.526],
+[45,	16,	50,	6,	0.3419,	0.5238,	88,	6,	5,	2.467,	0.990,	12.061],
+[36,	10,	34,	8,	0.3006,	0.4429,	82,	4,	4,	3.948,	1.344,	10.443],
+[33,	10,	27,	7,	0.3466,	0.4520,	66,	6,	7,	5.118,	1.464,	8.445],
+[40,	13,	50,	2,	0.3150,	0.4306,	56,	5,	4,	3.140,	1.081,	8.791],
+[40,	17,	32,	4,	0.2958,	0.4659,	62,	7,	3,	2.926,	1.108,	8.246],
+[42,	16,	50,	1,	0.2991,	0.4603,	59,	5,	2,	3.653,	1.059,	9.371]
+]
 
 //Need to have the correct number of matrices of data
 
@@ -66,7 +80,7 @@ var Week4Stats = [
 
 StatsMat =  CombineWeekStats(week)
 AllTeamsMat = AllTeamStats(StatsMat,week)
-
+AvgMat = GenerateAverages(StatsMat,week)
 
 
 function GetAllTeams(){
@@ -75,6 +89,10 @@ function GetAllTeams(){
 
 function GetWeek(){
 	return week
+}
+
+function GetAvg(){
+	return AvgMat
 }
 
 function AllTeamStats(Stats,WeekNumber){
@@ -96,6 +114,24 @@ function TeamStats(Stats,TeamNumber,WeekNumber){
 	}
 	return TeamStats
 }	
+
+function GenerateAverages(stats,week){
+	var averages = []
+	for(var i=0; i<12; i++){
+		var Avg = []
+		for(var j=0; j<week; j++){
+			var avg = 0
+			for(var k=0; k<12; k++){
+				avg = avg + stats[j][k][i]
+			}
+			avg = avg / 12.0
+			avg = avg.toFixed(3)
+			Avg.push(avg)
+		}
+		averages.push(Avg)
+	}
+	return averages
+}
 
 function CombineWeekStats(WeekNumber){
 	var AllWeeks = []
@@ -163,3 +199,5 @@ function CombineWeekStats(WeekNumber){
 	}
 	return AllWeeks
 }
+
+
