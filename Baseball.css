@@ -92,3 +92,22 @@ header h3{
 	width: 1000;
 	height: 400;
 }
+
+.Top_Lines_Header{
+	color:white;	
+	padding-top: 15px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 50px;
+	text-align: center;
+}
+
+.Top_Lines_Info{
+	padding-left: 15%;
+}
+
+.Top_Lines_Text{
+	color:white;	
+	padding-top: 15px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20px;	
+}
