@@ -56,8 +56,10 @@ var Data = ParseData()
 
 console.log('Data:')
 console.log( Data )
+console.log( TestWeek )
 
 DisplayData( Data )
+DisplayData( TestWeek )
 
 
 
