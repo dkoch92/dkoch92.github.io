@@ -24,9 +24,6 @@ var Week6 = Blank
 var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv",
 				"week_4_stats.csv","week_5_stats.csv","week_6_stats.csv"]
 
-console.log("Week4: ",Week4)
-console.log(CSV_Names[3] )
-
 function ParseData( CallBack, file, Week_Mat){
 	Papa.parse(file, {
 		download: true,
@@ -50,9 +47,25 @@ function CollectData( data, mat ) {
 }
 
 
-function TestButton() {
-	console.log('Button Works')
-	console.log( Week4 )
+function CheckWeekMat(index) {
+	if(index === 0){
+		console.log('Week1:',Week1)
+	}
+	if(index === 1){
+		console.log('Week2:',Week2)
+	}
+	if(index === 2){
+		console.log('Week3',Week3)
+	}
+	if(index === 3){
+		console.log('Week4:',Week4)
+	}
+	if(index === 4){
+		console.log('Week5:',Week5)
+	}	
+	if(index === 5){
+		console.log('Week6:',Week6)
+	}	
 }
 
 function NowParse(index) {
