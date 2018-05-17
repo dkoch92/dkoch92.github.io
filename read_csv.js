@@ -19,18 +19,21 @@ function ParseData(){
 	return parsed_data
 }
 
+function DisplayData( data ){
+	for (var i = 0; i < 12; i++) {
+		for (var j = 0; j < 12; j++) {
+			console.log( data[i][j] )
+}
+
 var Stats = []
 
 var Data = ParseData()
 
 console.log('Data:')
 console.log(Data)
-console.log(Data[0])
-console.log(Data[0][0])
-console.log(Data[11])
 
-for( var i =0; i < 12; i++ ){
-	console.log( Data[3][i] )
-}
+console.log('Displaying The Data')
+DisplayData( Data )
+
 
 
