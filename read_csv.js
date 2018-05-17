@@ -14,89 +14,68 @@ var Blank = [
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0]]
 
-var Week1
-var Week2
-var Week3
-var Week4
-var Week5
-var Week6
+var Week1 = Blank
+var Week2 = Blank
+var Week3 = Blank
+var Week4 = Blank
+var Week5 = Blank
+var Week6 = Blank
 
+var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv",
+				"week_4_stats.csv","week_5_stats.csv","week_6_stats.csv"]
 
-function ParseData( CallBack, Create, week, blank ){
-	for(var i = 0; i < week; i++ ){
-		file = "week_"+(i+1).toString()+"_stats.csv"
-		Papa.parse(file, {
-			download: true,
-			header: false,
-			dynamicTyping: true,
-			complete: function(results) {
-				Create( i,blank )
-				CallBack( results.data,i,blank )
-			}
-		})
-	}
+console.log("Week4: ",Week4)
+console.log(CSV_Name[3] )
+
+function ParseData( CallBack, file, Week_Mat){
+	Papa.parse(file, {
+		download: true,
+		header: false,
+		dynamicTyping: true,
+		complete: function(results) {
+			CallBack(results.data,i,Week_Mat)
+		}
+	})
 }
 
 
-function CollectData( data,week,mat ) {
+
+function CollectData( data, mat ) {
 	for (var i = 0; i < 12; i++) {
 		for (var j = 0; j < 12; j++) {
 			mat[i][j] =  data[i][j]
 		}
 	}
-	console.log(mat)
-	SetToWeek(mat,week)
+	console.log("Collecting Mat",mat)
 }
 
-function SetToWeek(M,W){
-	if( W === 0 ){
-		Week1 = M
-	}
-	if( W === 1 ){
-		Week2 = M
-	}
-	if( W === 2 ){
-		Week3 = M
-	}
-	if( W === 3 ){
-		Week4 = M
-	}
-	if( W === 4 ){
-		Week5 = M
-	}
-	if( W === 5 ){
-		Week6 = M
-	}
-}
 
 function TestButton() {
 	console.log('Button Works')
 	console.log( Week4 )
 }
 
-function NowParse() {
-	ParseData( CollectData,CreateMatrix,week,Blank )
-}
-
-function CreateMatrix(week_index,blank){
-	if( week_index === 0){
-		Week1 = blank
+function NowParse(index) {
+	filename = CSV_Names[index]
+	console.log('filename: ',filename)
+	if(index === 0){
+		ParseData( CollectData,filename,Week1)
 	}
-	if( week_index === 1){
-		Week2 = blank
+	if(index === 1){
+		ParseData( CollectData,filename,Week2)
 	}
-	if( week_index === 2){
-		Week3 = blank
+	if(index === 2){
+		ParseData( CollectData,filename,Week3)
 	}
-	if( week_index === 3){
-		Week4 = blank
+	if(index === 3){
+		ParseData( CollectData,filename,Week4)
 	}
-	if( week_index === 4){
-		Week5 = blank
-	}
-	if( week_index === 5){
-		Week6 = blank
-	}
+	if(index === 4){
+		ParseData( CollectData,filename,Week5)
+	}	
+	if(index === 5){
+		ParseData( CollectData,filename,Week6)
+	}	
 }
 
 
