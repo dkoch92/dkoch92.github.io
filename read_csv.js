@@ -1,5 +1,18 @@
 function ParseData(){
-	var parsed_data = []
+	var parsed_data = [
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0]]
+	console.log( parsed_data )
 	Papa.parse("test_stats2.csv", {
 		download: true,
 		header: false,
@@ -8,11 +21,9 @@ function ParseData(){
 			console.log("Parsed The Data!"),
 			console.log(results.data)
 			for (var i = 0; i < 12; i++) {
-				row = []
 				for (var j = 0; j < 12; j++) {
-					row.push( results.data[i][j] )
+					parsed_data[i][j] =  results.data[i][j]
 				}
-				parsed_data.push( row )
 			}
 		}
 	})
