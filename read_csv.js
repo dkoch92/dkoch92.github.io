@@ -35,7 +35,9 @@ var TestWeek = [
 ]
 
 function DisplayData( data ){
+	console.log( data )
 	for (var i = 0; i < 12; i++) {
+		console.log( data[i] )
 		for (var j = 0; j < 12; j++) {
 			console.log( data[i][j] )
 		}
@@ -47,11 +49,8 @@ var Data = ParseData()
 console.log('Data:')
 console.log( Data )
 
-console.log('Displaying The Data')
 DisplayData( Data )
 
-console.log('Displaying The Test')
-DisplayData( TestWeek )
 
 
 
