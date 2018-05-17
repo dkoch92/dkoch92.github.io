@@ -1,7 +1,7 @@
 function ParseData(){
 	var parsed_data = [
-		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
-		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[99,	1,	4,	0,	0,	0,	0,	0,	0,	0,	0,	0],
+		[98,	2,	3,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
@@ -13,6 +13,8 @@ function ParseData(){
 		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 		[0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0]]
 	console.log( parsed_data )
+	console.log( parsed_data[0] )
+	console.log( parsed_data[0][0] )
 	Papa.parse("test_stats2.csv", {
 		download: true,
 		header: false,
@@ -26,8 +28,14 @@ function ParseData(){
 					console.log( results.data[i][j] )
 				}
 			}
+		console.log( parsed_data )
+		console.log( parsed_data[0] )
+		console.log( parsed_data[0][0] )
 		}
 	})
+	console.log( parsed_data )
+	console.log( parsed_data[0] )
+	console.log( parsed_data[0][0] )
 	return parsed_data
 }
 
@@ -48,9 +56,9 @@ var TestWeek = [
 
 function DisplayData( data ){
 	console.log( data )
-	console.log( data["0"] )
+	console.log( data[0] )
 	console.log( data[1] )
-	console.log( data[1][0] )
+	console.log( data[0][0] )
 }
 
 var Data = ParseData()
