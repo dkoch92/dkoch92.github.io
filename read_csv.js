@@ -25,7 +25,7 @@ var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv",
 				"week_4_stats.csv","week_5_stats.csv","week_6_stats.csv"]
 
 console.log("Week4: ",Week4)
-console.log(CSV_Name[3] )
+console.log(CSV_Names[3] )
 
 function ParseData( CallBack, file, Week_Mat){
 	Papa.parse(file, {
@@ -33,7 +33,7 @@ function ParseData( CallBack, file, Week_Mat){
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			CallBack(results.data,i,Week_Mat)
+			CallBack(results.data,Week_Mat)
 		}
 	})
 }
