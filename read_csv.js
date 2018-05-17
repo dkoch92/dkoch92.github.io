@@ -48,9 +48,9 @@ var TestWeek = [
 function DisplayData( data ){
 	console.log( data )
 	for (var i = 0; i < 12; i++) {
-		console.log( data[i] )
+		console.log( data[0][i] )
 		for (var j = 0; j < 12; j++) {
-			console.log( data[i][j] )
+			console.log( data[0][i][j] )
 		}
 	}
 }
