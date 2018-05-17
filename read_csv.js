@@ -8,7 +8,9 @@ function ParseData(){
 			console.log(results)
 		}
 	})
+	return results.data
 }
 
 
-ParseData()
+var Data = ParseData()
+console.log(Data)
