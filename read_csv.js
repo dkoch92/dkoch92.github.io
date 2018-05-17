@@ -23,6 +23,7 @@ function ParseData(){
 			for (var i = 0; i < 12; i++) {
 				for (var j = 0; j < 12; j++) {
 					parsed_data[i][j] =  results.data[i][j]
+					console.log( results.data[i][j] )
 				}
 			}
 		}
@@ -54,12 +55,12 @@ function DisplayData( data ){
 
 var Data = ParseData()
 
-console.log('Data:')
-console.log( Data )
-console.log( TestWeek )
+//console.log('Data:')
+//console.log( Data )
+//console.log( TestWeek )
 
-DisplayData( Data )
-DisplayData( TestWeek )
+//DisplayData( Data )
+//DisplayData( TestWeek )
 
 
 
