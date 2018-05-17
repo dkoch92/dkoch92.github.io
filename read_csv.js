@@ -78,7 +78,7 @@ function SetValues( data,mat ) {
 	}
 }
 
-
+console.log(Test2)
 ParseData( SetValues,Test2 )
 
 //console.log('Data:')
