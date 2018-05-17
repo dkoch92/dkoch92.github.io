@@ -1,14 +1,14 @@
 week = 6
 
 function ParseData( CallBack, week ){
-	for(var i = 1; i < (week+1); i++ ){
-		file = "week_"+i.toString()+"_stats.csv"
+	for(var i = 0; i < week; i++ ){
+		file = "week_"+(i+1).toString()+"_stats.csv"
 		Papa.parse(file, {
 			download: true,
 			header: false,
 			dynamicTyping: true,
 			complete: function(results) {
-				CallBack( results.data, Mat, i )
+				CallBack( results.data,i )
 			}
 		})
 	}
