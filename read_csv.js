@@ -1,4 +1,4 @@
-function ParseData( CallBack ){
+function ParseData( CallBack, Mat ){
 	var parsed_data = [
 		[99,	1,	4,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 		[98,	2,	3,	0,	0,	0,	0,	0,	0,	0,	0,	0],
@@ -28,10 +28,15 @@ function ParseData( CallBack ){
 			console.log( parsed_data )
 			console.log( parsed_data[0] )
 			console.log( parsed_data[0][0] )
-			CallBack( results.data )
+			CallBack( results.data,Mat )
 
 		}
 	})
+}
+
+function TestButton() {
+	console.log('Button Works')
+	console.log( Test2 )
 }
 
 var TestWeek = [
@@ -64,32 +69,17 @@ var Test2 = [
 [49,	15,	56,	8,	0.3705,	0.5438,	55,	3,	7,	5.050,	1.317,	10.683]
 ]
 
-function DisplayData( data ){
-	console.log( data )
-	console.log( data[0] )
-	console.log( data[1] )
-	console.log( data[0][0] )
-}
 
-function SetValues( data) {
+function SetValues( data,mat ) {
 	for (var i = 0; i < 12; i++) {
 		for (var j = 0; j < 12; j++) {
-			Test2[i][j] =  data[i][j]
+			mat[i][j] =  data[i][j]
 		}
 	}
 }
 
 
-Papa.parsePromise = function(file) {
-  return new Promise(function(complete, error) {
-    Papa.parse(file, {complete, error});
-  });
-};
-
-Papa.parsePromise("test_stats2.csv") .
-  then(function(results) { console.log(results); });
-
-//ParseData( SetValues )
+ParseData( SetValues,Test2 )
 
 //console.log('Data:')
 //console.log( Data )
