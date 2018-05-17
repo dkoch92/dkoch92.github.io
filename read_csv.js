@@ -14,9 +14,23 @@ function ParseData( CallBack, week ){
 	}
 }
 
+
+function CollectData( data,week ) {
+	for (var i = 0; i < 12; i++) {
+		for (var j = 0; j < 12; j++) {
+			GetWeek(week)[i][j] =  data[i][j]
+		}
+	}
+}
+
+
 function TestButton() {
 	console.log('Button Works')
 	console.log( Week4 )
+}
+
+function NowParse() {
+	ParseData( CollectData,week )
 }
 
 var Blank = [
@@ -43,17 +57,6 @@ var Week6
 
 CreateMatrices(week,Blank)
 
-
-function CollectData( data,week ) {
-	for (var i = 0; i < 12; i++) {
-		for (var j = 0; j < 12; j++) {
-			GetWeek(week)[i][j] =  data[i][j]
-		}
-	}
-}
-
-
-ParseData( CollectData,week )
 
 //console.log('Data:')
 //console.log( Data )
