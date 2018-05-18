@@ -197,7 +197,7 @@ function GetWeek(index){
 
 function CombineAllWeeks(week){
 	var AllWeeks = []
-	for( var i = 0; i < WeekNumber ;i++ ){
+	for( var i = 0; i < week ;i++ ){
 		if(i==0){
 			AllWeeks.push(Week1)
 		}
