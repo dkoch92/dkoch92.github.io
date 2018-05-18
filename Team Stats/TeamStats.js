@@ -67,7 +67,7 @@ function GenerateAverages(stats,week){
 
 function CombineWeeks(Week){
 	var AllWeeks = []
-	for( var i = 0; i < WeekNumber ;i++ ){
+	for( var i = 0; i < Week ;i++ ){
 		var mat = GetWeek(i)
 		AllWeeks.push(mat)
 	return AllWeeks
