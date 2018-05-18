@@ -40,7 +40,7 @@ var Week_Labels
 var NewDataSet
 
 setTimeout(function(){ 
-    console.log('Plotting Stats Timeout')
+    console.log('Plotting Stats Timeout');
     week = GetWeekNumber();
     console.log('Plotting | week:',week);
     AllTeamsMat = GetAllTeams();
