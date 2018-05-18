@@ -40,16 +40,12 @@ var Week_Labels
 var NewDataSet
 
 setTimeout(function(){ 
-    console.log('Plotting Stats Timeout');
     week = GetWeekNumber();
-    console.log('Plotting | week:',week);
     AllTeamsMat = GetAllTeams();
-    console.log('Plotting | AllTeams:',AllTeamsMat);
     AvgMat = GetAvg();
-    console.log('Plotting | AvgMat:',AllTeamsMat);
     Week_Labels = WeekLabels(week);
     NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
-    CreatePlot(NewDataSet); } ,400)
+    CreatePlot(NewDataSet); } ,200)
 
 
 // Defining Functions
