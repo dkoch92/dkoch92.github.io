@@ -1,3 +1,5 @@
+// Setting all the Initial Components
+//----------------------------------------------------------------
 var week
 var StatsMat
 var AllTeamsMat
@@ -9,12 +11,9 @@ setTimeout( function() {
 	AllTeamsMat = AllTeamStats(StatsMat,week);
 	AvgMat      = GenerateAverages(StatsMat,week); } ,150)
 
-//CombineWeeks(week)
-//StatsMat =  CombineWeekStats(week)
-//AllTeamsMat = AllTeamStats(StatsMat,week)
-//AvgMat = GenerateAverages(StatsMat,week)
 
-
+// Defining Functions
+//-----------------------------------------------------------------
 
 function GetAvg(){
 	return AvgMat
