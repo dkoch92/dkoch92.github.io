@@ -1,4 +1,4 @@
-var week = 6  //Needs to be updted weekly
+/*var week = 6  //Needs to be updted weekly
 
 var Week1Stats = [
 [51,	17,	55,	6,	0.3085,	0.4108,	59,		5,	5,	3.553,	1.326,	8.384],
@@ -87,23 +87,30 @@ var Week6Stats = [
 [42,	13,	47,	5,	0.3711,	0.4900,	55,	3,	5,	2.732,	1.196,	8.839],
 [43,	14,	43,	7,	0.3583,	0.5148,	59,	2,	2,	5.072,	1.740,	8.801],
 [49,	15,	56,	8,	0.3705,	0.5438,	55,	3,	7,	5.050,	1.317,	10.683]
-]
+]*/
 
 //Need to have the correct number of matrices of data
 
 
+week = GetWeekNumber()
 
-StatsMat =  CombineWeekStats(week)
-AllTeamsMat = AllTeamStats(StatsMat,week)
-AvgMat = GenerateAverages(StatsMat,week)
+var StatsMat
+var AllTeamsMat
+var AvgMat
+
+setTimeout(function(){ 
+	StatsMat    = CombineWeeks(week);
+	AllTeamsMat = AllTeamStats(StatsMat,week);
+	AvgMat      = GenerateAverages(StatsMat,week); } ,500)
+
+//CombineWeeks(week)
+//StatsMat =  CombineWeekStats(week)
+//AllTeamsMat = AllTeamStats(StatsMat,week)
+//AvgMat = GenerateAverages(StatsMat,week)
 
 
 function GetAllTeams(){
 	return AllTeamsMat
-}
-
-function GetWeek(){
-	return week
 }
 
 function GetAvg(){
@@ -146,6 +153,14 @@ function GenerateAverages(stats,week){
 		averages.push(Avg)
 	}
 	return averages
+}
+
+function CombineWeeks(Week){
+	var AllWeeks = []
+	for( var i = 0; i < WeekNumber ;i++ ){
+		var mat = GetWeek(i)
+		AllWeeks.push(mat)
+	return AllWeeks
 }
 
 function CombineWeekStats(WeekNumber){

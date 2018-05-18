@@ -87,11 +87,9 @@ var Week6 = [
 var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv",
 				"week_4_stats.csv","week_5_stats.csv","week_6_stats.csv"]
 
+setTimeout(function(){ 
+	ParseAll(week,CSV_Names); },150)
 
-function CSVonLoad(){
-	setTimeout(function(){ 
-	ParseAll(week,CSV_Names); },500)
-}
 
 function ParseAll( week,names ){
 	for( var i = 0; i < week; i++ ){
@@ -122,6 +120,10 @@ function CollectData( data, mat ) {
 }
 
 
+function GetWeekNumber(){
+	return week
+}
+
 function CheckWeekMat(index) {
 	if(index === 0){
 		console.log('Week1:',Week1)
@@ -145,7 +147,7 @@ function CheckWeekMat(index) {
 
 function NowParse(index,files) {
 	name = files[index]
-	filename = 'CSV_Files/'+name
+	filename = '../CSV_Files/'+name
 	if(index === 0){
 		ParseData( CollectData,filename,Week1)
 	}

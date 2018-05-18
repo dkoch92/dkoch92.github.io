@@ -29,18 +29,25 @@ var stats_options = {
 
 // Setting all the Initial Components
 //----------------------------------------------------------------
-var TeamsboolArray = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
-var StatsboolArray = [true,false,false,false,false,false,false,false,false,false,false,false,false,false]
-var AVGbool = true
+var TeamsboolArray = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var StatsboolArray = [false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var AVGbool = false
 
-var AllTeamsMat = GetAllTeams()
-var AvgMat = GetAvg()
-var week = GetWeek()
+var AllTeamsMat
+var AvgMat
+var week
+var Week_Labels
+var NewDataSet
 
-var Week_Labels = WeekLabels(week)
+setTimeout(function(){ 
+    AllTeamsMat = GetAllTeams()
+    AvgMat = GetAvg()
+    week = GetWeekNumber()
 
-NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
-CreatePlot(NewDataSet);
+    Week_Labels = WeekLabels(week)
+
+    NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
+    CreatePlot(NewDataSet); } ,1000)
 
 
 // Defining Functions
