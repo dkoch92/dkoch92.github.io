@@ -92,16 +92,21 @@ var Week6Stats = [
 //Need to have the correct number of matrices of data
 
 
-week = GetWeekNumber()
 
+var week
 var StatsMat
 var AllTeamsMat
 var AvgMat
 
 setTimeout(function(){ 
+	console.log('TeamStats Timeout')
+	week = GetWeekNumber();
+	console.log('week:',week );
 	StatsMat    = CombineWeeks(week);
+	console.log('StatsMat:',StatsMat);
 	AllTeamsMat = AllTeamStats(StatsMat,week);
-	AvgMat      = GenerateAverages(StatsMat,week); } ,500)
+	console.log('AllTeams:',AllTeamsMat)
+	AvgMat      = GenerateAverages(StatsMat,week); } ,1000)
 
 //CombineWeeks(week)
 //StatsMat =  CombineWeekStats(week)
