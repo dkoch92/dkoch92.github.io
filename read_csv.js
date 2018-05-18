@@ -1,3 +1,5 @@
+week = 6
+
 var Week1 = [
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
@@ -82,9 +84,22 @@ var Week6 = [
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0],
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0]]
 
-
 var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv",
 				"week_4_stats.csv","week_5_stats.csv","week_6_stats.csv"]
+
+setTimeout(function(){ 
+	ParseAll(week,CSV_Names); },500)
+
+function CSVonLoad(){
+	console.log('Loaded')
+}
+
+function ParseAll( week,names ){
+	for( var i = 0; i < week; i++ ){
+		NowParse(i,names)
+		console.log('Parsed:',i)
+	}
+}
 
 function ParseData( CallBack, file, Week_Mat){
 	Papa.parse(file, {
@@ -105,7 +120,6 @@ function CollectData( data, mat ) {
 			mat[i][j] =  data[i][j]
 		}
 	}
-	console.log("Collecting Mat",mat)
 }
 
 
@@ -130,9 +144,8 @@ function CheckWeekMat(index) {
 	}	
 }
 
-function NowParse(index) {
-	filename = CSV_Names[index]
-	console.log('filename: ',filename)
+function NowParse(index,files) {
+	filename = files[index]
 	if(index === 0){
 		ParseData( CollectData,filename,Week1)
 	}
