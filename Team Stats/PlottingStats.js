@@ -46,6 +46,7 @@ setTimeout(function(){
     AllTeamsMat = GetAllTeams();
     console.log('Plotting | AllTeams:',AllTeamsMat);
     AvgMat = GetAvg();
+    console.log('Plotting | AvgMat:',AllTeamsMat);
     Week_Labels = WeekLabels(week);
     NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
     CreatePlot(NewDataSet); } ,2000)

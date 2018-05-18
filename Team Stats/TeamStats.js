@@ -6,12 +6,13 @@ var AvgMat
 setTimeout( function() { 
 	console.log('TeamStats Timeout');
 	week = GetWeekNumber();
-	console.log('week:',week );
-	StatsMat    = CombineWeeks(week);
-	console.log('StatsMat:',StatsMat);
+	console.log('TeamStats | week:',week );
+	StatsMat    = GetAllWeeks();
+	console.log('TeamStats | StatsMat:',StatsMat);
 	AllTeamsMat = AllTeamStats(StatsMat,week);
-	console.log('AllTeams:',AllTeamsMat);
-	AvgMat      = GenerateAverages(StatsMat,week); } ,1000)
+	console.log('TeamStats | AllTeams:',AllTeamsMat);
+	AvgMat      = GenerateAverages(StatsMat,week);
+	console.log('TeamStats | AVG Mat:',AvgMat) } ,1000)
 
 //CombineWeeks(week)
 //StatsMat =  CombineWeekStats(week)
@@ -19,12 +20,13 @@ setTimeout( function() {
 //AvgMat = GenerateAverages(StatsMat,week)
 
 
-function GetAllTeams(){
-	return AllTeamsMat
-}
 
 function GetAvg(){
 	return AvgMat
+}
+
+function GetAllTeams(){
+	return AllTeamsMat
 }
 
 function AllTeamStats(Stats,WeekNumber){
@@ -65,14 +67,6 @@ function GenerateAverages(stats,week){
 	return averages
 }
 
-function CombineWeeks(Week){
-	var AllWeeks = []
-	for( var i = 0; i < Week ;i++ ){
-		var mat = GetWeek(i)
-		AllWeeks.push(mat)
-	return AllWeeks
-	}
-}
 
 function CombineWeekStats(WeekNumber){
 	var AllWeeks = []

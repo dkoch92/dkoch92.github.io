@@ -86,10 +86,16 @@ var Week6 = [
 
 var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv",
 				"week_4_stats.csv","week_5_stats.csv","week_6_stats.csv"]
+var AllWeeks
 
 setTimeout(function(){ 
-	ParseAll(week,CSV_Names); },150)
+	ParseAll(week,CSV_Names);
+	AllWeeks = CombineAllWeeks( week ) },150)
 
+
+function GetAllWeeks(){
+	return AllWeeks
+}
 
 function ParseAll( week,names ){
 	for( var i = 0; i < week; i++ ){
@@ -189,3 +195,69 @@ function GetWeek(index){
 	}	
 }
 
+function CombineAllWeeks(week){
+	var AllWeeks = []
+	for( var i = 0; i < WeekNumber ;i++ ){
+		if(i==0){
+			AllWeeks.push(Week1)
+		}
+		if(i==1){
+			AllWeeks.push(Week2)
+		}
+		if(i==2){
+			AllWeeks.push(Week3)
+		}
+		if(i==3){
+			AllWeeks.push(Week4)
+		}
+		if(i==4){
+			AllWeeks.push(Week5)
+		}
+		if(i==5){
+			AllWeeks.push(Week6)
+		}
+		if(i==6){
+			AllWeeks.push(Week7)
+		}
+		if(i==7){
+			AllWeeks.push(Week8)
+		}
+		if(i==8){
+			AllWeeks.push(Week9)
+		}
+		if(i==9){
+			AllWeeks.push(Week10)
+		}
+		if(i==10){
+			AllWeeks.push(Week11)
+		}
+		if(i==11){
+			AllWeeks.push(Week12)
+		}
+		if(i==12){
+			AllWeeks.push(Week13)
+		}
+		if(i==13){
+			AllWeeks.push(Week14)
+		}
+		if(i==14){
+			AllWeeks.push(Week15)
+		}
+		if(i==15){
+			AllWeeks.push(Week16)
+		}
+		if(i==16){
+			AllWeeks.push(Week17)
+		}
+		if(i==17){
+			AllWeeks.push(Week18)
+		}
+		if(i==18){
+			AllWeeks.push(Week19)
+		}
+		if(i==19){
+			AllWeeks.push(Week20)
+		}
+	}
+	return AllWeeks
+}
