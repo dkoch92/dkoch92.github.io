@@ -90,7 +90,8 @@ var AllWeeks
 
 setTimeout(function(){ 
 	ParseAll(week,CSV_Names);
-	AllWeeks = CombineAllWeeks( week ) },150)
+	AllWeeks = CombineAllWeeks( week );
+	console.log('Finished Parsing') },75)
 
 
 function GetAllWeeks(){

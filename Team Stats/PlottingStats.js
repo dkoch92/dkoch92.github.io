@@ -49,7 +49,7 @@ setTimeout(function(){
     console.log('Plotting | AvgMat:',AllTeamsMat);
     Week_Labels = WeekLabels(week);
     NewDataSet = CreateData(TeamsboolArray,StatsboolArray,AllTeamsMat,week,Week_Labels,AVGbool,AvgMat);
-    CreatePlot(NewDataSet); } ,2000)
+    CreatePlot(NewDataSet); } ,400)
 
 
 // Defining Functions

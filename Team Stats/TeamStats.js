@@ -12,7 +12,7 @@ setTimeout( function() {
 	AllTeamsMat = AllTeamStats(StatsMat,week);
 	console.log('TeamStats | AllTeams:',AllTeamsMat);
 	AvgMat      = GenerateAverages(StatsMat,week);
-	console.log('TeamStats | AVG Mat:',AvgMat) } ,1000)
+	console.log('TeamStats | AVG Mat:',AvgMat) } ,200)
 
 //CombineWeeks(week)
 //StatsMat =  CombineWeekStats(week)
