@@ -38,9 +38,7 @@ console.log(Week4_M)
 setTimeout(function(){ 
 	ParseAll_M(week,CSV_Names_M);
 	AllWeeks_M = CombineAllWeeks_M( week );
-	console.log('Finished Parsing Matchups');
-	console.log(Week4_M);
-	console.log(Week1_M); },50)
+	console.log('Finished Parsing Matchups');},100)
 
 // Defining Functions
 //-----------------------------------------------------------------
