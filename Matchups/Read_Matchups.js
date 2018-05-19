@@ -80,7 +80,7 @@ function GetWeekNumber_M(){
 
 function NowParse_M(index,files) {
 	name = files[index]
-	filename = 'CSV_Files/'+name
+	filename = 'CSV Files/'+name
 	if(index === 0){
 		ParseData_M( CollectData_M,filename,Week1_M)
 	}

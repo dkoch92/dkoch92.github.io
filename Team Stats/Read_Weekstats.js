@@ -154,7 +154,7 @@ function GetWeekNumber(){
 
 function NowParse(index,files) {
 	name = files[index]
-	filename = '../CSV_Files/'+name
+	filename = '../CSV Files/'+name
 	if(index === 0){
 		ParseData( CollectData,filename,Week1)
 	}
