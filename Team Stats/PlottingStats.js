@@ -1,3 +1,6 @@
+// Setting all the Plotting options
+//----------------------------------------------------------------
+
 var ctx = document.getElementById("myChart").getContext('2d');
 
 var stats_options = {
