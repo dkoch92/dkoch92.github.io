@@ -16,13 +16,14 @@ for( var i = 0 ; i < (height) ; i++ ){
 	All_Top.push( row )
 }
 
-console.log(Top15)
-console.log(All_Top)
-
 var CSV_Names_TL = ["Top_Lines.csv","Top_Lines_Mat.csv"]
 
 setTimeout(function(){ 
+	console.log("Before",Top15);
+	console.log("Before",All_Top);
 	ParseAll_TL(CSV_Names_TL);
+	console.log("After Parse",Top15)
+	console.log("After Parse",All_Top)
 	console.log('Finished Parsing Top Lines');},400)
 
 // Defining Functions
@@ -57,6 +58,7 @@ function ParseData_TL( CallBack, file, Mat){
 }
 
 function CollectData_TL_15( data, mat ) {
+	console.log("Collecting Top15",data,mat)
 	for (var i = 0; i < 15; i++) {
 		for (var j = 0; j < 6; j++) {
 			mat[i][j]   = data[i][j]
@@ -65,6 +67,7 @@ function CollectData_TL_15( data, mat ) {
 }
 
 function CollectData_TL_All( data, mat ) {
+	console.log("Collecting All",data,mat)
 	for (var i = 0; i < height; i++) {
 		for (var j = 0; j < 8; j++) {
 			mat[i][j]   = data[i][j]

@@ -21,23 +21,18 @@ var All_Tops
 var Top_15
 
 setTimeout(function(){ 
-    week = GetAll_Top();
-    All_Tops = GetAllWeeks_M();
+    week = GetAllWeeks_M();
+    console.log("Display | week",week);
+    All_Tops = GetAll_Top();
+    console.log("Display | AllTop",All_Rops);
     Top_15 = GetTop15();
-	DisplayTop15(Top_15);} ,800)
+    console.log("Display | Top15",Top_15);
+	DisplayTop15(Top_15);} 
+	console.log("Finished Getting For Display"),800)
 
 
-var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7','Week 8','Week 9','Week 10'
-                  ,'Week 11','Week 12','Week 13','Week 14','Week 15','Week 16','Week 17','Week 18','Week 19','Week 20']
-
-
-var 
 // Defining Functions
 //-----------------------------------------------------------------
-
-
-document.getElementById('myImage').src='pic_bulbon.gif'
-
 
 function DisplayTop15(top15){
 	for(var i = 0 ; i < 15 ; i++){
