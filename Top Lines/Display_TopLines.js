@@ -27,8 +27,8 @@ setTimeout(function(){
     console.log("Display | AllTop",All_Rops);
     Top_15 = GetTop15();
     console.log("Display | Top15",Top_15);
-	DisplayTop15(Top_15);} 
-	console.log("Finished Getting For Display"),800)
+	DisplayTop15(Top_15);
+	console.log("Finished Getting For Display");} 800)
 
 
 // Defining Functions

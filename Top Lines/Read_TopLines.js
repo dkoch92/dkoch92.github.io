@@ -2,7 +2,7 @@
 //----------------------------------------------------------------
 var week = 6
 
-var height = 12*week-1
+var height = 12*(week-1)
 
 var Top15 = []
 for( var i = 0 ; i < 15 ; i++ ){
@@ -19,8 +19,6 @@ for( var i = 0 ; i < (height) ; i++ ){
 var CSV_Names_TL = ["Top_Lines.csv","Top_Lines_Mat.csv"]
 
 setTimeout(function(){ 
-	console.log("Before",Top15);
-	console.log("Before",All_Top);
 	ParseAll_TL(CSV_Names_TL);
 	console.log("After Parse",Top15)
 	console.log("After Parse",All_Top)
