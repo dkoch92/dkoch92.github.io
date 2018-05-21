@@ -30,8 +30,11 @@ setTimeout(function(){
     Top_15 = GetTop15();
 	DisplayTop15(Top_15);
 	AllSorted = SortAll_TL(All_Tops,TeamNames);
-	console.log(AllSorted);
-	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)}, 500)
+	console.log('all',AllSorted);
+	console.log('all[1]',AllSorted[1]);
+	console.log('all[1][0]',AllSorted[1][0]);
+	console.log('all[1][0][1]',AllSorted[1][0][1]);
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted);}, 500)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -116,6 +119,10 @@ function DisplayTeam_TL(t){
 }
 
 function DisplayLineStats_TL(teamsbool,weekbool,all){
+	console.log('all',all)
+	console.log('all[1]',all[1])
+	console.log('all[1][0]',all[1][0])
+	console.log('all[1][0][1]',all[1][0][1])
 	var team_index = 99
 	var week_index = 99
 	for(var i = 0; i < 12; i++){
