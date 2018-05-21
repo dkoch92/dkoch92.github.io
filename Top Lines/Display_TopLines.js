@@ -113,7 +113,7 @@ function DisplayTeam_TL(t){
 	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
 }
 
-DisplayLineStats_TL(teamsbool,weekbool,all){
+function DisplayLineStats_TL(teamsbool,weekbool,all){
 	for(var i = 0; i < 12; i++){
 		if( teamsbool[i] == true ){
 			team_index = i
