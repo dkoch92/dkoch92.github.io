@@ -28,7 +28,7 @@ setTimeout(function(){
     Top_15 = GetTop15();
     console.log("Display | Top15",Top_15);
 	DisplayTop15(Top_15);
-	console.log("Finished Getting For Display");}, 800)
+	console.log("Finished Getting For Display");}, 300)
 
 // Defining Functions
 //-----------------------------------------------------------------

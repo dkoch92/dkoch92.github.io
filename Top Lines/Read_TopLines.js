@@ -22,7 +22,7 @@ setTimeout(function(){
 	ParseAll_TL(CSV_Names_TL);
 	console.log("After Parse",Top15)
 	console.log("After Parse",All_Top)
-	console.log('Finished Parsing Top Lines');},400)
+	console.log('Finished Parsing Top Lines');},150)
 
 // Defining Functions
 //-----------------------------------------------------------------
