@@ -49,14 +49,12 @@ function ParseData_TL( CallBack, file, Mat){
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			console.log(results.data)
 			CallBack(results.data,Mat)
 		}
 	})
 }
 
 function CollectData_TL_15( data, mat ) {
-	console.log("Collecting Top15",data,mat)
 	for (var i = 0; i < 15; i++) {
 		for (var j = 0; j < 6; j++) {
 			mat[i][j]   = data[i][j]
@@ -65,7 +63,6 @@ function CollectData_TL_15( data, mat ) {
 }
 
 function CollectData_TL_All( data, mat ) {
-	console.log("Collecting All",data,mat)
 	for (var i = 0; i < height; i++) {
 		for (var j = 0; j < 8; j++) {
 			mat[i][j]   = data[i][j]
