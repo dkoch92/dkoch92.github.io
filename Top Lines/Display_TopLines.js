@@ -37,7 +37,7 @@ function DisplayTop15(top15){
 	for(var i = 0 ; i < 15 ; i++){
 		IMGid = ImgId[i]
 		team_img = TeamImage(TeamNames,top15[i][0])
-		document.getElementById(IMGid).src='.../Team Images/'+team_img
+		document.getElementById(IMGid).src='../Team Images/'+team_img
 		if( i <= 4 ){
 			week_tag     = Top5Id[i][0]
 			week_str     = top15[i][1].toString()
