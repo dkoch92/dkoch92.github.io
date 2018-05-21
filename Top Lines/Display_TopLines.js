@@ -111,10 +111,10 @@ function DisplayWeek_TL(w){
 function DisplayTeam_TL(t){
 	for( var i = 0; i < 12; i++ ){
 		if( i === t ){
-			DisplayWeekBools[i] = true
+			DisplayTeamBools[i] = true
 		}
 		else{
-			DisplayWeekBools[i] = false
+			DisplayTeamBools[i] = false
 		}		
 	}
 	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
