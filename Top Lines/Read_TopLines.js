@@ -16,11 +16,14 @@ for( var i = 0 ; i < (height) ; i++ ){
 	All_Top.push( row )
 }
 
+console.log(Top15)
+console.log(All_Top)
+
 var CSV_Names_TL = ["Top_Lines.csv","Top_Lines_Mat.csv"]
 
 setTimeout(function(){ 
 	ParseAll_TL(CSV_Names_TL);
-	console.log('Finished Parsing Top Lines');},120)
+	console.log('Finished Parsing Top Lines');},400)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -41,13 +44,14 @@ function ParseAll_TL( names ){
 		NowParse_TL(names)
 }
 
-function ParseData_TL( CallBack, file, Week_Mat){
+function ParseData_TL( CallBack, file, Mat){
 	Papa.parse(file, {
 		download: true,
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			CallBack(results.data,Week_Mat)
+			console.log(results.data)
+			CallBack(results.data,Mat)
 		}
 	})
 }

@@ -12,7 +12,7 @@ var Top5Id = [['t5_1_w','t5_1_m','t5_1_c','t5_1_o','t5_1_l'],
 			  ['t5_2_w','t5_2_m','t5_2_c','t5_2_o','t5_2_l'],
 			  ['t5_3_w','t5_3_m','t5_3_c','t5_3_o','t5_3_l'],
 			  ['t5_4_w','t5_4_m','t5_4_c','t5_4_o','t5_4_l'],
-			  ['t5_5_w','t5_5_m','t5_5_c','t5_5_o','t5_5_l']
+			  ['t5_5_w','t5_5_m','t5_5_c','t5_5_o','t5_5_l']]
 
 var Top6_15Id = ['t15_6','t15_7','t15_8','t15_9','t15_10','t15_11','t15_12','t15_13','t15_14','t15_15']
 
@@ -24,7 +24,7 @@ setTimeout(function(){
     week = GetAll_Top();
     All_Tops = GetAllWeeks_M();
     Top_15 = GetTop15();
-	DisplayTop15(Top_15);} ,250)
+	DisplayTop15(Top_15);} ,800)
 
 
 var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7','Week 8','Week 9','Week 10'
