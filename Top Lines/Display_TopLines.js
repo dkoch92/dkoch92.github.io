@@ -16,19 +16,20 @@ var Top5Id = [['t5_1_w','t5_1_m','t5_1_c','t5_1_o','t5_1_l'],
 
 var Top6_15Id = ['t15_6','t15_7','t15_8','t15_9','t15_10','t15_11','t15_12','t15_13','t15_14','t15_15']
 
+var DisplayTeamBools = [false,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayWeekBools = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+
 var week 
 var All_Tops
 var Top_15
 
 setTimeout(function(){ 
     week = GetWeekNumber_TL();
-    console.log("Display | week",week);
     All_Tops = GetAll_Top();
-    console.log("Display | AllTop",All_Tops);
     Top_15 = GetTop15();
-    console.log("Display | Top15",Top_15);
 	DisplayTop15(Top_15);
-	console.log("Finished Getting For Display");}, 300)
+	var AllSorted = SortAll_TL(All_Tops,TeamNames);
+	console.log(AllSorted)}, 300)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -63,6 +64,77 @@ function DisplayTop15(top15){
 			final_string = week_str+' '+matchup_str+' '+category_str
 			document.getElementById(top15_tag).innerHTML = final_string
 		}
+	}
+}
+
+function SortAll_TL(all,names){
+	var All_Sorted = [[],[],[],[],[],[],[],[],[],[],[],[]]
+	for(var i = 2; i < (week+1); i++){
+		for(var j = 0; j < 12; j++){
+			team = names[j]
+			for( var k = 0; k < 12*(week-1); k++ ){
+				if( all[k][0] === team ){
+					if( all[k][7] === i ){
+						row = [0,0,0,0,0,0,0,0]
+						for(var q = 0;q < 7;q++){
+							row[q] = all[k][q]
+						}
+						row[7] = int(k)
+						All_Sorted[j].push(row)
+					}
+				}
+			}
+		}
+	}
+	return All_Sorted
+}
+
+function DisplayWeek_TL(w){
+	for( var i = 1; i < 21; i++ ){
+		if( i === w ){
+			DisplayWeekBools[i-1] = true
+		}
+		else{
+			DisplayWeekBools[i-1] = false
+		}		
+	}
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
+}
+
+function DisplayTeam_TL(t){
+	for( var i = 0; i < 12; i++ ){
+		if( i === t ){
+			DisplayWeekBools[i] = true
+		}
+		else{
+			DisplayWeekBools[i] = false
+		}		
+	}
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
+}
+
+DisplayLineStats_TL(teamsbool,weekbool,all){
+	for(var i = 0; i < 12; i++){
+		if( teamsbool[i] == true ){
+			team_index = i
+		}
+	}
+	for(var j = 0; j < 20; j++){
+		if( weekbool[i] == true ){
+			week_index = j
+		}
+	}
+	matchup_string = all[i][j][1].toString()+'-'+all[i][j][2].toString()+'-'+all[i][j][3].toString()
+	categor_string = all[i][j][4].toString()+'-'+all[i][j][5].toString()+'-'+all[i][j][6].toString()
+	rank_string    = all[i][j][7].toString()
+	stats_string   = matchup_string+" "+categor_string+" "+rank_string
+	document.getElementById('prompt_stats').innerHTML = stats_string
+	team_img = TeamImage(TeamNames,all[i][j][0])
+	document.getElementById('prompt_img').src='../Team Images/'+team_img
+	if( all[i][j][7] > 12*(week-2)+2 ){
+		document.getElementById('feelsbad_img').src='../Team Images/Feelsbadman Pic.png'
+	}else{
+		document.getElementById('feelsbad_img').src='../Team Images/Blank Pic.png'
 	}
 }
 
