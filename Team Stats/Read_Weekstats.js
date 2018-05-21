@@ -104,7 +104,7 @@ var Week20 = [
 // Setting all the Initial Components
 //----------------------------------------------------------------
 
-var week = 6
+var week = 7
 
 var CSV_Names = ["week_1_stats.csv","week_2_stats.csv","week_3_stats.csv","week_4_stats.csv","week_5_stats.csv",
                  "week_6_stats.csv","week_7_stats.csv","week_8_stats.csv","week_9_stats.csv","week_10_stats.csv",

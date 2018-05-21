@@ -1,6 +1,6 @@
 // Setting all the Initial Components
 //----------------------------------------------------------------
-var week = 6
+var week = 7
 
 var height = 12*(week-1)
 

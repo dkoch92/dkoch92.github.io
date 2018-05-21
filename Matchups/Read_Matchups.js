@@ -80,7 +80,7 @@ var Week20_M = [
 
 //  Setting all the Initial Components
 //----------------------------------------------------------------
-var week = 6
+var week = 7
 
 var CSV_Names_M = ["week_1_matchups.csv","week_2_matchups.csv","week_3_matchups.csv","week_4_matchups.csv","week_5_matchups.csv",
 				   "week_6_matchups.csv","week_7_matchups.csv","week_8_matchups.csv","week_9_matchups.csv","week_10_matchups.csv",
@@ -153,7 +153,50 @@ function NowParse_M(index,files) {
 	}	
 	if(index === 5){
 		ParseData_M( CollectData_M,filename,Week6_M)
+	}
+	if(index === 6){
+		ParseData_M( CollectData_M,filename,Week7_M)
+	}
+	if(index === 7){
+		ParseData_M( CollectData_M,filename,Week8_M)
+	}
+	if(index === 8){
+		ParseData_M( CollectData_M,filename,Week9_M)
+	}
+	if(index === 9){
+		ParseData_M( CollectData_M,filename,Week10_M)
+	}
+	if(index === 10){
+		ParseData_M( CollectData_M,filename,Week11_M)
+	}
+	if(index === 11){
+		ParseData_M( CollectData_M,filename,Week12_M)
+	}
+	if(index === 12){
+		ParseData_M( CollectData_M,filename,Week13_M)
+	}
+	if(index === 13){
+		ParseData_M( CollectData_M,filename,Week14_M)
+	}
+	if(index === 14){
+		ParseData_M( CollectData_M,filename,Week15_M)
 	}	
+	if(index === 15){
+		ParseData_M( CollectData_M,filename,Week16_M)
+	}
+	if(index === 16){
+		ParseData_M( CollectData_M,filename,Week17_M)
+	}
+	if(index === 17){
+		ParseData_M( CollectData_M,filename,Week18_M)
+	}
+	if(index === 18){
+		ParseData_M( CollectData_M,filename,Week19_M)
+	}
+	if(index === 19){
+		ParseData_M( CollectData_M,filename,Week20_M)
+	}
+	
 }
 
 function CombineAllWeeks_M(week){
