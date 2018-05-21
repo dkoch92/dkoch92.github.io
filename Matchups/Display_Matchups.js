@@ -113,16 +113,21 @@ var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7
 //-----------------------------------------------------------------
 
 
-function DisplayWeek(week){
-	Mat = WeekMat(week-1)
-	for(var i = 0 ; i < 12 ; i++){
-		for(var j = 0 ; j < 6 ; j++){
-			id_tag = IdNames[i][j]
-			number = (Mat[i][j]).toString()
-			title  = Week_Titles[week-1]
-			document.getElementById(id_tag).innerHTML = number
-			document.getElementById('chart_title').innerHTML = title
+function DisplayWeek(w){
+	if( w <= week ){
+		Mat = WeekMat(w-1)
+		for(var i = 0 ; i < 12 ; i++){
+			for(var j = 0 ; j < 6 ; j++){
+				id_tag = IdNames[i][j]
+				number = (Mat[i][j]).toString()
+				title  = Week_Titles[w-1]
+				document.getElementById(id_tag).innerHTML = number
+				document.getElementById('chart_title').innerHTML = title
+			}
 		}
+	}
+	if( w > week ){
+		DisplaySeason()
 	}
 }
 
