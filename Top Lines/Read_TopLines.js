@@ -6,7 +6,7 @@ var height = 12*(week-1)
 
 var Top15 = []
 for( var i = 0 ; i < 15 ; i++ ){
-	row = ["name","name","name","name","name","name"]
+	row = ["name","name","name","name","New Hampshire Thunder Catz","name"]
 	Top15.push( row )
 }
 
