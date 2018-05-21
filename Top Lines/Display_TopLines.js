@@ -133,8 +133,8 @@ function DisplayLineStats_TL(teamsbool,weekbool,all){
 			week_num = j-1
 		}
 	}
-	x = team_index
-	y = week_index
+	x = team_num
+	y = week_num
 	console.log('x',x)
 	console.log('y',y)
 	console.log('all[x]',all[x])
