@@ -90,11 +90,12 @@
 .TL_Prompt_Stats{
     position:absolute;
     margin:0 auto;
-    font-size: 26px;
+    padding: 12px 0 0 0;
+    font-size: 32px;
     font-family: "Times New Roman", Times, serif;
     word-spacing: 70px;
     width:500px;
-    height:110px;
+    height:98px;
     text-align: center;
 }
 

@@ -145,7 +145,8 @@ function DisplayLineStats_TL(teamsbool,weekbool,all){
 	stats_string   = matchup_string+" "+categor_string+" "+rank_string
 	document.getElementById('prompt_stats').innerHTML = stats_string
 	team_img = TeamImage(TeamNames,all[x][y][0])
-	document.getElementById('prompt_img').src='../Team Images/'+team_img
+	console.log(team_img)
+	document.getElementById('prompt_team_img').src='../Team Images/'+team_img
 	if( all[x][y][7] > 12*(week-2)+2 ){
 		document.getElementById('feelsbad_img').src='../Team Images/Feelsbadman Pic.png'
 	}else{
