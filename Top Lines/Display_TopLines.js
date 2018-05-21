@@ -24,7 +24,7 @@ setTimeout(function(){
     week = GetWeekNumber_TL();
     console.log("Display | week",week);
     All_Tops = GetAll_Top();
-    console.log("Display | AllTop",All_Rops);
+    console.log("Display | AllTop",All_Tops);
     Top_15 = GetTop15();
     console.log("Display | Top15",Top_15);
 	DisplayTop15(Top_15);
