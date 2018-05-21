@@ -16,8 +16,8 @@ var Top5Id = [['t5_1_w','t5_1_m','t5_1_c','t5_1_o','t5_1_l'],
 
 var Top6_15Id = ['t15_6','t15_7','t15_8','t15_9','t15_10','t15_11','t15_12','t15_13','t15_14','t15_15']
 
-var DisplayTeamBools = [false,false,false,false,false,false,false,false,false,false,false,false]
-var DisplayWeekBools = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayTeamBools = [true,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayWeekBools = [false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
 var week 
 var All_Tops
@@ -30,7 +30,8 @@ setTimeout(function(){
     Top_15 = GetTop15();
 	DisplayTop15(Top_15);
 	AllSorted = SortAll_TL(All_Tops,TeamNames);
-	console.log(AllSorted)}, 300)
+	console.log(AllSorted);
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)}, 500)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -115,6 +116,8 @@ function DisplayTeam_TL(t){
 }
 
 function DisplayLineStats_TL(teamsbool,weekbool,all){
+	var team_index = 99
+	var week_index = 99
 	for(var i = 0; i < 12; i++){
 		if( teamsbool[i] == true ){
 			team_index = i
