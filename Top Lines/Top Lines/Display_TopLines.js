@@ -16,20 +16,25 @@ var Top5Id = [['t5_1_w','t5_1_m','t5_1_c','t5_1_o','t5_1_l'],
 
 var Top6_15Id = ['t15_6','t15_7','t15_8','t15_9','t15_10','t15_11','t15_12','t15_13','t15_14','t15_15']
 
-var DisplayTeamBools = [false,false,false,false,false,false,false,false,false,false,false,false]
-var DisplayWeekBools = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayTeamBools = [true,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayWeekBools = [false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 
 var week 
 var All_Tops
 var Top_15
+var AllSorted
 
 setTimeout(function(){ 
     week = GetWeekNumber_TL();
     All_Tops = GetAll_Top();
     Top_15 = GetTop15();
 	DisplayTop15(Top_15);
-	var AllSorted = SortAll_TL(All_Tops,TeamNames);
-	console.log(AllSorted)}, 300)
+	AllSorted = SortAll_TL(All_Tops,TeamNames);
+	console.log('all',AllSorted);
+	console.log('all[1]',AllSorted[1]);
+	console.log('all[1][0]',AllSorted[1][0]);
+	console.log('all[1][0][1]',AllSorted[1][0][1]);
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted);}, 500)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -79,7 +84,7 @@ function SortAll_TL(all,names){
 						for(var q = 0;q < 7;q++){
 							row[q] = all[k][q]
 						}
-						row[7] = k
+						row[7] = k+1
 						All_Sorted[j].push(row)
 					}
 				}
@@ -90,12 +95,12 @@ function SortAll_TL(all,names){
 }
 
 function DisplayWeek_TL(w){
-	for( var i = 1; i < 21; i++ ){
-		if( i === w ){
-			DisplayWeekBools[i-1] = true
+	for( var i = 0; i < 21; i++ ){
+		if( i === (w-1) ){
+			DisplayWeekBools[i] = true
 		}
 		else{
-			DisplayWeekBools[i-1] = false
+			DisplayWeekBools[i] = false
 		}		
 	}
 	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
@@ -114,24 +119,32 @@ function DisplayTeam_TL(t){
 }
 
 function DisplayLineStats_TL(teamsbool,weekbool,all){
+	var team_num = 99
+	var week_num = 99
 	for(var i = 0; i < 12; i++){
 		if( teamsbool[i] == true ){
-			team_index = i
+			team_num = i
 		}
 	}
 	for(var j = 0; j < 20; j++){
-		if( weekbool[i] == true ){
-			week_index = j
+		if( weekbool[j] == true ){
+			week_num = j-1
 		}
 	}
-	matchup_string = all[i][j][1].toString()+'-'+all[i][j][2].toString()+'-'+all[i][j][3].toString()
-	categor_string = all[i][j][4].toString()+'-'+all[i][j][5].toString()+'-'+all[i][j][6].toString()
-	rank_string    = all[i][j][7].toString()
+	x = team_index
+	y = week_index
+	console.log('x',x)
+	console.log('y',y)
+	console.log('all[x]',all[x])
+	console.log('all[x][y]',all[x][y])
+	matchup_string = all[x][y][1].toString()+'-'+all[x][y][2].toString()+'-'+all[x][y][3].toString()
+	categor_string = all[x][y][4].toString()+'-'+all[x][y][5].toString()+'-'+all[x][y][6].toString()
+	rank_string    = all[x][y][7].toString()
 	stats_string   = matchup_string+" "+categor_string+" "+rank_string
 	document.getElementById('prompt_stats').innerHTML = stats_string
-	team_img = TeamImage(TeamNames,all[i][j][0])
+	team_img = TeamImage(TeamNames,all[x][y][0])
 	document.getElementById('prompt_img').src='../Team Images/'+team_img
-	if( all[i][j][7] > 12*(week-2)+2 ){
+	if( all[x][y][7] > 12*(week-2)+2 ){
 		document.getElementById('feelsbad_img').src='../Team Images/Feelsbadman Pic.png'
 	}else{
 		document.getElementById('feelsbad_img').src='../Team Images/Blank Pic.png'
