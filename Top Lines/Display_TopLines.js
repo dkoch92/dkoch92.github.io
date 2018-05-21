@@ -84,7 +84,7 @@ function SortAll_TL(all,names){
 						for(var q = 0;q < 7;q++){
 							row[q] = all[k][q]
 						}
-						row[7] = k
+						row[7] = k+1
 						All_Sorted[j].push(row)
 					}
 				}
@@ -95,15 +95,17 @@ function SortAll_TL(all,names){
 }
 
 function DisplayWeek_TL(w){
-	for( var i = 0; i < 21; i++ ){
-		if( i === (w-1) ){
-			DisplayWeekBools[i] = true
+	if( w <= week ){
+		for( var i = 0; i < 21; i++ ){
+			if( i === (w-1) ){
+				DisplayWeekBools[i] = true
+			}
+			else{
+				DisplayWeekBools[i] = false
+			}		
 		}
-		else{
-			DisplayWeekBools[i] = false
-		}		
+		DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
 	}
-	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
 }
 
 function DisplayTeam_TL(t){
@@ -119,24 +121,24 @@ function DisplayTeam_TL(t){
 }
 
 function DisplayLineStats_TL(teamsbool,weekbool,all){
-	console.log('all',all)
-	console.log('all[1]',all[1])
-	console.log('all[1][0]',all[1][0])
-	console.log('all[1][0][1]',all[1][0][1])
-	var team_index = 99
-	var week_index = 99
+	var team_num = 99
+	var week_num = 99
 	for(var i = 0; i < 12; i++){
 		if( teamsbool[i] == true ){
-			team_index = i
+			team_num = i
 		}
 	}
 	for(var j = 0; j < 20; j++){
-		if( weekbool[i] == true ){
-			week_index = j-1
+		if( weekbool[j] == true ){
+			week_num = j-1
 		}
 	}
 	x = team_index
 	y = week_index
+	console.log('x',x)
+	console.log('y',y)
+	console.log('all[x]',all[x])
+	console.log('all[x][y]',all[x][y])
 	matchup_string = all[x][y][1].toString()+'-'+all[x][y][2].toString()+'-'+all[x][y][3].toString()
 	categor_string = all[x][y][4].toString()+'-'+all[x][y][5].toString()+'-'+all[x][y][6].toString()
 	rank_string    = all[x][y][7].toString()
