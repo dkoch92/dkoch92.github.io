@@ -22,13 +22,14 @@ var DisplayWeekBools = [false,false,false,false,false,false,false,false,false,fa
 var week 
 var All_Tops
 var Top_15
+var AllSorted
 
 setTimeout(function(){ 
     week = GetWeekNumber_TL();
     All_Tops = GetAll_Top();
     Top_15 = GetTop15();
 	DisplayTop15(Top_15);
-	var AllSorted = SortAll_TL(All_Tops,TeamNames);
+	AllSorted = SortAll_TL(All_Tops,TeamNames);
 	console.log(AllSorted)}, 300)
 
 // Defining Functions
@@ -90,12 +91,12 @@ function SortAll_TL(all,names){
 }
 
 function DisplayWeek_TL(w){
-	for( var i = 1; i < 21; i++ ){
-		if( i === w ){
-			DisplayWeekBools[i-1] = true
+	for( var i = 0; i < 21; i++ ){
+		if( i === (w-1) ){
+			DisplayWeekBools[i] = true
 		}
 		else{
-			DisplayWeekBools[i-1] = false
+			DisplayWeekBools[i] = false
 		}		
 	}
 	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
@@ -121,17 +122,19 @@ function DisplayLineStats_TL(teamsbool,weekbool,all){
 	}
 	for(var j = 0; j < 20; j++){
 		if( weekbool[i] == true ){
-			week_index = j
+			week_index = j-1
 		}
 	}
-	matchup_string = all[i][j][1].toString()+'-'+all[i][j][2].toString()+'-'+all[i][j][3].toString()
-	categor_string = all[i][j][4].toString()+'-'+all[i][j][5].toString()+'-'+all[i][j][6].toString()
-	rank_string    = all[i][j][7].toString()
+	x = team_index
+	y = week_index
+	matchup_string = all[x][y][1].toString()+'-'+all[x][y][2].toString()+'-'+all[x][y][3].toString()
+	categor_string = all[x][y][4].toString()+'-'+all[x][y][5].toString()+'-'+all[x][y][6].toString()
+	rank_string    = all[x][y][7].toString()
 	stats_string   = matchup_string+" "+categor_string+" "+rank_string
 	document.getElementById('prompt_stats').innerHTML = stats_string
-	team_img = TeamImage(TeamNames,all[i][j][0])
+	team_img = TeamImage(TeamNames,all[x][y][0])
 	document.getElementById('prompt_img').src='../Team Images/'+team_img
-	if( all[i][j][7] > 12*(week-2)+2 ){
+	if( all[x][y][7] > 12*(week-2)+2 ){
 		document.getElementById('feelsbad_img').src='../Team Images/Feelsbadman Pic.png'
 	}else{
 		document.getElementById('feelsbad_img').src='../Team Images/Blank Pic.png'
