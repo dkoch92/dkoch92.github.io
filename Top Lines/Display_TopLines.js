@@ -79,7 +79,7 @@ function SortAll_TL(all,names){
 						for(var q = 0;q < 7;q++){
 							row[q] = all[k][q]
 						}
-						row[7] = int(k)
+						row[7] = k
 						All_Sorted[j].push(row)
 					}
 				}
