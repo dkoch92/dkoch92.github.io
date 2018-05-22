@@ -34,7 +34,7 @@ setTimeout(function(){
 	console.log('all[1]',AllSorted[1]);
 	console.log('all[1][0]',AllSorted[1][0]);
 	console.log('all[1][0][1]',AllSorted[1][0][1]);
-	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted);}, 500)
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted);}, 300)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -152,6 +152,9 @@ function DisplayLineStats_TL(teamsbool,weekbool,all){
 	}else{
 		document.getElementById('feelsbad_img').src='../Team Images/Blank Pic.png'
 	}
+	total = 12*(week-1)
+	out_of_string = "(Out Of "+total.toString()+")"
+	document.getElementById('outof').innerHTML = out_of_string
 }
 
 function TeamImage(teamnames,string){
