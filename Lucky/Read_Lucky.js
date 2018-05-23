@@ -36,7 +36,7 @@ function Get_Opp(){
 }
 
 function ParseAll_L( names ){
-		NowParse_TL(names)
+		NowParse_L(names)
 }
 
 function ParseData_L( CallBack, file, Mat){
