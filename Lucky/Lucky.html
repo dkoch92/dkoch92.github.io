@@ -1,0 +1,575 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>
+			Top Lines
+		</title>
+		<link href="../Baseball.css" rel="stylesheet" type="text/css" />
+		<link href="Lucky.css" rel="stylesheet" type="text/css" />
+		<script src="../papaparse.min.js"></script>
+		<script src="Read_Lucky.js"></script>
+		<script src="Display_Lucky.js"></script>
+
+	</head>
+
+	<body class="Baseball_Background">
+
+		<header>
+			<nav>
+				<ul class="Main_Nav_UL">
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Fantasy18_Home.html">Home</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Matchups/Matchups.html">Matchups</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Leaders_Season.html">Stat Leaders</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Unbeatens/Unbeaten.html">Unbeaten</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Team Stats/Team Stats.html">Team Stats</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Top Lines/Top Lines.html">Top Lines</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" >Lucky (or not)</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="Top_Lines_Header">
+			<u>Strength of Schedule</u>
+		</div>
+
+		<div class="Top_Lines_Info">
+			<ul>
+				<li class="Top_Lines_Text">Matchup Record: The total number of Wins-Losses-Ties in simulated matchups across all weeks <u>of your opponents</u> </li>
+				<li class="Top_Lines_Text">Categories Record: The total number of individual category Wins-Losses-Ties from all simulated matchups <u>of your opponents</u></li>
+			</ul>
+		</div>
+
+		<div class="display_container">
+			<img src="Lucky_Records_Blank.png">
+			<!-- Text Boxs That Do Not Change -->
+			<!-- Team Names -->
+			<div class="teamname_container" style="top:383px; left:252px;">Player Haters</div>
+			<div class="teamname_container" style="top:423px; left:252px;">Thunder Catz</div>
+			<div class="teamname_container" style="top:463px; left:252px;">Dicks Out</div>
+			<div class="teamname_container" style="top:503px; left:252px;">EZ Game EZ Life</div>
+			<div class="teamname_container" style="top:543px; left:252px;">Tall Sexy Tyrian</div>
+			<div class="teamname_container" style="top:583px; left:252px;">Dumpster Fires</div>
+			<div class="teamname_container" style="top:630px; left:252px;">Confortably Numb</div>
+			<div class="teamname_container" style="top:670px; left:252px;">MN Islanders</div>
+			<div class="teamname_container" style="top:710px; left:252px;">Ozuna Matata</div>
+			<div class="teamname_container" style="top:750px; left:252px;">Ctrl Altuve Dlt</div>
+			<div class="teamname_container" style="top:790px; left:252px;">Johto Hoe-Ohs</div>
+			<div class="teamname_container" style="top:830px; left:252px;">Ventura Gulls</div>
+			<!-- Division Names -->
+			<div class="division_container" style="top:463px; left:50px;">East</div>
+			<div class="division_container" style="top:503px; left:50px;">East</div>
+			<div class="division_container" style="top:710px; left:50px;">South</div>
+			<div class="division_container" style="top:750px; left:50px;">West</div>
+			<!-- Catagories -->
+			<div class="catagories_container" style="top:328px; left:446px;">Wins</div>
+			<div class="catagories_container" style="top:328px; left:536px;">Losses</div>
+			<div class="catagories_container" style="top:328px; left:625px;">Ties</div>
+			<div class="catagories_container" style="top:328px; left:750px;">W</div>
+			<div class="catagories_container" style="top:328px; left:840px;">L</div>
+			<div class="catagories_container" style="top:328px; left:930px;">T</div>
+
+			<div class="opp_title_container" style="top:272px; left:446px;">Season</div>
+			<div class="opp_stats_container" style="top:382px; left:445px;">
+				<div class="opp_stat" id="opp_1_W" style="top:0px; left:0px;"></div>
+				<div class="opp_stat" id="opp_1_L" style="top:0px; left:90px;"></div>
+				<div class="opp_stat" id="opp_1_T" style="top:0px; left:180px;"></div>
+				<div class="opp_stat" id="opp_1w" style="top:0px; left:304px;"></div>
+				<div class="opp_stat" id="opp_1l" style="top:0px; left:394px;"></div>
+				<div class="opp_stat" id="opp_1t" style="top:0px; left:484px;"></div>
+				<div class="opp_stat" id="opp_2_W" style="top:40px; left:0px;"></div>
+				<div class="opp_stat" id="opp_2_L" style="top:40px; left:90px;"></div>
+				<div class="opp_stat" id="opp_2_T" style="top:40px; left:180px;"></div>
+				<div class="opp_stat" id="opp_2w" style="top:40px; left:304px;"></div>
+				<div class="opp_stat" id="opp_2l" style="top:40px; left:394px;"></div>
+				<div class="opp_stat" id="opp_2t" style="top:40px; left:484px;"></div>
+				<div class="opp_stat" id="opp_3_W" style="top:80px; left:0px;"></div>
+				<div class="opp_stat" id="opp_3_L" style="top:80px; left:90px;"></div>
+				<div class="opp_stat" id="opp_3_T" style="top:80px; left:180px;"></div>
+				<div class="opp_stat" id="opp_3w" style="top:80px; left:304px;"></div>
+				<div class="opp_stat" id="opp_3l" style="top:80px; left:394px;"></div>
+				<div class="opp_stat" id="opp_3t" style="top:80px; left:484px;"></div>
+				<div class="opp_stat" id="opp_4_W" style="top:120px; left:0px;"></div>
+				<div class="opp_stat" id="opp_4_L" style="top:120px; left:90px;"></div>
+				<div class="opp_stat" id="opp_4_T" style="top:120px; left:180px;"></div>
+				<div class="opp_stat" id="opp_4w" style="top:120px; left:304px;"></div>
+				<div class="opp_stat" id="opp_4l" style="top:120px; left:394px;"></div>
+				<div class="opp_stat" id="opp_4t" style="top:120px; left:484px;"></div>
+				<div class="opp_stat" id="opp_5_W" style="top:160px; left:0px;"></div>
+				<div class="opp_stat" id="opp_5_L" style="top:160px; left:90px;"></div>
+				<div class="opp_stat" id="opp_5_T" style="top:160px; left:180px;"></div>
+				<div class="opp_stat" id="opp_5w" style="top:160px; left:304px;"></div>
+				<div class="opp_stat" id="opp_5l" style="top:160px; left:394px;"></div>
+				<div class="opp_stat" id="opp_5t" style="top:160px; left:484px;"></div>
+				<div class="opp_stat" id="opp_6_W" style="top:200px; left:0px;"></div>
+				<div class="opp_stat" id="opp_6_L" style="top:200px; left:90px;"></div>
+				<div class="opp_stat" id="opp_6_T" style="top:200px; left:180px;"></div>
+				<div class="opp_stat" id="opp_6w" style="top:200px; left:304px;"></div>
+				<div class="opp_stat" id="opp_6l" style="top:200px; left:394px;"></div>
+				<div class="opp_stat" id="opp_6t" style="top:200px; left:484px;"></div>
+
+				<div class="opp_stat" id="opp_7_W" style="top:248px; left:0px;"></div>
+				<div class="opp_stat" id="opp_7_L" style="top:248px; left:90px;"></div>
+				<div class="opp_stat" id="opp_7_T" style="top:248px; left:180px;"></div>
+				<div class="opp_stat" id="opp_7w" style="top:248px; left:304px;"></div>
+				<div class="opp_stat" id="opp_7l" style="top:248px; left:394px;"></div>
+				<div class="opp_stat" id="opp_7t" style="top:248px; left:484px;"></div>
+				<div class="opp_stat" id="opp_8_W" style="top:288px; left:0px;"></div>
+				<div class="opp_stat" id="opp_8_L" style="top:288px; left:90px;"></div>
+				<div class="opp_stat" id="opp_8_T" style="top:288px; left:180px;"></div>
+				<div class="opp_stat" id="opp_8w" style="top:288px; left:304px;"></div>
+				<div class="opp_stat" id="opp_8l" style="top:288px; left:394px;"></div>
+				<div class="opp_stat" id="opp_8t" style="top:288px; left:484px;"></div>
+				<div class="opp_stat" id="opp_9_W" style="top:328px; left:0px;"></div>
+				<div class="opp_stat" id="opp_9_L" style="top:328px; left:90px;"></div>
+				<div class="opp_stat" id="opp_9_T" style="top:328px; left:180px;"></div>
+				<div class="opp_stat" id="opp_9w" style="top:328px; left:304px;"></div>
+				<div class="opp_stat" id="opp_9l" style="top:328px; left:394px;"></div>
+				<div class="opp_stat" id="opp_9t" style="top:328px; left:484px;"></div>
+				<div class="opp_stat" id="opp_10_W" style="top:368px; left:0px;"></div>
+				<div class="opp_stat" id="opp_10_L" style="top:368px; left:90px;"></div>
+				<div class="opp_stat" id="opp_10_T" style="top:368px; left:180px;"></div>
+				<div class="opp_stat" id="opp_10w" style="top:368px; left:304px;"></div>
+				<div class="opp_stat" id="opp_10l" style="top:368px; left:394px;"></div>
+				<div class="opp_stat" id="opp_10t" style="top:368px; left:484px;"></div>
+				<div class="opp_stat" id="opp_11_W" style="top:408px; left:0px;"></div>
+				<div class="opp_stat" id="opp_11_L" style="top:408px; left:90px;"></div>
+				<div class="opp_stat" id="opp_11_T" style="top:408px; left:180px;"></div>
+				<div class="opp_stat" id="opp_11w" style="top:408px; left:304px;"></div>
+				<div class="opp_stat" id="opp_11l" style="top:408px; left:394px;"></div>
+				<div class="opp_stat" id="opp_11t" style="top:408px; left:484px;"></div>
+				<div class="opp_stat" id="opp_12_W" style="top:448px; left:0px;"></div>
+				<div class="opp_stat" id="opp_12_L" style="top:448px; left:90px;"></div>
+				<div class="opp_stat" id="opp_12_T" style="top:448px; left:180px;"></div>
+				<div class="opp_stat" id="opp_12w" style="top:448px; left:304px;"></div>
+				<div class="opp_stat" id="opp_12l" style="top:448px; left:394px;"></div>
+				<div class="opp_stat" id="opp_12t" style="top:448px; left:484px;"></div>
+			</div>
+
+		</div>
+
+		<div class="Top_Lines_Header">
+			<u>Win % By Categories</u>
+		</div>
+
+		<div class="Top_Lines_Info">
+			<ul>
+				<li class="Top_Lines_Text">Left Percentage: Your team's win percentage for that category, versus your matchup opponents this season</li>
+				<li class="Top_Lines_Text">Right Percentage: Your team's win percentage for that category, simulated across all matchups each week</u></li>
+			</ul>
+		</div>
+
+
+		<div class="Win_Percent_container">
+			<img src="Win_Percent_Blank.png">
+			<div class="Win_Percent_Header" style="top:30px; left:680px">Hitting</div>
+			<div class="Win_Percent_Header" style="top:730px; left:680px">Pitching</div>
+			<!-- Text Boxs That Do Not Change -->
+			<!-- Team Names 196-->
+			<div class="teamname_container" style="top:196px; left:265px;">Player Haters</div>
+			<div class="teamname_container" style="top:236px; left:265px;">Thunder Catz</div>
+			<div class="teamname_container" style="top:276px; left:265px;">Dicks Out</div>
+			<div class="teamname_container" style="top:316px; left:265px;">EZ Game EZ Life</div>
+			<div class="teamname_container" style="top:356px; left:265px;">Tall Sexy Tyrian</div>
+			<div class="teamname_container" style="top:396px; left:265px;">Dumpster Fires</div>
+			<div class="teamname_container" style="top:444px; left:265px;">Confortably Numb</div>
+			<div class="teamname_container" style="top:484px; left:265px;">MN Islanders</div>
+			<div class="teamname_container" style="top:524px; left:265px;">Ozuna Matata</div>
+			<div class="teamname_container" style="top:564px; left:265px;">Ctrl Altuve Dlt</div>
+			<div class="teamname_container" style="top:604px; left:265px;">Johto Hoe-Ohs</div>
+			<div class="teamname_container" style="top:644px; left:265px;">Ventura Gulls</div>
+			<!-- Division Names -->
+			<div class="division_container" style="top:276px; left:62px;">East</div>
+			<div class="division_container" style="top:316px; left:62px;">East</div>
+			<div class="division_container" style="top:524px; left:62px;">South</div>
+			<div class="division_container" style="top:564px; left:62px;">West</div>
+			<!-- Catagories -->
+			<div class="win_percent_catagories_container" style="top:146px; left:458px;">Runs</div>
+			<div class="win_percent_catagories_container" style="top:146px; left:581px;">HR</div>
+			<div class="win_percent_catagories_container" style="top:146px; left:703px;">RBI</div>
+			<div class="win_percent_catagories_container" style="top:146px; left:823px;">SB</div>
+			<div class="win_percent_catagories_container" style="top:146px; left:946px;">OBP</div>
+			<div class="win_percent_catagories_container" style="top:146px; left:1068px;">SLG</div>
+			<div class="win_percent_catagories_container" style="top:146px; left:1224px;">Average</div>
+		
+			<div class="teamname_container" style="top:894px; left:265px;">Player Haters</div>
+			<div class="teamname_container" style="top:934px; left:265px;">Thunder Catz</div>
+			<div class="teamname_container" style="top:974px; left:265px;">Dicks Out</div>
+			<div class="teamname_container" style="top:1014px; left:265px;">EZ Game EZ Life</div>
+			<div class="teamname_container" style="top:1054px; left:265px;">Tall Sexy Tyrian</div>
+			<div class="teamname_container" style="top:1094px; left:265px;">Dumpster Fires</div>
+			<div class="teamname_container" style="top:1142px; left:265px;">Confortably Numb</div>
+			<div class="teamname_container" style="top:1182px; left:265px;">MN Islanders</div>
+			<div class="teamname_container" style="top:1222px; left:265px;">Ozuna Matata</div>
+			<div class="teamname_container" style="top:1262px; left:265px;">Ctrl Altuve Dlt</div>
+			<div class="teamname_container" style="top:1302px; left:265px;">Johto Hoe-Ohs</div>
+			<div class="teamname_container" style="top:1342px; left:265px;">Ventura Gulls</div>
+			<!-- Division Names -->
+			<div class="division_container" style="top:974px; left:62px;">East</div>
+			<div class="division_container" style="top:1016px; left:62px;">East</div>
+			<div class="division_container" style="top:1222px; left:62px;">South</div>
+			<div class="division_container" style="top:1262px; left:62px;">West</div>
+			<!-- Catagories -->
+			<div class="win_percent_catagories_container" style="top:844px; left:458px;">K</div>
+			<div class="win_percent_catagories_container" style="top:844px; left:581px;">QS</div>
+			<div class="win_percent_catagories_container" style="top:844px; left:703px;">SV</div>
+			<div class="win_percent_catagories_container" style="top:844px; left:823px;">ERA</div>
+			<div class="win_percent_catagories_container" style="top:844px; left:946px;">WHIP</div>
+			<div class="win_percent_catagories_container" style="top:844px; left:1068px;">K/9</div>
+			<div class="win_percent_catagories_container" style="top:844px; left:1224px;">Average</div>
+
+			<div class="WP_stats_container" style="top:196px; left:458px;">
+				<div class="WP_stat" id="WP_1_H11" style="top:0px; left:0px;"></div>
+				<div class="WP_stat" id="WP_1_H12" style="top:0px; left:62px;"></div>
+				<div class="WP_stat" id="WP_1_H21" style="top:0px; left:123px;"></div>
+				<div class="WP_stat" id="WP_1_H22" style="top:0px; left:184px;"></div>
+				<div class="WP_stat" id="WP_1_H31" style="top:0px; left:245px;"></div>
+				<div class="WP_stat" id="WP_1_H32" style="top:0px; left:306px;"></div>
+				<div class="WP_stat" id="WP_1_H41" style="top:0px; left:367px;"></div>
+				<div class="WP_stat" id="WP_1_H42" style="top:0px; left:428px;"></div>
+				<div class="WP_stat" id="WP_1_H51" style="top:0px; left:489px;"></div>
+				<div class="WP_stat" id="WP_1_H52" style="top:0px; left:550px;"></div>
+				<div class="WP_stat" id="WP_1_H61" style="top:0px; left:611px;"></div>
+				<div class="WP_stat" id="WP_1_H62" style="top:0px; left:672px;"></div>
+				<div class="WP_stat" id="WP_2_H11" style="top:40px; left:0px;"></div>
+				<div class="WP_stat" id="WP_2_H12" style="top:40px; left:62px;"></div>
+				<div class="WP_stat" id="WP_2_H21" style="top:40px; left:123px;"></div>
+				<div class="WP_stat" id="WP_2_H22" style="top:40px; left:184px;"></div>
+				<div class="WP_stat" id="WP_2_H31" style="top:40px; left:245px;"></div>
+				<div class="WP_stat" id="WP_2_H32" style="top:40px; left:306px;"></div>
+				<div class="WP_stat" id="WP_2_H41" style="top:40px; left:367px;"></div>
+				<div class="WP_stat" id="WP_2_H42" style="top:40px; left:428px;"></div>
+				<div class="WP_stat" id="WP_2_H51" style="top:40px; left:489px;"></div>
+				<div class="WP_stat" id="WP_2_H52" style="top:40px; left:550px;"></div>
+				<div class="WP_stat" id="WP_2_H61" style="top:40px; left:611px;"></div>
+				<div class="WP_stat" id="WP_2_H62" style="top:40px; left:672px;"></div>
+				<div class="WP_stat" id="WP_3_H11" style="top:80px; left:0px;"></div>
+				<div class="WP_stat" id="WP_3_H12" style="top:80px; left:62px;"></div>
+				<div class="WP_stat" id="WP_3_H21" style="top:80px; left:123px;"></div>
+				<div class="WP_stat" id="WP_3_H22" style="top:80px; left:184px;"></div>
+				<div class="WP_stat" id="WP_3_H31" style="top:80px; left:245px;"></div>
+				<div class="WP_stat" id="WP_3_H32" style="top:80px; left:306px;"></div>
+				<div class="WP_stat" id="WP_3_H41" style="top:80px; left:367px;"></div>
+				<div class="WP_stat" id="WP_3_H42" style="top:80px; left:428px;"></div>
+				<div class="WP_stat" id="WP_3_H51" style="top:80px; left:489px;"></div>
+				<div class="WP_stat" id="WP_3_H52" style="top:80px; left:550px;"></div>
+				<div class="WP_stat" id="WP_3_H61" style="top:80px; left:611px;"></div>
+				<div class="WP_stat" id="WP_3_H62" style="top:80px; left:672px;"></div>
+				<div class="WP_stat" id="WP_4_H11" style="top:120px; left:0px;"></div>
+				<div class="WP_stat" id="WP_4_H12" style="top:120px; left:62px;"></div>
+				<div class="WP_stat" id="WP_4_H21" style="top:120px; left:123px;"></div>
+				<div class="WP_stat" id="WP_4_H22" style="top:120px; left:184px;"></div>
+				<div class="WP_stat" id="WP_4_H31" style="top:120px; left:245px;"></div>
+				<div class="WP_stat" id="WP_4_H32" style="top:120px; left:306px;"></div>
+				<div class="WP_stat" id="WP_4_H41" style="top:120px; left:367px;"></div>
+				<div class="WP_stat" id="WP_4_H42" style="top:120px; left:428px;"></div>
+				<div class="WP_stat" id="WP_4_H51" style="top:120px; left:489px;"></div>
+				<div class="WP_stat" id="WP_4_H52" style="top:120px; left:550px;"></div>
+				<div class="WP_stat" id="WP_4_H61" style="top:120px; left:611px;"></div>
+				<div class="WP_stat" id="WP_4_H62" style="top:120px; left:672px;"></div>
+				<div class="WP_stat" id="WP_5_H11" style="top:160px; left:0px;"></div>
+				<div class="WP_stat" id="WP_5_H12" style="top:160px; left:62px;"></div>
+				<div class="WP_stat" id="WP_5_H21" style="top:160px; left:123px;"></div>
+				<div class="WP_stat" id="WP_5_H22" style="top:160px; left:184px;"></div>
+				<div class="WP_stat" id="WP_5_H31" style="top:160px; left:245px;"></div>
+				<div class="WP_stat" id="WP_5_H32" style="top:160px; left:306px;"></div>
+				<div class="WP_stat" id="WP_5_H41" style="top:160px; left:367px;"></div>
+				<div class="WP_stat" id="WP_5_H42" style="top:160px; left:428px;"></div>
+				<div class="WP_stat" id="WP_5_H51" style="top:160px; left:489px;"></div>
+				<div class="WP_stat" id="WP_5_H52" style="top:160px; left:550px;"></div>
+				<div class="WP_stat" id="WP_5_H61" style="top:160px; left:611px;"></div>
+				<div class="WP_stat" id="WP_5_H62" style="top:160px; left:672px;"></div>
+				<div class="WP_stat" id="WP_6_H11" style="top:200px; left:0px;"></div>
+				<div class="WP_stat" id="WP_6_H12" style="top:200px; left:62px;"></div>
+				<div class="WP_stat" id="WP_6_H21" style="top:200px; left:123px;"></div>
+				<div class="WP_stat" id="WP_6_H22" style="top:200px; left:184px;"></div>
+				<div class="WP_stat" id="WP_6_H31" style="top:200px; left:245px;"></div>
+				<div class="WP_stat" id="WP_6_H32" style="top:200px; left:306px;"></div>
+				<div class="WP_stat" id="WP_6_H41" style="top:200px; left:367px;"></div>
+				<div class="WP_stat" id="WP_6_H42" style="top:200px; left:428px;"></div>
+				<div class="WP_stat" id="WP_6_H51" style="top:200px; left:489px;"></div>
+				<div class="WP_stat" id="WP_6_H52" style="top:200px; left:550px;"></div>
+				<div class="WP_stat" id="WP_6_H61" style="top:200px; left:611px;"></div>
+				<div class="WP_stat" id="WP_6_H62" style="top:200px; left:672px;"></div>
+
+				<div class="WP_stat" id="WP_7_H11" style="top:248px; left:0px;"></div>
+				<div class="WP_stat" id="WP_7_H12" style="top:248px; left:62px;"></div>
+				<div class="WP_stat" id="WP_7_H21" style="top:248px; left:123px;"></div>
+				<div class="WP_stat" id="WP_7_H22" style="top:248px; left:184px;"></div>
+				<div class="WP_stat" id="WP_7_H31" style="top:248px; left:245px;"></div>
+				<div class="WP_stat" id="WP_7_H32" style="top:248px; left:306px;"></div>
+				<div class="WP_stat" id="WP_7_H41" style="top:248px; left:367px;"></div>
+				<div class="WP_stat" id="WP_7_H42" style="top:248px; left:428px;"></div>
+				<div class="WP_stat" id="WP_7_H51" style="top:248px; left:489px;"></div>
+				<div class="WP_stat" id="WP_7_H52" style="top:248px; left:550px;"></div>
+				<div class="WP_stat" id="WP_7_H61" style="top:248px; left:611px;"></div>
+				<div class="WP_stat" id="WP_7_H62" style="top:248px; left:672px;"></div>
+				<div class="WP_stat" id="WP_8_H11" style="top:288px; left:0px;"></div>
+				<div class="WP_stat" id="WP_8_H12" style="top:288px; left:62px;"></div>
+				<div class="WP_stat" id="WP_8_H21" style="top:288px; left:123px;"></div>
+				<div class="WP_stat" id="WP_8_H22" style="top:288px; left:184px;"></div>
+				<div class="WP_stat" id="WP_8_H31" style="top:288px; left:245px;"></div>
+				<div class="WP_stat" id="WP_8_H32" style="top:288px; left:306px;"></div>
+				<div class="WP_stat" id="WP_8_H41" style="top:288px; left:367px;"></div>
+				<div class="WP_stat" id="WP_8_H42" style="top:288px; left:428px;"></div>
+				<div class="WP_stat" id="WP_8_H51" style="top:288px; left:489px;"></div>
+				<div class="WP_stat" id="WP_8_H52" style="top:288px; left:550px;"></div>
+				<div class="WP_stat" id="WP_8_H61" style="top:288px; left:611px;"></div>
+				<div class="WP_stat" id="WP_8_H62" style="top:288px; left:672px;"></div>
+				<div class="WP_stat" id="WP_9_H11" style="top:328px; left:0px;"></div>
+				<div class="WP_stat" id="WP_9_H12" style="top:328px; left:62px;"></div>
+				<div class="WP_stat" id="WP_9_H21" style="top:328px; left:123px;"></div>
+				<div class="WP_stat" id="WP_9_H22" style="top:328px; left:184px;"></div>
+				<div class="WP_stat" id="WP_9_H31" style="top:328px; left:245px;"></div>
+				<div class="WP_stat" id="WP_9_H32" style="top:328px; left:306px;"></div>
+				<div class="WP_stat" id="WP_9_H41" style="top:328px; left:367px;"></div>
+				<div class="WP_stat" id="WP_9_H42" style="top:328px; left:428px;"></div>
+				<div class="WP_stat" id="WP_9_H51" style="top:328px; left:489px;"></div>
+				<div class="WP_stat" id="WP_9_H52" style="top:328px; left:550px;"></div>
+				<div class="WP_stat" id="WP_9_H61" style="top:328px; left:611px;"></div>
+				<div class="WP_stat" id="WP_9_H62" style="top:328px; left:672px;"></div>
+				<div class="WP_stat" id="WP_10_H11" style="top:368px; left:0px;"></div>
+				<div class="WP_stat" id="WP_10_H12" style="top:368px; left:62px;"></div>
+				<div class="WP_stat" id="WP_10_H21" style="top:368px; left:123px;"></div>
+				<div class="WP_stat" id="WP_10_H22" style="top:368px; left:184px;"></div>
+				<div class="WP_stat" id="WP_10_H31" style="top:368px; left:245px;"></div>
+				<div class="WP_stat" id="WP_10_H32" style="top:368px; left:306px;"></div>
+				<div class="WP_stat" id="WP_10_H41" style="top:368px; left:367px;"></div>
+				<div class="WP_stat" id="WP_10_H42" style="top:368px; left:428px;"></div>
+				<div class="WP_stat" id="WP_10_H51" style="top:368px; left:489px;"></div>
+				<div class="WP_stat" id="WP_10_H52" style="top:368px; left:550px;"></div>
+				<div class="WP_stat" id="WP_10_H61" style="top:368px; left:611px;"></div>
+				<div class="WP_stat" id="WP_10_H62" style="top:368px; left:672px;"></div>
+				<div class="WP_stat" id="WP_11_H11" style="top:408px; left:0px;"></div>
+				<div class="WP_stat" id="WP_11_H12" style="top:408px; left:62px;"></div>
+				<div class="WP_stat" id="WP_11_H21" style="top:408px; left:123px;"></div>
+				<div class="WP_stat" id="WP_11_H22" style="top:408px; left:184px;"></div>
+				<div class="WP_stat" id="WP_11_H31" style="top:408px; left:245px;"></div>
+				<div class="WP_stat" id="WP_11_H32" style="top:408px; left:306px;"></div>
+				<div class="WP_stat" id="WP_11_H41" style="top:408px; left:367px;"></div>
+				<div class="WP_stat" id="WP_11_H42" style="top:408px; left:428px;"></div>
+				<div class="WP_stat" id="WP_11_H51" style="top:408px; left:489px;"></div>
+				<div class="WP_stat" id="WP_11_H52" style="top:408px; left:550px;"></div>
+				<div class="WP_stat" id="WP_11_H61" style="top:408px; left:611px;"></div>
+				<div class="WP_stat" id="WP_11_H62" style="top:408px; left:672px;"></div>
+				<div class="WP_stat" id="WP_12_H11" style="top:448px; left:0px;"></div>
+				<div class="WP_stat" id="WP_12_H12" style="top:448px; left:62px;"></div>
+				<div class="WP_stat" id="WP_12_H21" style="top:448px; left:123px;"></div>
+				<div class="WP_stat" id="WP_12_H22" style="top:448px; left:184px;"></div>
+				<div class="WP_stat" id="WP_12_H31" style="top:448px; left:245px;"></div>
+				<div class="WP_stat" id="WP_12_H32" style="top:448px; left:306px;"></div>
+				<div class="WP_stat" id="WP_12_H41" style="top:448px; left:367px;"></div>
+				<div class="WP_stat" id="WP_12_H42" style="top:448px; left:428px;"></div>
+				<div class="WP_stat" id="WP_12_H51" style="top:448px; left:489px;"></div>
+				<div class="WP_stat" id="WP_12_H52" style="top:448px; left:550px;"></div>
+				<div class="WP_stat" id="WP_12_H61" style="top:448px; left:611px;"></div>
+				<div class="WP_stat" id="WP_12_H62" style="top:448px; left:672px;"></div>
+			</div>
+		
+			<div class="WP_stats_container" style="top:894px; left:458px;">
+				<div class="WP_stat" id="WP_1_P11" style="top:0px; left:1px;"></div>
+				<div class="WP_stat" id="WP_1_P12" style="top:0px; left:62px;"></div>
+				<div class="WP_stat" id="WP_1_P21" style="top:0px; left:123px;"></div>
+				<div class="WP_stat" id="WP_1_P22" style="top:0px; left:184px;"></div>
+				<div class="WP_stat" id="WP_1_P31" style="top:0px; left:245px;"></div>
+				<div class="WP_stat" id="WP_1_P32" style="top:0px; left:306px;"></div>
+				<div class="WP_stat" id="WP_1_P41" style="top:0px; left:367px;"></div>
+				<div class="WP_stat" id="WP_1_P42" style="top:0px; left:428px;"></div>
+				<div class="WP_stat" id="WP_1_P51" style="top:0px; left:489px;"></div>
+				<div class="WP_stat" id="WP_1_P52" style="top:0px; left:550px;"></div>
+				<div class="WP_stat" id="WP_1_P61" style="top:0px; left:611px;"></div>
+				<div class="WP_stat" id="WP_1_P62" style="top:0px; left:672px;"></div>
+				<div class="WP_stat" id="WP_2_P11" style="top:40px; left:1px;"></div>
+				<div class="WP_stat" id="WP_2_P12" style="top:40px; left:62px;"></div>
+				<div class="WP_stat" id="WP_2_P21" style="top:40px; left:123px;"></div>
+				<div class="WP_stat" id="WP_2_P22" style="top:40px; left:184px;"></div>
+				<div class="WP_stat" id="WP_2_P31" style="top:40px; left:245px;"></div>
+				<div class="WP_stat" id="WP_2_P32" style="top:40px; left:306px;"></div>
+				<div class="WP_stat" id="WP_2_P41" style="top:40px; left:367px;"></div>
+				<div class="WP_stat" id="WP_2_P42" style="top:40px; left:428px;"></div>
+				<div class="WP_stat" id="WP_2_P51" style="top:40px; left:489px;"></div>
+				<div class="WP_stat" id="WP_2_P52" style="top:40px; left:550px;"></div>
+				<div class="WP_stat" id="WP_2_P61" style="top:40px; left:611px;"></div>
+				<div class="WP_stat" id="WP_2_P62" style="top:40px; left:672px;"></div>
+				<div class="WP_stat" id="WP_3_P11" style="top:80px; left:1px;"></div>
+				<div class="WP_stat" id="WP_3_P12" style="top:80px; left:62px;"></div>
+				<div class="WP_stat" id="WP_3_P21" style="top:80px; left:123px;"></div>
+				<div class="WP_stat" id="WP_3_P22" style="top:80px; left:184px;"></div>
+				<div class="WP_stat" id="WP_3_P31" style="top:80px; left:245px;"></div>
+				<div class="WP_stat" id="WP_3_P32" style="top:80px; left:306px;"></div>
+				<div class="WP_stat" id="WP_3_P41" style="top:80px; left:367px;"></div>
+				<div class="WP_stat" id="WP_3_P42" style="top:80px; left:428px;"></div>
+				<div class="WP_stat" id="WP_3_P51" style="top:80px; left:489px;"></div>
+				<div class="WP_stat" id="WP_3_P52" style="top:80px; left:550px;"></div>
+				<div class="WP_stat" id="WP_3_P61" style="top:80px; left:611px;"></div>
+				<div class="WP_stat" id="WP_3_P62" style="top:80px; left:672px;"></div>
+				<div class="WP_stat" id="WP_4_P11" style="top:120px; left:1px;"></div>
+				<div class="WP_stat" id="WP_4_P12" style="top:120px; left:62px;"></div>
+				<div class="WP_stat" id="WP_4_P21" style="top:120px; left:123px;"></div>
+				<div class="WP_stat" id="WP_4_P22" style="top:120px; left:184px;"></div>
+				<div class="WP_stat" id="WP_4_P31" style="top:120px; left:245px;"></div>
+				<div class="WP_stat" id="WP_4_P32" style="top:120px; left:306px;"></div>
+				<div class="WP_stat" id="WP_4_P41" style="top:120px; left:367px;"></div>
+				<div class="WP_stat" id="WP_4_P42" style="top:120px; left:428px;"></div>
+				<div class="WP_stat" id="WP_4_P51" style="top:120px; left:489px;"></div>
+				<div class="WP_stat" id="WP_4_P52" style="top:120px; left:550px;"></div>
+				<div class="WP_stat" id="WP_4_P61" style="top:120px; left:611px;"></div>
+				<div class="WP_stat" id="WP_4_P62" style="top:120px; left:672px;"></div>
+				<div class="WP_stat" id="WP_5_P11" style="top:160px; left:1px;"></div>
+				<div class="WP_stat" id="WP_5_P12" style="top:160px; left:62px;"></div>
+				<div class="WP_stat" id="WP_5_P21" style="top:160px; left:123px;"></div>
+				<div class="WP_stat" id="WP_5_P22" style="top:160px; left:184px;"></div>
+				<div class="WP_stat" id="WP_5_P31" style="top:160px; left:245px;"></div>
+				<div class="WP_stat" id="WP_5_P32" style="top:160px; left:306px;"></div>
+				<div class="WP_stat" id="WP_5_P41" style="top:160px; left:367px;"></div>
+				<div class="WP_stat" id="WP_5_P42" style="top:160px; left:428px;"></div>
+				<div class="WP_stat" id="WP_5_P51" style="top:160px; left:489px;"></div>
+				<div class="WP_stat" id="WP_5_P52" style="top:160px; left:550px;"></div>
+				<div class="WP_stat" id="WP_5_P61" style="top:160px; left:611px;"></div>
+				<div class="WP_stat" id="WP_5_P62" style="top:160px; left:672px;"></div>
+				<div class="WP_stat" id="WP_6_P11" style="top:200px; left:1px;"></div>
+				<div class="WP_stat" id="WP_6_P12" style="top:200px; left:62px;"></div>
+				<div class="WP_stat" id="WP_6_P21" style="top:200px; left:123px;"></div>
+				<div class="WP_stat" id="WP_6_P22" style="top:200px; left:184px;"></div>
+				<div class="WP_stat" id="WP_6_P31" style="top:200px; left:245px;"></div>
+				<div class="WP_stat" id="WP_6_P32" style="top:200px; left:306px;"></div>
+				<div class="WP_stat" id="WP_6_P41" style="top:200px; left:367px;"></div>
+				<div class="WP_stat" id="WP_6_P42" style="top:200px; left:428px;"></div>
+				<div class="WP_stat" id="WP_6_P51" style="top:200px; left:489px;"></div>
+				<div class="WP_stat" id="WP_6_P52" style="top:200px; left:550px;"></div>
+				<div class="WP_stat" id="WP_6_P61" style="top:200px; left:611px;"></div>
+				<div class="WP_stat" id="WP_6_P62" style="top:200px; left:672px;"></div>
+
+				<div class="WP_stat" id="WP_7_P11" style="top:248px; left:1px;"></div>
+				<div class="WP_stat" id="WP_7_P12" style="top:248px; left:62px;"></div>
+				<div class="WP_stat" id="WP_7_P21" style="top:248px; left:123px;"></div>
+				<div class="WP_stat" id="WP_7_P22" style="top:248px; left:184px;"></div>
+				<div class="WP_stat" id="WP_7_P31" style="top:248px; left:245px;"></div>
+				<div class="WP_stat" id="WP_7_P32" style="top:248px; left:306px;"></div>
+				<div class="WP_stat" id="WP_7_P41" style="top:248px; left:367px;"></div>
+				<div class="WP_stat" id="WP_7_P42" style="top:248px; left:428px;"></div>
+				<div class="WP_stat" id="WP_7_P51" style="top:248px; left:489px;"></div>
+				<div class="WP_stat" id="WP_7_P52" style="top:248px; left:550px;"></div>
+				<div class="WP_stat" id="WP_7_P61" style="top:248px; left:611px;"></div>
+				<div class="WP_stat" id="WP_7_P62" style="top:248px; left:672px;"></div>
+				<div class="WP_stat" id="WP_8_P11" style="top:288px; left:1px;"></div>
+				<div class="WP_stat" id="WP_8_P12" style="top:288px; left:62px;"></div>
+				<div class="WP_stat" id="WP_8_P21" style="top:288px; left:123px;"></div>
+				<div class="WP_stat" id="WP_8_P22" style="top:288px; left:184px;"></div>
+				<div class="WP_stat" id="WP_8_P31" style="top:288px; left:245px;"></div>
+				<div class="WP_stat" id="WP_8_P32" style="top:288px; left:306px;"></div>
+				<div class="WP_stat" id="WP_8_P41" style="top:288px; left:367px;"></div>
+				<div class="WP_stat" id="WP_8_P42" style="top:288px; left:428px;"></div>
+				<div class="WP_stat" id="WP_8_P51" style="top:288px; left:489px;"></div>
+				<div class="WP_stat" id="WP_8_P52" style="top:288px; left:550px;"></div>
+				<div class="WP_stat" id="WP_8_P61" style="top:288px; left:611px;"></div>
+				<div class="WP_stat" id="WP_8_P62" style="top:288px; left:672px;"></div>
+				<div class="WP_stat" id="WP_9_P11" style="top:328px; left:1px;"></div>
+				<div class="WP_stat" id="WP_9_P12" style="top:328px; left:62px;"></div>
+				<div class="WP_stat" id="WP_9_P21" style="top:328px; left:123px;"></div>
+				<div class="WP_stat" id="WP_9_P22" style="top:328px; left:184px;"></div>
+				<div class="WP_stat" id="WP_9_P31" style="top:328px; left:245px;"></div>
+				<div class="WP_stat" id="WP_9_P32" style="top:328px; left:306px;"></div>
+				<div class="WP_stat" id="WP_9_P41" style="top:328px; left:367px;"></div>
+				<div class="WP_stat" id="WP_9_P42" style="top:328px; left:428px;"></div>
+				<div class="WP_stat" id="WP_9_P51" style="top:328px; left:489px;"></div>
+				<div class="WP_stat" id="WP_9_P52" style="top:328px; left:550px;"></div>
+				<div class="WP_stat" id="WP_9_P61" style="top:328px; left:611px;"></div>
+				<div class="WP_stat" id="WP_9_P62" style="top:328px; left:672px;"></div>
+				<div class="WP_stat" id="WP_10_P11" style="top:368px; left:1px;"></div>
+				<div class="WP_stat" id="WP_10_P12" style="top:368px; left:62px;"></div>
+				<div class="WP_stat" id="WP_10_P21" style="top:368px; left:123px;"></div>
+				<div class="WP_stat" id="WP_10_P22" style="top:368px; left:184px;"></div>
+				<div class="WP_stat" id="WP_10_P31" style="top:368px; left:245px;"></div>
+				<div class="WP_stat" id="WP_10_P32" style="top:368px; left:306px;"></div>
+				<div class="WP_stat" id="WP_10_P41" style="top:368px; left:367px;"></div>
+				<div class="WP_stat" id="WP_10_P42" style="top:368px; left:428px;"></div>
+				<div class="WP_stat" id="WP_10_P51" style="top:368px; left:489px;"></div>
+				<div class="WP_stat" id="WP_10_P52" style="top:368px; left:550px;"></div>
+				<div class="WP_stat" id="WP_10_P61" style="top:368px; left:611px;"></div>
+				<div class="WP_stat" id="WP_10_P62" style="top:368px; left:672px;"></div>
+				<div class="WP_stat" id="WP_11_P11" style="top:408px; left:1px;"></div>
+				<div class="WP_stat" id="WP_11_P12" style="top:408px; left:62px;"></div>
+				<div class="WP_stat" id="WP_11_P21" style="top:408px; left:123px;"></div>
+				<div class="WP_stat" id="WP_11_P22" style="top:408px; left:184px;"></div>
+				<div class="WP_stat" id="WP_11_P31" style="top:408px; left:245px;"></div>
+				<div class="WP_stat" id="WP_11_P32" style="top:408px; left:306px;"></div>
+				<div class="WP_stat" id="WP_11_P41" style="top:408px; left:367px;"></div>
+				<div class="WP_stat" id="WP_11_P42" style="top:408px; left:428px;"></div>
+				<div class="WP_stat" id="WP_11_P51" style="top:408px; left:489px;"></div>
+				<div class="WP_stat" id="WP_11_P52" style="top:408px; left:550px;"></div>
+				<div class="WP_stat" id="WP_11_P61" style="top:408px; left:611px;"></div>
+				<div class="WP_stat" id="WP_11_P62" style="top:408px; left:672px;"></div>
+				<div class="WP_stat" id="WP_12_P11" style="top:448px; left:1px;"></div>
+				<div class="WP_stat" id="WP_12_P12" style="top:448px; left:62px;"></div>
+				<div class="WP_stat" id="WP_12_P21" style="top:448px; left:123px;"></div>
+				<div class="WP_stat" id="WP_12_P22" style="top:448px; left:184px;"></div>
+				<div class="WP_stat" id="WP_12_P31" style="top:448px; left:245px;"></div>
+				<div class="WP_stat" id="WP_12_P32" style="top:448px; left:306px;"></div>
+				<div class="WP_stat" id="WP_12_P41" style="top:448px; left:367px;"></div>
+				<div class="WP_stat" id="WP_12_P42" style="top:448px; left:428px;"></div>
+				<div class="WP_stat" id="WP_12_P51" style="top:448px; left:489px;"></div>
+				<div class="WP_stat" id="WP_12_P52" style="top:448px; left:550px;"></div>
+				<div class="WP_stat" id="WP_12_P61" style="top:448px; left:611px;"></div>
+				<div class="WP_stat" id="WP_12_P62" style="top:448px; left:672px;"></div>
+			</div>
+			
+			<div class="WP_avg_container" style="top:196px; left:1206px;">
+				<div class="WP_avg" id="WP_avg_H11" style="top:0px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H12" style="top:0px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H21" style="top:40px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H22" style="top:40px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H31" style="top:80px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H32" style="top:80px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H41" style="top:120px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H42" style="top:120px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H51" style="top:160px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H52" style="top:160px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H61" style="top:200px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H62" style="top:200px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H71" style="top:248px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H72" style="top:248px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H81" style="top:288px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H82" style="top:288px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H91" style="top:328px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H92" style="top:328px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H101" style="top:368px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H102" style="top:368px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H111" style="top:408px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H112" style="top:408px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_H121" style="top:448px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_H122" style="top:448px; left:78px;"></div>
+			</div>
+
+			<div class="WP_avg_container" style="top:894px; left:1206px;">
+				<div class="WP_avg" id="WP_avg_P11" style="top:0px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P12" style="top:0px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P21" style="top:40px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P22" style="top:40px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P31" style="top:80px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P32" style="top:80px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P41" style="top:120px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P42" style="top:120px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P51" style="top:160px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P52" style="top:160px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P61" style="top:200px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P62" style="top:200px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P71" style="top:248px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P72" style="top:248px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P81" style="top:288px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P82" style="top:288px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P91" style="top:328px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P92" style="top:328px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P101" style="top:368px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P102" style="top:368px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P111" style="top:408px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P112" style="top:408px; left:78px;"></div>
+				<div class="WP_avg" id="WP_avg_P121" style="top:448px; left:0px;"></div>
+				<div class="WP_avg" id="WP_avg_P122" style="top:448px; left:78px;"></div>
+			</div>
+
+	</body>
+
+
+
+</html>

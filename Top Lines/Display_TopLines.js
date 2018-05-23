@@ -24,6 +24,7 @@ var All_Tops
 var Top_15
 var AllSorted
 
+
 setTimeout(function(){ 
     week = GetWeekNumber_TL();
     All_Tops = GetAll_Top();
@@ -97,11 +98,15 @@ function SortAll_TL(all,names){
 function DisplayWeek_TL(w){
 	if( w <= week ){
 		for( var i = 0; i < 21; i++ ){
+			week_tag = 'w'+(i+1).toString()
+			console.log(week_tag)
 			if( i === (w-1) ){
 				DisplayWeekBools[i] = true
+				document.getElementById(week_tag).style.border = "2px solid white";
 			}
 			else{
 				DisplayWeekBools[i] = false
+				document.getElementById(week_tag).style.border = "1px solid black";
 			}		
 		}
 		DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
@@ -110,11 +115,14 @@ function DisplayWeek_TL(w){
 
 function DisplayTeam_TL(t){
 	for( var i = 0; i < 12; i++ ){
+		team_tag = 't'+i.toString()
 		if( i === t ){
 			DisplayTeamBools[i] = true
+			document.getElementById(team_tag).style.border = "2px solid white";
 		}
 		else{
 			DisplayTeamBools[i] = false
+			document.getElementById(team_tag).style.border = "1px solid black";
 		}		
 	}
 	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
