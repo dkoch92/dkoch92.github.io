@@ -114,7 +114,6 @@ function Create_AVG_WP(wp){
 }
 
 function Display_WP_AVG(avg){
-	console.log(avg)
 	var rbga_string = 'rgba(200, 200, 200, 0)'
 	for(var i = 0; i < 24; i++){
 		for(var j = 0; j < 2; j++){
