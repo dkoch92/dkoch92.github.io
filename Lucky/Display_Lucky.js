@@ -97,13 +97,14 @@ function Create_AVG_WP(wp){
 		}
 		H_opp_avg = Math.round(H_opp/6.0)
 		H_cat_avg = Math.round(H_cat/6.0)
+		avg.push( [ H_opp_avg,H_cat_avg ] )
 	}
-	for(var i = 0; i < 12; i++){
+	for(var ii = 0; ii < 12; ii++){
 		P_opp = 0
 		P_cat = 0
-		for(var j = 6; j < 12; j++ ){
-				P_opp = P_opp + wp[i][2*j]
-				P_cat = P_cat + wp[i][2*j+1]
+		for(var jj = 6; jj < 12; jj++ ){
+				P_opp = P_opp + wp[ii][2*jj]
+				P_cat = P_cat + wp[ii][2*jj+1]
 		}
 		P_opp_avg = Math.round(P_opp/6.0)
 		P_cat_avg = Math.round(P_cat/6.0)
@@ -113,6 +114,7 @@ function Create_AVG_WP(wp){
 }
 
 function Display_WP_AVG(avg){
+	console.log(avg)
 	var rbga_string = 'rgba(200, 200, 200, 0)'
 	for(var i = 0; i < 24; i++){
 		for(var j = 0; j < 2; j++){
