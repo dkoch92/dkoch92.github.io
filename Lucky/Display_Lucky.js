@@ -24,7 +24,7 @@ setTimeout(function(){
 	WP_AVG = Create_AVG_WP(WP_Mat)
     Display_Opp_Record(Opp_Record);
     Display_WP(WP_H_id,WP_P_id,WP_Mat);
-    Display_WP_AVG(WP_AVG); } ,500)
+    Display_WP_AVG(WP_AVG); } ,600)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -96,6 +96,7 @@ function Create_AVG_WP(wp){
 		}
 		H_opp_avg = Math.round(H_opp/6.0)
 		H_cat_avg = Math.round(H_cat/6.0)
+		console.log(H_opp_avg,H_cat_avg)
 		avg.push( [ H_opp_avg,H_cat_avg ] )
 	}
 	for(var i = 0; i < 12; i++){
