@@ -95,6 +95,7 @@ function Create_AVG_WP(wp){
 				H_cat = H_cat + wp[i][2*j+1]
 		}
 		H_opp_avg = (H_opp/6.0).toFixed(0)
+		console.log(H_opp_avg)
 		H_cat_avg = (H_cat/6.0).toFixed(0)
 		avg.push( [ H_opp_avg,H_cat_avg ] )
 	}
