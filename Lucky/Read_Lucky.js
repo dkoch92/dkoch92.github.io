@@ -69,9 +69,9 @@ function CollectData_L_WP( data, mat ) {
 function NowParse_L(files) {
 	name1 = files[0]
 	filename1 = '../CSV Files/'+name1
-	ParseData_TL( CollectData_L_Opp,filename1,Opp_Mat)
+	ParseData_L( CollectData_L_Opp,filename1,Opp_Mat)
 
 	name2 = files[1]
 	filename2 = '../CSV Files/'+name2
-	ParseData_TL( CollectData_L_WP,filename2,WP_Mat)	
+	ParseData_L( CollectData_L_WP,filename2,WP_Mat)	
 }
