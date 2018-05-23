@@ -15,13 +15,14 @@ var WP_avg_id = [["WP_avg_H11","WP_avg_H12"],["WP_avg_H21","WP_avg_H22"],["WP_av
 
 var WP_Mat
 var Opp_record
+var WP_AVG
 
 setTimeout(function(){ 
 	WP_Mat     = Get_WP();
 	Opp_Record = Get_Opp();
-	console.log(WP_Mat);
-	console.log(Opp_Record);
-	WP_AVG = Create_AVG_WP(WP_Mat)
+	WP_AVG = Create_AVG_WP(WP_Mat); } ,300)
+
+setTimeout(function(){ 
     Display_Opp_Record(Opp_Record);
     Display_WP(WP_H_id,WP_P_id,WP_Mat);
     Display_WP_AVG(WP_AVG); } ,600)
