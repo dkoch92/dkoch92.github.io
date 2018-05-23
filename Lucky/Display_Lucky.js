@@ -24,7 +24,7 @@ setTimeout(function(){
 	WP_AVG = Create_AVG_WP(WP_Mat)
     Display_Opp_Record(Opp_Record);
     Display_WP(WP_H_id,WP_P_id,WP_Mat);
-    Display_WP_AVG(WP_AVG); } ,400)
+    Display_WP_AVG(WP_AVG); } ,500)
 
 // Defining Functions
 //-----------------------------------------------------------------

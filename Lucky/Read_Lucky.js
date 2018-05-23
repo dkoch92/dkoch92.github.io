@@ -22,7 +22,7 @@ var WP_Mat = [
 var CSV_Names_L = ["Opponent_Stats.csv","Win_Percents.csv"]
 
 setTimeout(function(){ 
-	ParseAll_L(CSV_Names_L);},70)
+	ParseAll_L(CSV_Names_L);},100)
 
 // Defining Functions
 //-----------------------------------------------------------------
