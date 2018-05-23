@@ -56,11 +56,11 @@ function Display_WP(h_array,p_array,wp){
 			}
 			if( j < 12 ){
 				stat_tag = h_array[i][j]
-				document.getElementById(stat_tag).innerHTML = wp[i][j].toString()
+				document.getElementById(stat_tag).innerHTML = (Math.round(wp[i][j])).toString()
 				document.getElementById(stat_tag).style.background = rbga_string
 			}else{
 				stat_tag = p_array[i][j-12]
-				document.getElementById(stat_tag).innerHTML = wp[i][j].toString()
+				document.getElementById(stat_tag).innerHTML = (Math.round(wp[i][j])).toString()
 				document.getElementById(stat_tag).style.background = rbga_string
 			}
 		}
@@ -96,8 +96,6 @@ function Create_AVG_WP(wp){
 		}
 		H_opp_avg = Math.round(H_opp/6.0)
 		H_cat_avg = Math.round(H_cat/6.0)
-		console.log(H_opp_avg,H_cat_avg)
-		avg.push( [ H_opp_avg,H_cat_avg ] )
 	}
 	for(var i = 0; i < 12; i++){
 		P_opp = 0
