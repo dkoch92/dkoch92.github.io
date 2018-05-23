@@ -94,9 +94,8 @@ function Create_AVG_WP(wp){
 				H_opp = H_opp + wp[i][2*j]
 				H_cat = H_cat + wp[i][2*j+1]
 		}
-		H_opp_avg = (H_opp/6.0).toFixed(0)
-		console.log(H_opp_avg)
-		H_cat_avg = (H_cat/6.0).toFixed(0)
+		H_opp_avg = Math.round(H_opp/6.0)
+		H_cat_avg = Math.round(H_cat/6.0)
 		avg.push( [ H_opp_avg,H_cat_avg ] )
 	}
 	for(var i = 0; i < 12; i++){
@@ -106,8 +105,8 @@ function Create_AVG_WP(wp){
 				P_opp = P_opp + wp[i][2*j]
 				P_cat = P_cat + wp[i][2*j+1]
 		}
-		P_opp_avg = (P_opp/6.0).toFixed(0)
-		P_cat_avg = (P_cat/6.0).toFixed(0)
+		P_opp_avg = Math.round(P_opp/6.0)
+		P_cat_avg = Math.round(P_cat/6.0)
 		avg.push( [ P_opp_avg,P_cat_avg ] )
 	}
 	return avg
