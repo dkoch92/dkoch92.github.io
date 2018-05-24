@@ -42,11 +42,15 @@ var place_color = ['rgba(212,175,55,.45)','rgba(192,192,192,.45)','rgba(205,127,
 var H_array = CreateTextId('H')
 var P_array = CreateTextId('P')
 
+var AllWeeks_L
+
 setTimeout(function(){ 
-	Test_Text_Display(Test_Leaders,H_array)
+	AllWeeks_L = GetAllWeeks_L()
+	console.log(ALLWeeks_L)
+	Test_Text_Display(AllWeeks_L[0],H_array)
 	Test_H_Display();
     Test_P_Display();
-	Test_Text_Display()}, 300)
+	Test_Text_Display()}, 400)
 
 
 // Defining Functions
