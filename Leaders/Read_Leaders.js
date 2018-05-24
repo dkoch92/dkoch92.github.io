@@ -75,8 +75,9 @@ function GetWeekNumber_L(){
 }
 
 function NowParse_L(index,file) {
-	name = file
+	name = file[index]
 	filename = '../CSV Files/'+name
+	console.log(filename)
 	if(index === 0){
 		ParseData_L( CollectData_L,filename,Week1_L)
 	}
