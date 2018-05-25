@@ -80,7 +80,7 @@ function DisplayWeek_U(w){
 	}
 	else{
 		U_DisplayColors(All_U[week-1],U_id)
-		DisplayWeekTitle(week-1,'U')
+		DisplayWeekTitle(week,'U')
 	}
 }
 
@@ -91,6 +91,6 @@ function DisplayWeek_B(w){
 	}
 	else{
 		U_DisplayColors(All_B[week-1],B_id)
-		DisplayWeekTitle(week-1,'B')
+		DisplayWeekTitle(week,'B')
 	}
 }
