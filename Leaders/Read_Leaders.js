@@ -60,9 +60,7 @@ setTimeout(function(){
 
 setTimeout(function(){ 	
 	AllWeeks_L = CombineAllWeeks_L( week );
-	console.log(AllWeeks_L);
-	AllPlaces_L = CombineAllPlaces_L(week);
-	console.log('AllPlaces:',AllPlaces_L);},200)
+	AllPlaces_L = CombineAllPlaces_L(week); },200)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -112,7 +110,6 @@ function GetWeekNumber_L(){
 function NowParse_L(index,file) {
 	name = file[index]
 	filename = '../CSV Files/'+name
-	console.log(filename)
 	if(index === 0){
 		ParseData_L( CollectData_L,filename,Week1_L,Week1_Places)
 	}

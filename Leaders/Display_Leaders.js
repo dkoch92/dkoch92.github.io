@@ -25,12 +25,8 @@ var week
 setTimeout(function(){ 
 	week = GetWeekNumber_L()
 	AllWeeks = GetAllWeeks_L();
-	console.log(AllWeeks);
 	AllPlaces = GetAllPlaces_L();
-	console.log(AllPlaces);
-	Text_Display(AllWeeks_L[0],H_array,P_array);
-	CreateDisplay(AllPlaces[0])
-	console.log('finished display');}, 400)
+	DisplaySeasonLeader(); }, 400)
 
 
 // Defining Functions

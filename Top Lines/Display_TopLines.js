@@ -141,17 +141,12 @@ function DisplayLineStats_TL(teamsbool,weekbool,all){
 	}
 	x = team_num
 	y = week_num
-	console.log('x',x)
-	console.log('y',y)
-	console.log('all[x]',all[x])
-	console.log('all[x][y]',all[x][y])
 	matchup_string = all[x][y][1].toString()+'-'+all[x][y][2].toString()+'-'+all[x][y][3].toString()
 	categor_string = all[x][y][4].toString()+'-'+all[x][y][5].toString()+'-'+all[x][y][6].toString()
 	rank_string    = all[x][y][7].toString()
 	stats_string   = matchup_string+" "+categor_string+" "+rank_string
 	document.getElementById('prompt_stats').innerHTML = stats_string
 	team_img = TeamImage(TeamNames,all[x][y][0])
-	console.log(team_img)
 	document.getElementById('prompt_team_img').src='../Team Images/'+team_img
 	if( all[x][y][7] > 12*(week-2)+2 ){
 		document.getElementById('feelsbad_img').src='../Team Images/Feelsbadman Pic.png'
