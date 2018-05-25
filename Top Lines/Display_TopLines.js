@@ -95,7 +95,6 @@ function DisplayWeek_TL(w){
 	if( w <= week ){
 		for( var i = 0; i < 20; i++ ){
 			week_tag = 'w'+(i+1).toString()
-			console.log(week_tag,w)
 			if(i !== 0){
 				if( i === (w-1) ){
 					DisplayWeekBools[i] = true

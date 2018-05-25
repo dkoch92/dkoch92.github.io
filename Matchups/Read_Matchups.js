@@ -89,11 +89,9 @@ var CSV_Names_M = ["week_1_matchups.csv","week_2_matchups.csv","week_3_matchups.
 
 var AllWeeks_M
 
-console.log(Week4_M)
 setTimeout(function(){ 
 	ParseAll_M(week,CSV_Names_M);
-	AllWeeks_M = CombineAllWeeks_M( week );
-	console.log('Finished Parsing Matchups');},100)
+	AllWeeks_M = CombineAllWeeks_M( week );},100)
 
 // Defining Functions
 //-----------------------------------------------------------------

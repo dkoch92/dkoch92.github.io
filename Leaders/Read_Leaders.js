@@ -92,7 +92,6 @@ function ParseData_L( CallBack, file, Week_Mat, Place_Mat){
 }
 
 function CollectData_L( data, mat1, mat2 ) {
-	console.log(data)
 	for (var i = 0; i < 36; i++) {
 		if( i < 24 ){
 			mat1.push( data[i] )
