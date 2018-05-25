@@ -94,10 +94,8 @@ function CreateDisplay(Places){
 	var total_length = 0
 	var total_top = 0
 	for(var i = 0; i < 12;i++){
-		if((i===0)||(i===6)){
-			total_length = 0
-			total_top = 0
-		}
+		total_length = 0
+		total_top = 0
 		for(var j = 0; j < 3; j++){
 			length = Places[i][j]
 			top_px = total_top.toString()+'px'
@@ -107,14 +105,15 @@ function CreateDisplay(Places){
 			if(i < 6){
 				cell_tag = H_id[i][j]
 				img_tag = h_id[i][j]
+				document.getElementById(cell_tag).style.left = Leader_Left[i]
 			}else{
 				cell_tag = P_id[i-6][j]
 				img_tag = p_id[i-6][j]
+				document.getElementById(cell_tag).style.left = Leader_Left[i-6]
 			}
 			cell_child_tag = cell_tag+'_color'
 			document.getElementById(cell_tag).style.height = cell_height
 			document.getElementById(cell_tag).style.top = top_px
-			document.getElementById(cell_tag).style.left = Leader_Left[i]
 			document.getElementById(cell_tag).style.background = place_color[j]
 			document.getElementById(cell_child_tag).style.position = 'absolute'
 			document.getElementById(cell_child_tag).style.height = '100%'
