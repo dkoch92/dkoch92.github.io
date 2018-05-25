@@ -1,0 +1,171 @@
+.U_buttons_container{
+    margin: 0 auto;
+    width:1000px;
+    height:30px;
+    padding-top: 40px;
+    position:relative;
+    align-items: inline;
+
+}
+
+.U_display_container{
+    margin: 0 auto;
+    border:1px solid yellow;
+    position: relative;
+    width:1400px;
+    height:750px;
+    padding-top: 15px;
+}
+
+.U_categories_container{
+    position: absolute;
+    width:800px;
+    height:70px;
+}
+
+.U_category{
+    position: absolute;
+    padding-top: 18px;
+    width:80px;
+    height:42px;    
+    font-size: 28px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.U_teams_container{
+    position: absolute;
+    width:226px;
+    height:490px;
+}
+
+.U_team{
+    position: absolute;
+    padding-top: 8px;
+    width:222px;
+    height:32px;    
+    font-size: 24px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.U_stats_container{
+    position: absolute;
+    width:960px;
+    height:485px;
+}
+
+.U_stat_row{
+    position: absolute;
+    width:960px;
+    height:40px;
+}
+
+.U_stat{
+    position: absolute;
+    padding-top: 8px;
+    width:80px;
+    height:32px;    
+    font-size: 24px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+
+
+.leaders_buttons_container{
+    margin: 0 auto;
+    width:1000px;
+    height:30px;
+    padding-top: 40px;
+    position:relative;
+    align-items: inline;
+
+}
+
+.leaders_button_season{
+    background-color: rgba(0,0,0,.2); 
+    border: 1px solid black;
+    color: white; 
+    font-size: 15px;
+    height:25px;
+    width:125px;
+    cursor: pointer;
+    display: inline;
+
+}
+
+.leaders_button_week{
+   background-color: rgba(0,0,0,.2); 
+    border: 1px solid black;
+    color: white; 
+    font-size: 15px;
+    height:25px;
+    width:35px;
+    cursor: pointer;
+    display: inline;
+
+}
+
+.leaders_display_container{
+    margin: 0 auto;
+    position:relative;
+    height: 900px;
+    width: 1300px;
+
+}
+
+.leaders_title{
+    position:absolute;
+    height: 60px;
+    width:502px;
+    padding:10px 0 0 0;
+    font-size: 44px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.leaders_category{
+    height: 39px;
+    width:164px;
+    padding:8px 0 0 0;
+    font-size: 29px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    position: absolute;
+}
+
+.leaders_stat_container{
+    height: 316px;
+    width:1010px;
+    position: absolute;
+}
+
+.leaders_stat{
+    margin:0 0 0 0;
+    border:2px solid black;
+    height: 36px;
+    width:166px;
+    position: absolute;
+}
+.stat_img{
+    margin:0 0 0 0;
+    width:100%;
+    height:100%;
+}
+
+.leaders_text_container{
+    position:absolute;
+    height:330px;
+    width:166px;
+}
+
+.leaders_text{
+    position:absolute;
+    padding-top: 8px;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    height: 28px;
+    width: 83px;
+}
