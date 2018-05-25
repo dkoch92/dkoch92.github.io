@@ -1,35 +1,11 @@
-// Creating Empty Matrices
-//----------------------------------------------------------------
-Test_Leaders = [
-['Nate','Clint','Nate'],				
-[55,53,52]	,		
-['Allen','Will','Josh','Will','Nate','Brian']	,
-[19,	18, '  ',	  	17	 ,'  ','  '	 ]		,	
-['Daniel',	'Daniel',	'Clint',	'Will',	'Daniel'	,'Mike',	'Charlie',	'Allen'	,'Matt'],
-[56,	54, '  ',	 	50,'  ','  ','  ','  ','  ']	, 	 	 	 	 
-['Will',	'McD',	'McD',	'Josh',	'Cullen',	'Nate']	,		
-[13,	11,	10,'  ','  ','  '],
-['Brian',	'Allen',	'Will'],
-[0.4188,0.405,	0.4],
-['Allen',	'Josh',	'Will'],
-[0.6612,	0.6008,	0.5797]
-] 	
-
-Test_Places = [
-[1,1,1],
-[1,2,3],
-[1,2,6],
-[1,1,4],
-[1,1,1],
-[1,1,1]] 	 			
-
-
-
 // Setting all the Initial Components
 //----------------------------------------------------------------
 
 var Leader_Pics = ['L_1.png','L_2.png','L_3.png','L_4.png','L_5.png','L_6.png']
 var Leader_Left = ['0px','168px','336px', '504px','672px','840px']
+
+var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7','Week 8','Week 9','Week 10'
+                  ,'Week 11','Week 12','Week 13','Week 14','Week 15','Week 16','Week 17','Week 18','Week 19','Week 20']
 
 var H_id = [['H1_1','H1_2','H1_3'],['H2_1','H2_2','H2_3'],['H3_1','H3_2','H3_3'],['H4_1','H4_2','H4_3'],['H5_1','H5_2','H5_3'],['H6_1','H6_2','H6_3']]
 var h_id = [['h1_1','h1_2','h1_3'],['h2_1','h2_2','h2_3'],['h3_1','h3_2','h3_3'],['h4_1','h4_2','h4_3'],['h5_1','h5_2','h5_3'],['h6_1','h6_2','h6_3']]
@@ -44,8 +20,10 @@ var P_array = CreateTextId('P')
 
 var AllWeeks
 var AllPlaces
+var week
 
 setTimeout(function(){ 
+	week = GetWeekNumber_L()
 	AllWeeks = GetAllWeeks_L();
 	console.log(AllWeeks);
 	AllPlaces = GetAllPlaces_L();
@@ -131,14 +109,20 @@ function CreateDisplay(Places){
 }
 
 function DisplayWeekLeader(index){
-	w = index - 1
+	if(index <= week){
+		w = index - 1
 	Text_Display(AllWeeks_L[w],H_array,P_array);
 	CreateDisplay(AllPlaces[w])
+	document.getElementById('Leader_title').innerHTML = Week_Titles[w]
+	}else{
+		DisplaySeasonLeader()
+	}
 }
 
 function DisplaySeasonLeader(){
 	w = week
 	Text_Display(AllWeeks_L[w],H_array,P_array);
 	CreateDisplay(AllPlaces[w])
+	document.getElementById('Leader_title').innerHTML = "Season"
 }
 

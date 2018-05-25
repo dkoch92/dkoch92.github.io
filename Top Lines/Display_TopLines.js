@@ -96,14 +96,16 @@ function DisplayWeek_TL(w){
 		for( var i = 0; i < 20; i++ ){
 			week_tag = 'w'+(i+1).toString()
 			console.log(week_tag,w)
-			if( i === (w-1) ){
-				DisplayWeekBools[i] = true
-				document.getElementById(week_tag).style.border = "2px solid white";
-			}
-			else{
-				DisplayWeekBools[i] = false
-				document.getElementById(week_tag).style.border = "1px solid black";
-			}		
+			if(i !== 0){
+				if( i === (w-1) ){
+					DisplayWeekBools[i] = true
+					document.getElementById(week_tag).style.border = "2px solid white";
+				}
+				else{
+					DisplayWeekBools[i] = false
+					document.getElementById(week_tag).style.border = "1px solid black";
+				}	
+			}	
 		}
 		DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted)
 	}
