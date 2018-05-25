@@ -55,11 +55,6 @@ setTimeout(function(){
 	console.log('finished display');}, 400)
 
 
-console.log(H_id)
-console.log(h_id)
-console.log(P_id)
-console.log(p_id)
-
 // Defining Functions
 //-----------------------------------------------------------------
 
@@ -124,28 +119,15 @@ function CreateDisplay(Places){
 	}
 }
 
-function Test_H_Display(){
-	for(var i = 0; i < 6;i++){
-		var total_length = 0
-		var total_top = 0
-		for(var j = 0; j < 3; j++){
-			length = Test_Places[i][j]
-			top_px = total_top.toString()+'px'
-			total_length = total_length + length
-			cell_height = (length*36).toString()+'px'
-			total_top = total_top + length*36
-			cell_tag = H_id[i][j]
-			cell_child_tag = cell_tag+'_color'
-			img_tag = h_id[i][j]
-			document.getElementById(cell_tag).style.height = cell_height
-			document.getElementById(cell_tag).style.top = top_px
-			document.getElementById(cell_tag).style.left = Leader_Left[i]
-			document.getElementById(cell_tag).style.background = place_color[j]
-			document.getElementById(cell_child_tag).style.position = 'absolute'
-			document.getElementById(cell_child_tag).style.height = '100%'
-			document.getElementById(cell_child_tag).style.width = '100%'
-			document.getElementById(cell_child_tag).style.background = place_color[j]
-			document.getElementById(img_tag).src = Leader_Pics[length-1]
-		}
-	}
+function DisplayWeekLeader(index){
+	w = index - 1
+	Text_Display(AllWeeks_L[w],H_array,P_array);
+	CreateDisplay(AllPlaces[w])
 }
+
+function DisplaySeasonLeader(){
+	w = week
+	Text_Display(AllWeeks_L[w],H_array,P_array);
+	CreateDisplay(AllPlaces[w])
+}
+
