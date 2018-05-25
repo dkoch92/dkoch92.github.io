@@ -42,7 +42,7 @@ function U_DisplayColors(Mat,id){
 			if( Mat[i][j] === 0 ){
 				rbga_color = 'rgba('+(127).toString()+','+(223).toString()+','+(111).toString()+',.44)'
 			}else{
-				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+','+(0.28 - Mat[i][j]*.03 ).toString()+')'
+				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+','+(0.35 - Mat[i][j]*.05 ).toString()+')'
 			}
 			document.getElementById(stat_tag).style.background = rbga_color
 		}
@@ -56,7 +56,7 @@ function B_DisplayColors(Mat,id){
 			if( Mat[i][j] === 0 ){
 				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+',.44)'
 			}else{
-				rbga_color = 'rgba('+(127).toString()+','+(223).toString()+','+(111).toString()+','+(0.02 + Mat[i][j]*.04 ).toString()+')'
+				rbga_color = 'rgba('+(127).toString()+','+(223).toString()+','+(111).toString()+','+(0.02 + Mat[i][j]*.06 ).toString()+')'
 			}
 			document.getElementById(stat_tag).style.background = rbga_color
 		}
