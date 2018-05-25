@@ -12,9 +12,12 @@ setTimeout(function(){
 	All_U = GetAllWeeks_U();
 	All_B = GetAllWeeks_B();
 	console.log('All U',All_U);
-	console.log('All U',All_U);
+	console.log('All U',All_U);}, 400)
+
+setTimeout(function(){ 
 	U_DisplayColors(All_U[4],U_id);
-	B_DisplayColors(All_U[4],B_id);}, 400)
+	B_DisplayColors(All_B[4],B_id);}, 500)
+
 
 
 // Defining Functions
