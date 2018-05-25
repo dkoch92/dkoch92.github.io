@@ -42,24 +42,30 @@ var place_color = ['rgba(212,175,55,.45)','rgba(192,192,192,.45)','rgba(205,127,
 var H_array = CreateTextId('H')
 var P_array = CreateTextId('P')
 
-var AllWeeks_L
+var AllWeeks
+var AllPlaces
 
 setTimeout(function(){ 
-	AllWeeks_L = GetAllWeeks_L()
-	console.log(ALLWeeks_L)
-	Test_Text_Display(AllWeeks_L[0],H_array)
-	Test_H_Display();
-    Test_P_Display();
-	Test_Text_Display()}, 400)
+	AllWeeks = GetAllWeeks_L();
+	console.log(AllWeeks);
+	AllPlaces = GetAllPlaces_L();
+	console.log(AllPlaces);
+	Text_Display(AllWeeks_L[0],H_array,P_array);
+	CreateDisplay(AllPlaces[0])
+	console.log('finished display');}, 400)
 
 
 // Defining Functions
 //-----------------------------------------------------------------
 
-function Test_Text_Display(lead,id){
-	for(var i = 0; i < 12; i++){
+function Text_Display(lead,h_id,p_id){
+	for(var i = 0; i < 24; i++){
 		for(var j = 0; j < lead[i].length ;j++){
-			text_tag = id[i][j]
+			if(i < 12){
+				text_tag = h_id[i][j]
+			}else{
+				text_tag = p_id[i][j]
+			}
 			document.getElementById(text_tag).innerHTML = lead[i][j]
 		}
 	}
@@ -79,19 +85,28 @@ function CreateTextId(letter){
 	return id_array
 }
 
-function Test_P_Display(){
-	for(var i = 0; i < 6;i++){
-		var total_length = 0
-		var total_top = 0
+function CreateDisplay(Places){
+	var total_length = 0
+	var total_top = 0
+	for(var i = 0; i < 12;i++){
+		if((i===0)||(i===6)){
+			total_length = 0
+			total_top = 0
+		}
 		for(var j = 0; j < 3; j++){
-			length = Test_Places[i][j]
+			length = Places[i][j]
 			top_px = total_top.toString()+'px'
 			total_length = total_length + length
 			cell_height = (length*36).toString()+'px'
 			total_top = total_top + length*36
-			cell_tag = P_id[i][j]
+			if(i < 6){
+				cell_tag = H_id[i][j]
+				img_tag = h_id[i][j]
+			}else{
+				cell_tag = P_id[i][j]
+				img_tag = p_id[i][j]
+			}
 			cell_child_tag = cell_tag+'_color'
-			img_tag = p_id[i][j]
 			document.getElementById(cell_tag).style.height = cell_height
 			document.getElementById(cell_tag).style.top = top_px
 			document.getElementById(cell_tag).style.left = Leader_Left[i]
