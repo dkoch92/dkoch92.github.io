@@ -31,11 +31,7 @@ setTimeout(function(){
     Top_15 = GetTop15();
 	DisplayTop15(Top_15);
 	AllSorted = SortAll_TL(All_Tops,TeamNames);
-	console.log('all',AllSorted);
-	console.log('all[1]',AllSorted[1]);
-	console.log('all[1][0]',AllSorted[1][0]);
-	console.log('all[1][0][1]',AllSorted[1][0][1]);
-	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted);}, 300)
+	DisplayLineStats_TL(DisplayTeamBools,DisplayWeekBools,AllSorted);}, 400)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -97,9 +93,9 @@ function SortAll_TL(all,names){
 
 function DisplayWeek_TL(w){
 	if( w <= week ){
-		for( var i = 0; i < 21; i++ ){
+		for( var i = 0; i < 20; i++ ){
 			week_tag = 'w'+(i+1).toString()
-			console.log(week_tag)
+			console.log(week_tag,w)
 			if( i === (w-1) ){
 				DisplayWeekBools[i] = true
 				document.getElementById(week_tag).style.border = "2px solid white";

@@ -60,13 +60,18 @@ setTimeout(function(){
 
 function Text_Display(lead,h_tag,p_tag){
 	for(var i = 0; i < 24; i++){
-		for(var j = 0; j < lead[i].length ;j++){
+		for(var j = 0; j < 9 ;j++){
 			if(i < 12){
 				text_tag = h_tag[i][j]
 			}else{
 				text_tag = p_tag[i-12][j]
 			}
-			document.getElementById(text_tag).innerHTML = lead[i][j]
+			if( j < lead[i].length){
+				document.getElementById(text_tag).innerHTML = lead[i][j]
+			}
+			else{
+				document.getElementById(text_tag).innerHTML = '   '
+			}
 		}
 	}
 }
@@ -109,12 +114,18 @@ function CreateDisplay(Places){
 			cell_child_tag = cell_tag+'_color'
 			document.getElementById(cell_tag).style.height = cell_height
 			document.getElementById(cell_tag).style.top = top_px
-			document.getElementById(cell_tag).style.background = place_color[j]
 			document.getElementById(cell_child_tag).style.position = 'absolute'
 			document.getElementById(cell_child_tag).style.height = '100%'
 			document.getElementById(cell_child_tag).style.width = '100%'
-			document.getElementById(cell_child_tag).style.background = place_color[j]
-			document.getElementById(img_tag).src = Leader_Pics[length-1]
+			if( length !== 0){
+				document.getElementById(cell_child_tag).style.background = place_color[j]
+				document.getElementById(img_tag).src = Leader_Pics[length-1]
+				document.getElementById(cell_tag).style.border='2px solid black';
+			}else{
+				document.getElementById(cell_child_tag).style.background = 'rgba(212,175,55,0)'
+				document.getElementById(img_tag).src = '../Team Images/Blank Pic.png'
+				document.getElementById(cell_tag).style.border='0px solid black';
+			}
 		}
 	}
 }
