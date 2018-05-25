@@ -70,16 +70,6 @@
     text-align: center;
 }
 
-.U_buttons_container{
-    margin: 0 auto;
-    width:1000px;
-    height:5px;
-    padding-top: 30px;
-    position:relative;
-    align-items: inline;
-}
-
-
 .U_button_week{
     background-color: rgba(0,0,0,.2); 
     border: 1px solid black;
