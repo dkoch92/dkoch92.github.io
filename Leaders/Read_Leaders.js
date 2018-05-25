@@ -94,10 +94,14 @@ function ParseData_L( CallBack, file, Week_Mat, Place_Mat){
 	})
 }
 
-function CollectData_L( data, mat ) {
+function CollectData_L( data, mat1, mat2 ) {
 	for (var i = 0; i < 36; i++) {
-		if( )
-		mat.push( data[i] )
+		if( i < 24 ){
+			mat1.push( data[i] )
+		}
+		else{
+			mat2.push( data[i] )
+		}
 	}
 }
 
