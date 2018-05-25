@@ -20,12 +20,12 @@ var WP_AVG
 setTimeout(function(){ 
 	WP_Mat     = Get_WP();
 	Opp_Record = Get_Opp();
-	WP_AVG = Create_AVG_WP(WP_Mat); } ,300)
+	WP_AVG = Create_AVG_WP(WP_Mat); } ,220)
 
 setTimeout(function(){ 
     Display_Opp_Record(Opp_Record);
     Display_WP(WP_H_id,WP_P_id,WP_Mat);
-    Display_WP_AVG(WP_AVG); } ,600)
+    Display_WP_AVG(WP_AVG); } ,400)
 
 // Defining Functions
 //-----------------------------------------------------------------
