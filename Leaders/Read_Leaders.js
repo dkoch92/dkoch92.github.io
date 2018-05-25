@@ -59,11 +59,10 @@ setTimeout(function(){
 	ParseAll_L(week,CSV_Names_L);},100)
 
 setTimeout(function(){ 	
-	console.log(Week2_L);
 	AllWeeks_L = CombineAllWeeks_L( week );
 	console.log(AllWeeks_L);
 	AllPlaces_L = CombineAllPlaces_L(week);
-	console.log(AllPlaces_L);},200)
+	console.log('AllPlaces:',AllPlaces_L);},200)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -95,6 +94,7 @@ function ParseData_L( CallBack, file, Week_Mat, Place_Mat){
 }
 
 function CollectData_L( data, mat1, mat2 ) {
+	console.log(data)
 	for (var i = 0; i < 36; i++) {
 		if( i < 24 ){
 			mat1.push( data[i] )

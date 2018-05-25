@@ -55,16 +55,21 @@ setTimeout(function(){
 	console.log('finished display');}, 400)
 
 
+console.log(H_id)
+console.log(h_id)
+console.log(P_id)
+console.log(p_id)
+
 // Defining Functions
 //-----------------------------------------------------------------
 
-function Text_Display(lead,h_id,p_id){
+function Text_Display(lead,h_tag,p_tag){
 	for(var i = 0; i < 24; i++){
 		for(var j = 0; j < lead[i].length ;j++){
 			if(i < 12){
-				text_tag = h_id[i][j]
+				text_tag = h_tag[i][j]
 			}else{
-				text_tag = p_id[i][j]
+				text_tag = p_tag[i-12][j]
 			}
 			document.getElementById(text_tag).innerHTML = lead[i][j]
 		}
@@ -103,8 +108,8 @@ function CreateDisplay(Places){
 				cell_tag = H_id[i][j]
 				img_tag = h_id[i][j]
 			}else{
-				cell_tag = P_id[i][j]
-				img_tag = p_id[i][j]
+				cell_tag = P_id[i-6][j]
+				img_tag = p_id[i-6][j]
 			}
 			cell_child_tag = cell_tag+'_color'
 			document.getElementById(cell_tag).style.height = cell_height
