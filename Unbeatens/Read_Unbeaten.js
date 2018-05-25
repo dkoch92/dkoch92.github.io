@@ -67,8 +67,8 @@ function GetAllWeeks_U(){
 	return AllWeeks_U
 }
 
-function GetAllPlaces_B(){
-	return AllPlaces_B
+function GetAllWeeks_B(){
+	return AllWeeks_B
 }
 
 function ParseAll_U( week,names ){
@@ -236,7 +236,7 @@ function CombineAllWeeks_U(week){
 	return AllWeeks
 }
 
-function CombineAllWeeks_U(week){
+function CombineAllWeeks_B(week){
 	var AllWeeks = []
 	for( var i = 0; i < week ;i++ ){
 		if(i==0){
