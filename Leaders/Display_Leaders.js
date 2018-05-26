@@ -23,7 +23,7 @@ var medal_teams = ['1_img','2_img','3_img','4_img','5_img','6_img','7_img','8_im
 var medal_id = [['g1','s1','b1'],['g2','s2','b2'],['g3','s3','b3'],['g4','s4','b4'],['g5','s5','b5'],['g6','s6','b6'],
 				['g7','s7','b7'],['g8','s8','b8'],['g9','s9','b9'],['g10','s10','b10'],['g11','s11','b11'],['g12','s12','b12']]
 
-var medal_PH = [['1_h','1_p'],['2_h','2_p'],['3_h','3_p'],['4_h','4_p'],['5_h','5_p'],['6_h','6_p']
+var medal_PH = [['1_h','1_p'],['2_h','2_p'],['3_h','3_p'],['4_h','4_p'],['5_h','5_p'],['6_h','6_p'],
 				['7_h','7_p'],['8_h','8_p'],['9_h','9_p'],['10_h','10_p'],['11_h','11_p'],['12_h','12_p']]
 
 var H_array = CreateTextId('H')
@@ -41,10 +41,9 @@ setTimeout(function(){
 	AllPlaces = GetAllPlaces_L();
 	Medals = GetMedalCount();
 	DisplaySeasonLeader();
-	medals_ranked = RankMedalCount(Medals);}, 450)
+	medals_ranked = RankMedalCount(Medals);
+	DisplayMedalCount(medals_ranked,Medals);}, 450)
 
-setTimeout(function(){ 
-	DisplayMedalCount(medals_ranked,Medals);}, 550)
 
 // Defining Functions
 //-----------------------------------------------------------------
