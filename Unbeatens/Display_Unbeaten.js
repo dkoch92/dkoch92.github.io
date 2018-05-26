@@ -86,11 +86,11 @@ function DisplayWeek_U(w){
 
 function DisplayWeek_B(w){
 	if(w <= week){
-		U_DisplayColors(All_B[w-1],B_id,w)
+		B_DisplayColors(All_B[w-1],B_id,w)
 		DisplayWeekTitle(w,'B')
 	}
 	else{
-		U_DisplayColors(All_B[week-1],B_id,week)
+		B_DisplayColors(All_B[week-1],B_id,week)
 		DisplayWeekTitle(week,'B')
 	}
 }
