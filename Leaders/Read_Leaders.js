@@ -126,8 +126,9 @@ function MedalCount(all_w,w,all_p){
 	console.log(medal_count[0])
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
-			for(var k = 0; k < all_w[i][2*j+1].length ;k++){
-				team_index = DetermineTeam( all_w[i][2*j+1][k] )
+			for(var k = 0; k < all_w[i][2*j].length ;k++){
+				console.log(all_w[i][2*j][k])
+				team_index = DetermineTeam( all_w[i][2*j][k] )
 				console.log('team:',team_index)
 				p = all_p[i][j]
 				if( k < p[0] ){

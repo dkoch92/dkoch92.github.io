@@ -104,6 +104,25 @@
     margin: 0 auto;
 }
 
+.medal_count_PH{
+    position:absolute;
+    padding-top: 2px;
+    font-size: 32px;
+    color:white;
+    font-family: "Times New Roman", Times, serif;
+    word-spacing: 20px;
+    text-align: center;
+}
+
+.medals_PH{
+    position:absolute;
+    font-size: 28px;
+    color:white;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    height:40px;
+    width:60px;
+}
 .medal_team{
     position:absolute;
     font-size: 20px;
