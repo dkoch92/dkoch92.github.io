@@ -132,15 +132,19 @@ function MedalCount(all_w,w,all_p){
 			for(var k = 0; k < all_w[i][2*j].length ;k++){
 				team_index = DetermineTeam( all_w[i][2*j][k] )
 				p = all_p[i][j]
+				console.log(p)
 				if( k < p[0] ){
+					console.log('gold',k,p[0])
 					medal_count[team_index][0] = medal_count[team_index][0] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 				if( p[0] <= k < ( p[0] + p[1] ) ){
+					console.log('silver',p[0],k,p[0]+p[1])
 					medal_count[team_index][1] = medal_count[team_index][1] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 				if( ( p[0] + p[1] ) <= k < ( p[0] + p[1] + p[2] ) ){
+					console.log('bronze',p[0] + p[1],k,p[0]+p[1]+p[2])
 					medal_count[team_index][2] = medal_count[team_index][2] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
