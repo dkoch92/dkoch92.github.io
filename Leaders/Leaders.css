@@ -126,6 +126,14 @@
     position: absolute;
 }
 
+.medal_text{
+    width:100%;
+    height:100%;
+    position:absolute;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
 .medal_img_container img{
     width: 100%;
     height: 100%;
