@@ -33,6 +33,7 @@ var AllWeeks
 var AllPlaces
 var week
 var Medals
+var medals_ranked
 
 setTimeout(function(){ 
 	week = GetWeekNumber_L()
@@ -40,9 +41,10 @@ setTimeout(function(){
 	AllPlaces = GetAllPlaces_L();
 	Medals = GetMedalCount();
 	DisplaySeasonLeader();
-	medals_ranked = RankMedalCount(Medals);
-	DisplayMedalCount(medals_ranked,Medals);}, 450)
+	medals_ranked = RankMedalCount(Medals);}, 450)
 
+setTimeout(function(){ 
+	DisplayMedalCount(medals_ranked,Medals);}, 550)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -156,12 +158,12 @@ function RankMedalCount(medals){
 		}
 		rank.push(top)
 		total_medals.splice(top,1,0)
-		console.log(total_medals)
 	}
 	return rank
 }
 
 function DisplayMedalCount(rank,medals){
+	console.log(rank,medals)
 	for(var i = 0; i < 12; i++){
 		r = rank[i]
 		document.getElementById(medal_teams[i]).src='../Team Images/'+TeamPics[r]
