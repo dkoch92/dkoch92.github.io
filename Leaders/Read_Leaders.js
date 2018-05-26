@@ -118,7 +118,7 @@ function GetMedalCount(){
 function MedalCount(all_w,w,all_p){
 	var medal_count = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
 	for(var i = 0; i < w; i++){
-		for(var j = ; j < 12; j++){
+		for(var j = 0; j < 12; j++){
 			for(vak k = 0; k < ( all_w[i][2*j+1]).length ;k++){
 				team_index = DetermineTeam( all_w[i][2*j+1][k] )
 				p = all_p[i][j]

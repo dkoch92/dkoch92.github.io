@@ -94,3 +94,34 @@
     height: 28px;
     width: 83px;
 }
+
+.medal_count_container{
+    padding-top: 50px;
+    position:relative;
+    height: 528px;
+    width: 983px;
+    border: 1px solid green;
+    margin: 0 auto;
+}
+
+.medal_team{
+    position:absolute;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    height: 48px;
+    width: 183px;
+}
+
+.medal_team_img {
+    position: absolute;
+    height: 140px;
+    width: 140px;
+    border: 1px solid blue;
+}
+
+.medal_team_img img{
+    position: absolute
+    width: 100%;
+    height: 100%;
+}
