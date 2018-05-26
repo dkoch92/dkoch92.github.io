@@ -52,15 +52,20 @@ var CSV_Names_L = ["week_1_leaders.csv","week_2_leaders.csv","week_3_leaders.csv
 				   "week_11_leaders.csv","week_12_leaders.csv","week_13_leaders.csv","week_14_leaders.csv","week_15_leaders.csv",
 				   "week_16_leaders.csv","week_17_leaders.csv","week_18_leaders.csv","week_19_leaders.csv","week_20_leaders.csv","season_leaders.csv"]
 
+var Names = ['Will','Clint','Brian','Daniel','Mike','Cullen','Charlie','Allen','Josh','Matt','McD','Nate']
+
 var AllWeeks_L
 var AllPlaces_L
+var MedalCount
 
 setTimeout(function(){ 
 	ParseAll_L(week,CSV_Names_L);},100)
 
 setTimeout(function(){ 	
 	AllWeeks_L = CombineAllWeeks_L( week );
-	AllPlaces_L = CombineAllPlaces_L(week); },200)
+	AllPlaces_L = CombineAllPlaces_L(week);
+	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
+	console.log(MedalCount); },200)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -104,6 +109,41 @@ function CollectData_L( data, mat1, mat2 ) {
 
 function GetWeekNumber_L(){
 	return week
+}
+
+function GetMedalCount(){
+	return MedalCount
+}
+
+function MedalCount(all_w,w,all_p){
+	var medal_count = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+	for(var i = 0; i < w; i++){
+		for(var j = ; j < 12; j++){
+			for(vak k = 0; k < ( all_w[i][2*j+1]).length ;k++){
+				team_index = DetermineTeam( all_w[i][2*j+1][k] )
+				p = all_p[i][j]
+				console.log('places array:',p)
+				if( k < p[0] ){
+					medal_count[team_index][0] = medal_count[team_index][0] + 1 
+				}
+				if( p[0] <= k < ( p[0] + p[1] ) ){
+					medal_count[team_index][1] = medal_count[team_index][1] + 1 
+				}
+				if( ( p[0] + p[1] ) < k <= ( p[0] + p[1] + p[2] ) ){
+					medal_count[team_index][2] = medal_count[team_index][2] + 1 
+				}
+			} 
+		}
+	}
+	return medal_count
+}
+
+function DetermineTeam(name){
+	for(var i = 0; i < 12; i++){
+		if( name === Names[i] ){
+			return i
+		}
+	}
 }
 
 function NowParse_L(index,file) {
