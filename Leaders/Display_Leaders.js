@@ -4,6 +4,9 @@
 var Leader_Pics = ['L_1.png','L_2.png','L_3.png','L_4.png','L_5.png','L_6.png']
 var Leader_Left = ['0px','168px','336px', '504px','672px','840px']
 
+var TeamPics = ['Will Pic.png','Clint Pic.png','Brian Pic.png','Daniel Pic.png','Mike Pic.png','Cullen Pic.png',
+				'Charlie Pic.png','Allen Pic.png','Josh Pic.png','Matt Pic.png','McD Pic.png','Nate Pic.png']
+
 var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7','Week 8','Week 9','Week 10'
                   ,'Week 11','Week 12','Week 13','Week 14','Week 15','Week 16','Week 17','Week 18','Week 19','Week 20']
 
@@ -14,6 +17,14 @@ var P_id = [['P1_1','P1_2','P1_3'],['P2_1','P2_2','P2_3'],['P3_1','P3_2','P3_3']
 var p_id = [['p1_1','p1_2','p1_3'],['p2_1','p2_2','p2_3'],['p3_1','p3_2','p3_3'],['p4_1','p4_2','p4_3'],['p5_1','p5_2','p5_3'],['p6_1','p6_2','p6_3']]
 
 var place_color = ['rgba(212,175,55,.45)','rgba(192,192,192,.45)','rgba(205,127,50,.45)']
+
+var medal_teams = ['1_img','2_img','3_img','4_img','5_img','6_img','7_img','8_img','9_img','10_img','11_img','12_img']
+
+var medal_id = [['g1','s1','b1'],['g2','s2','b2'],['g3','s3','b3'],['g4','s4','b4'],['g5','s5','b5'],['g6','s6','b6'],
+				['g7','s7','b7'],['g8','s8','b8'],['g9','s9','b9'],['g10','s10','b10'],['g11','s11','b11'],['g12','s12','b12']]
+
+var medal_PH = [['1_h','1_p'],['2_h','2_p'],['3_h','3_p'],['4_h','4_p'],['5_h','5_p'],['6_h','6_p']
+				['7_h','7_p'],['8_h','8_p'],['9_h','9_p'],['10_h','10_p'],['11_h','11_p'],['12_h','12_p']]
 
 var H_array = CreateTextId('H')
 var P_array = CreateTextId('P')
@@ -30,7 +41,7 @@ setTimeout(function(){
 	Medals = GetMedalCount();
 	DisplaySeasonLeader();
 	medals_ranked = RankMedalCount(Medals);
-	console.log(medals_ranked) }, 450)
+	DisplayMedalCount(medals_ranked,Medals);}, 450)
 
 
 // Defining Functions
@@ -150,7 +161,17 @@ function RankMedalCount(medals){
 	return rank
 }
 
-
+function DisplayMedalCount(rank,medals){
+	for(var i = 0; i < 12; i++){
+		r = rank[i]
+		document.getElementById(medal_teams[i]).src='../Team Images/'+TeamPics[r]
+		document.getElementById(medal_id[i][0]).innerHTML = medals[r][0]
+		document.getElementById(medal_id[i][1]).innerHTML = medals[r][1]
+		document.getElementById(medal_id[i][2]).innerHTML = medals[r][2]
+		document.getElementById(medal_PH[i][0]).innerHTML = medals[r][3]
+		document.getElementById(medal_PH[i][1]).innerHTML = medals[r][4]
+	}
+}
 
 function DisplayWeekLeader(index){
 	if(index <= week){
