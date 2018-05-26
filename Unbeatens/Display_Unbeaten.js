@@ -52,7 +52,7 @@ function U_DisplayColors(Mat,id){
 			if( Mat[i][j] === 0 ){
 				rbga_color = 'rgba('+(127).toString()+','+(223).toString()+','+(111).toString()+',.8)'
 			}else{
-				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+','+( .72 - 0.09*Mat[i][j]).toString()+')'
+				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+','+( .8 - 0.08*Mat[i][j]).toString()+')'
 			}
 			document.getElementById(stat_tag).style.background = rbga_color
 		}
@@ -64,9 +64,9 @@ function B_DisplayColors(Mat,id){
 		for(var j = 0; j < 12 ; j++){
 			stat_tag = id[i][j]
 			if( Mat[i][j] > 0 ){
-				rbga_color = 'rgba('+(127).toString()+','+(223).toString()+','+(111).toString()+','+( .02 + 0.09*Mat[i][j] ).toString()+')'
+				rbga_color = 'rgba('+(127).toString()+','+(223).toString()+','+(111).toString()+','+(  0.08*Mat[i][j] ).toString()+')'
 			}else{
-				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+',.7)'
+				rbga_color = 'rgba('+(243).toString()+','+(132).toString()+','+(41).toString()+',.8)'
 			}
 			document.getElementById(stat_tag).style.background = rbga_color
 		}
