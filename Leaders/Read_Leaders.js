@@ -64,8 +64,13 @@ setTimeout(function(){
 setTimeout(function(){ 	
 	AllWeeks_L = CombineAllWeeks_L( week );
 	AllPlaces_L = CombineAllPlaces_L(week);
+	console.log(AllWeeks_L[0]);
+	console.log(AllWeeks_L[0][1]);
+	console.log(AllWeeks_L[0][1].length);},200)
+
+setTimeout(function(){ 	
 	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
-	console.log(MedalCount); },200)
+	console.log(MedalCount); },250)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -120,7 +125,7 @@ function MedalCount(all_w,w,all_p){
 	console.log(all_w)
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
-			for(vak k = 0; k < ( all_w[i][2*j+1]).length ;k++){
+			for(vak k = 0; k < all_w[i][2*j+1].length ;k++){
 				team_index = DetermineTeam( all_w[i][2*j+1][k] )
 				p = all_p[i][j]
 				console.log('places array:',p)

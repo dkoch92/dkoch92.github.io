@@ -115,11 +115,19 @@
 
 .medal_team_img {
     position: absolute;
-    border: 1px solid blue;
 }
 
 .medal_team_img img{
-    position: absolute
     width: 100%;
     height: 100%;
 }
+
+.medal_img_container{
+    position: absolute;
+}
+
+.medal_img_container img{
+    width: 100%;
+    height: 100%;
+}
+
