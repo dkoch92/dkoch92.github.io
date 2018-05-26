@@ -122,13 +122,14 @@ function GetMedalCount(){
 
 function MedalCount(all_w,w,all_p){
 	var medal_count = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
-	console.log(all_w)
+	console.log(medal_count)
+	console.log(medal_count[0])
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
 			for(var k = 0; k < all_w[i][2*j+1].length ;k++){
 				team_index = DetermineTeam( all_w[i][2*j+1][k] )
+				console.log('team:',team_index)
 				p = all_p[i][j]
-				console.log('places array:',p)
 				if( k < p[0] ){
 					medal_count[team_index][0] = medal_count[team_index][0] + 1 
 				}
