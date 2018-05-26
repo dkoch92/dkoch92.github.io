@@ -70,7 +70,7 @@ setTimeout(function(){
 
 setTimeout(function(){ 	
 	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
-	console.log(MedalCount); },250)
+	console.log(MedalCount); },280)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -121,7 +121,7 @@ function GetMedalCount(){
 }
 
 function MedalCount(all_w,w,all_p){
-	var medal_count = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+	var medal_count = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
 			if( j < 6){

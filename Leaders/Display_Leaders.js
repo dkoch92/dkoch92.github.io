@@ -21,12 +21,16 @@ var P_array = CreateTextId('P')
 var AllWeeks
 var AllPlaces
 var week
+var Medals
 
 setTimeout(function(){ 
 	week = GetWeekNumber_L()
 	AllWeeks = GetAllWeeks_L();
 	AllPlaces = GetAllPlaces_L();
-	DisplaySeasonLeader(); }, 400)
+	Medals = GetMedalCount();
+	DisplaySeasonLeader();
+	medals_ranked = RankMedalCount(Medals);
+	console.log(medals_ranked) }, 450)
 
 
 // Defining Functions
@@ -103,6 +107,50 @@ function CreateDisplay(Places){
 		}
 	}
 }
+
+function RankMedalCount(medals){
+	var rank = []
+	var total_medals = [0,0,0,0,0,0,0,0,0,0,0,0]
+	for(var i = 0; i < 12; i++){
+		total_medals[i] = medals[i][0]+ medals[i][1] + medals[i][2]
+	}
+	for(var j = 0; j <12; j++){
+		var top = 99
+		var top_medals = 0
+		for(var k = 0; k < 12 ;k++){
+			if( total_medals[k] > top_medals  ){
+				top = k
+				top_medals = total_medals[k]
+			}
+			if( total_medals[k] === top_medals ){
+				if(total_medals[k] !== 0){
+					if( medals[k][0] > medals[top][0] ){
+						top = k
+						top_medals = total_medals[k]
+					}
+					if( medals[k][0] === medals[top][0] ){
+						if(medals[k][1] > medals[top][1]){
+							top = k
+							top_medals = total_medals[k]
+						}
+						if( medals[k][1] === medals[top][1] ){
+							if(medals[k][2] > medals[top][2]){
+								top = k
+								top_medals = total_medals[k]
+							}
+						}
+					}
+				}
+			}
+		}
+		rank.push(top)
+		total_medals.splice(top,1,0)
+		console.log(total_medals)
+	}
+	return rank
+}
+
+
 
 function DisplayWeekLeader(index){
 	if(index <= week){
