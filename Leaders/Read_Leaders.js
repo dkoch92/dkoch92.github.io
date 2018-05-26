@@ -121,24 +121,28 @@ function GetMedalCount(){
 }
 
 function MedalCount(all_w,w,all_p){
-	var medal_count = [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
-	console.log(medal_count)
-	console.log(medal_count[0])
+	var medal_count = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
+			if( j < 6){
+				x = 3
+			}else{
+				x = 4
+			}
 			for(var k = 0; k < all_w[i][2*j].length ;k++){
-				console.log(all_w[i][2*j][k])
 				team_index = DetermineTeam( all_w[i][2*j][k] )
-				console.log('team:',team_index)
 				p = all_p[i][j]
 				if( k < p[0] ){
 					medal_count[team_index][0] = medal_count[team_index][0] + 1 
+					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 				if( p[0] <= k < ( p[0] + p[1] ) ){
 					medal_count[team_index][1] = medal_count[team_index][1] + 1 
+					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 				if( ( p[0] + p[1] ) < k <= ( p[0] + p[1] + p[2] ) ){
 					medal_count[team_index][2] = medal_count[team_index][2] + 1 
+					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 			} 
 		}
