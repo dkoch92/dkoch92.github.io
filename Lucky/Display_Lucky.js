@@ -13,8 +13,8 @@ var WP_avg_id = [["WP_avg_H11","WP_avg_H12"],["WP_avg_H21","WP_avg_H22"],["WP_av
 			     ["WP_avg_P11","WP_avg_P12"],["WP_avg_P21","WP_avg_P22"],["WP_avg_P31","WP_avg_P32"],["WP_avg_P41","WP_avg_P42"],["WP_avg_P51","WP_avg_P52"],["WP_avg_P61","WP_avg_P62"],
 			     ["WP_avg_P71","WP_avg_P72"],["WP_avg_P81","WP_avg_P82"],["WP_avg_P91","WP_avg_P92"],["WP_avg_P101","WP_avg_P102"],["WP_avg_P111","WP_avg_P112"],["WP_avg_P121","WP_avg_P122"]]
 
-var DisplayTeamBools = [false,false,false,false,false,false,false,false,false,false,false,false]
-var DisplayOppBools  = [false,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayTeamBools = [false,false,false,false,false,false,false,false,false,false,false,true]
+var DisplayOppBools  = [true,false,false,false,false,false,false,false,false,false,false,false]
 
 var TeamPics = ['Will Pic.png','Clint Pic.png','Brian Pic.png','Daniel Pic.png','Mike Pic.png','Cullen Pic.png',
 				'Charlie Pic.png','Allen Pic.png','Josh Pic.png','Matt Pic.png','McD Pic.png','Nate Pic.png']
@@ -35,7 +35,8 @@ setTimeout(function(){
 setTimeout(function(){ 
     Display_Opp_Record(Opp_Record);
     Display_WP(WP_H_id,WP_P_id,WP_Mat);
-    Display_WP_AVG(WP_AVG); } ,400)
+    Display_WP_AVG(WP_AVG);
+    DisplayAllRecords(DisplayTeamBools,DisplayOppBools,All_Records); } ,400)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -171,6 +172,8 @@ function DisplayOpp_L(index){
 }
 
 function DisplayAllRecords(teams,opps,AR){
+	var team = 99
+	var opp = 99
 	for (var i = 0; i < 12; i++){
 		if(teams[i] === true){
 			team = i

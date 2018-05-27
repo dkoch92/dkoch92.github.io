@@ -100,6 +100,6 @@ function NowParse_L(files) {
 	ParseData_L( CollectData_L_WP,filename2,WP_Mat)	
 
 	name3 = files[2]
-	filename2 = '../CSV Files/'+name3
+	filename3 = '../CSV Files/'+name3
 	ParseData_L( CollectData_L_AR,filename3,AllRecords)	
 }
