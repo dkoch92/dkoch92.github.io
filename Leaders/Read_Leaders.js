@@ -74,13 +74,13 @@ setTimeout(function(){
 // Defining Functions
 //-----------------------------------------------------------------
 
-function ParseWeek( callback,w ){
+function ParseWeek( CallBack,w ){
 	Papa.parse('../CSV Files/Week.csv', {
 		download: true,
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			callBack(results.data,w)
+			CallBack(results.data,w)
 		}
 	})
 }
