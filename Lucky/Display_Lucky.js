@@ -36,7 +36,7 @@ setTimeout(function(){
     Display_Opp_Record(Opp_Record);
     Display_WP(WP_H_id,WP_P_id,WP_Mat);
     Display_WP_AVG(WP_AVG);
-    DisplayAllRecords(DisplayTeamBools,DisplayOppBools,All_Records); } ,400)
+    DisplayAllRecords(DisplayTeamBools,DisplayOppBools); } ,400)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -157,7 +157,7 @@ function DisplayTeam_L(index){
 			DisplayTeamBools[i] = false
 		}
 	}
-	DisplayAllRecords(DisplayTeamBools,DisplayOppBools,All_Records)
+	DisplayAllRecords(DisplayTeamBools,DisplayOppBools)
 }
 
 function DisplayOpp_L(index){
@@ -168,10 +168,10 @@ function DisplayOpp_L(index){
 			DisplayOppBools[i] = false
 		}
 	}
-	DisplayAllRecords(DisplayTeamBools,DisplayOppBools,All_Records)
+	DisplayAllRecords(DisplayTeamBools,DisplayOppBools)
 }
 
-function DisplayAllRecords(teams,opps,AR){
+function DisplayAllRecords(teams,opps){
 	var team = 99
 	var opp = 99
 	for (var i = 0; i < 12; i++){
@@ -183,6 +183,6 @@ function DisplayAllRecords(teams,opps,AR){
 		}
 		document.getElementById('prompt_team_img').src='../Team Images/'+TeamPics[team]
 		document.getElementById('prompt_opp_img').src='../Team Images/'+TeamPics[opp]
-		document.getElementById('L_prompt_stats').innerHTML = AR[team][opp]
+		document.getElementById('L_prompt_stats').innerHTML = All_Records[team][opp]
 	}
 }
