@@ -181,8 +181,11 @@ function DisplayAllRecords(teams,opps){
 		if(opps[i] === true){
 			opp = i
 		}
-		document.getElementById('prompt_team_img').src='../Team Images/'+TeamPics[team]
-		document.getElementById('prompt_opp_img').src='../Team Images/'+TeamPics[opp]
-		document.getElementById('L_prompt_stats').innerHTML = All_Records[team][opp]
 	}
+	console.log(All_Records)
+	console.log(team)
+	console.log(opp)
+	document.getElementById('prompt_team_img').src='../Team Images/'+TeamPics[team]
+	document.getElementById('prompt_opp_img').src='../Team Images/'+TeamPics[opp]
+	document.getElementById('L_prompt_stats').innerHTML = All_Records[team][opp]
 }
