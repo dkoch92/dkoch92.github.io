@@ -65,10 +65,7 @@ setTimeout(function(){
 
 setTimeout(function(){ 	
 	AllWeeks_L = CombineAllWeeks_L( week );
-	AllPlaces_L = CombineAllPlaces_L(week);
-	console.log(AllWeeks_L[0]);
-	console.log(AllWeeks_L[0][1]);
-	console.log(AllWeeks_L[0][1].length);},200)
+	AllPlaces_L = CombineAllPlaces_L(week);},200)
 
 setTimeout(function(){ 	
 	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
@@ -152,17 +149,14 @@ function MedalCount(all_w,w,all_p){
 				p = all_p[i][j]
 				console.log(p)
 				if( k < p[0] ){
-					console.log('gold',k,p[0])
 					medal_count[team_index][0] = medal_count[team_index][0] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 				if( (p[0] <= k) && (k < ( p[0] + p[1] )) ){
-					console.log('silver',p[0],k,p[0]+p[1])
 					medal_count[team_index][1] = medal_count[team_index][1] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
 				if( (( p[0] + p[1] ) <= k) && (k < ( p[0] + p[1] + p[2] )) ){
-					console.log('bronze',p[0] + p[1],k,p[0]+p[1]+p[2])
 					medal_count[team_index][2] = medal_count[team_index][2] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
 				}
