@@ -60,10 +60,10 @@ var MedalCount
 
 setTimeout(function(){ 
 	ParseWeek( CollectWeek,week );
-	console.log(week)
 	ParseAll_L(week,CSV_Names_L);},100)
 
 setTimeout(function(){ 	
+	console.log('week',week)
 	AllWeeks_L = CombineAllWeeks_L( week );
 	AllPlaces_L = CombineAllPlaces_L(week);},200)
 
@@ -74,21 +74,24 @@ setTimeout(function(){
 // Defining Functions
 //-----------------------------------------------------------------
 
-function ParseWeek( CallBack,w ){
+function ParseWeek( CallBack,int ){
 	Papa.parse('../CSV Files/Week.csv', {
 		download: true,
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			CallBack(results.data)
+			CallBack(results.data,int)
 		}
 	})
 }
 
-function CollectWeek(data){
+function CollectWeek(data,w){
 	console.log(data)
-	console.log(data[0])
+	console.log(data[0][0])
+	w = data[0][0]
+	console.log(week)
 	week = data[0][0]
+	console.log(week)
 }
 
 
