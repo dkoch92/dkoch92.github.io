@@ -88,7 +88,7 @@ function ParseWeek( CallBack,w ){
 function CollectWeek(data){
 	console.log(data)
 	console.log(data[0])
-	week = data[0]
+	week = data[0][0]
 }
 
 
