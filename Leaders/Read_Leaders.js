@@ -45,7 +45,6 @@ var Season_Places = []
 
 //  Setting all the Initial Components
 //----------------------------------------------------------------
-var week = 7
 
 var CSV_Names_L = ["week_1_leaders.csv","week_2_leaders.csv","week_3_leaders.csv","week_4_leaders.csv","week_5_leaders.csv",
 				   "week_6_leaders.csv","week_7_leaders.csv","week_8_leaders.csv","week_9_leaders.csv","week_10_leaders.csv",
@@ -54,11 +53,14 @@ var CSV_Names_L = ["week_1_leaders.csv","week_2_leaders.csv","week_3_leaders.csv
 
 var Names = ['Will','Clint','Brian','Daniel','Mike','Cullen','Charlie','Allen','Josh','Matt','McD','Nate']
 
+var week
 var AllWeeks_L
 var AllPlaces_L
 var MedalCount
 
 setTimeout(function(){ 
+	ParseWeek( CollectWeek,week );
+	console.log(week)
 	ParseAll_L(week,CSV_Names_L);},100)
 
 setTimeout(function(){ 	
@@ -74,6 +76,22 @@ setTimeout(function(){
 
 // Defining Functions
 //-----------------------------------------------------------------
+
+function ParseWeek( callback,w ){
+	Papa.parse('Week.csv', {
+		download: true,
+		header: false,
+		dynamicTyping: true,
+		complete: function(results) {
+			callBack(results.data,w)
+		}
+	})
+}
+
+function CollectWeek(data,w){
+	w = data[0]
+}
+
 
 function GetAllWeeks_L(){
 	return AllWeeks_L
