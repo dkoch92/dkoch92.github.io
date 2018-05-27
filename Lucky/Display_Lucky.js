@@ -13,6 +13,14 @@ var WP_avg_id = [["WP_avg_H11","WP_avg_H12"],["WP_avg_H21","WP_avg_H22"],["WP_av
 			     ["WP_avg_P11","WP_avg_P12"],["WP_avg_P21","WP_avg_P22"],["WP_avg_P31","WP_avg_P32"],["WP_avg_P41","WP_avg_P42"],["WP_avg_P51","WP_avg_P52"],["WP_avg_P61","WP_avg_P62"],
 			     ["WP_avg_P71","WP_avg_P72"],["WP_avg_P81","WP_avg_P82"],["WP_avg_P91","WP_avg_P92"],["WP_avg_P101","WP_avg_P102"],["WP_avg_P111","WP_avg_P112"],["WP_avg_P121","WP_avg_P122"]]
 
+var DisplayTeamBools = [false,false,false,false,false,false,false,false,false,false,false,false]
+var DisplayOppBools  = [false,false,false,false,false,false,false,false,false,false,false,false]
+
+var TeamPics = ['Will Pic.png','Clint Pic.png','Brian Pic.png','Daniel Pic.png','Mike Pic.png','Cullen Pic.png',
+				'Charlie Pic.png','Allen Pic.png','Josh Pic.png','Matt Pic.png','McD Pic.png','Nate Pic.png']
+
+
+var All_Records
 var WP_Mat
 var Opp_record
 var WP_AVG
@@ -20,7 +28,9 @@ var WP_AVG
 setTimeout(function(){ 
 	WP_Mat     = Get_WP();
 	Opp_Record = Get_Opp();
-	WP_AVG = Create_AVG_WP(WP_Mat); } ,220)
+	WP_AVG = Create_AVG_WP(WP_Mat);
+	All_Records = Get_AR();
+	console.log(All_Records) } ,220)
 
 setTimeout(function(){ 
     Display_Opp_Record(Opp_Record);
@@ -39,6 +49,8 @@ function Display_Opp_Record(Opp){
 		}
 	}
 }
+
+
 
 function Display_WP(h_array,p_array,wp){
 	var rbga_string = 'rgba(200, 200, 200, 0)'
@@ -113,6 +125,7 @@ function Create_AVG_WP(wp){
 	return avg
 }
 
+
 function Display_WP_AVG(avg){
 	var rbga_string = 'rgba(200, 200, 200, 0)'
 	for(var i = 0; i < 24; i++){
@@ -132,5 +145,41 @@ function Display_WP_AVG(avg){
 			document.getElementById(avg_tag).innerHTML = avg[i][j]
 			document.getElementById(avg_tag).style.background = rbga_string
 		}
+	}
+}
+
+function DisplayTeam_L(index){
+	for(var i = 0; i < 12; i++){
+		if( i === index){
+			DisplayTeamBools[i] = true
+		}else{
+			DisplayTeamBools[i] = false
+		}
+	}
+	DisplayAllRecords(DisplayTeamBools,DisplayOppBools,All_Records)
+}
+
+function DisplayOpp_L(index){
+	for(var i = 0; i < 12; i++){
+		if( i === index){
+			DisplayOppBools[i] = true
+		}else{
+			DisplayOppBools[i] = false
+		}
+	}
+	DisplayAllRecords(DisplayTeamBools,DisplayOppBools,All_Records)
+}
+
+function DisplayAllRecords(teams,opps,AR){
+	for (var i = 0; i < 12; i++){
+		if(teams[i] === true){
+			team = i
+		}
+		if(opps[i] === true){
+			opp = i
+		}
+		document.getElementById('prompt_team_img').src='../Team Images/'+TeamPics[team]
+		document.getElementById('prompt_opp_img').src='../Team Images/'+TeamPics[opp]
+		document.getElementById('L_prompt_stats').innerHTML = AR[team][opp]
 	}
 }

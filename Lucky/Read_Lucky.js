@@ -19,7 +19,14 @@ var WP_Mat = [
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0, 0],
 [0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0,	0, 0]]
 
-var CSV_Names_L = ["Opponent_Stats.csv","Win_Percents.csv"]
+var CSV_Names_L = ["Opponent_Stats.csv","Win_Percents.csv","All_Records.csv"]
+
+var AllRecords = [[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],
+				  [0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],
+				  [0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],
+				  [0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],
+				  [0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],
+				  [0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0],[0,	0,	0,	0,	0,	0,  0,	0,	0,	0,	0,	0]]
 
 setTimeout(function(){ 
 	ParseAll_L(CSV_Names_L);},50)
@@ -34,6 +41,11 @@ function Get_WP(){
 function Get_Opp(){
 	return Opp_Mat
 }
+
+function Get_AR(){
+	return AllRecords
+}
+
 
 function ParseAll_L( names ){
 		NowParse_L(names)
@@ -66,6 +78,18 @@ function CollectData_L_WP( data, mat ) {
 	}
 }
 
+function CollectData_L_AR( data, mat ) {
+	for (var i = 0; i < 12; i++) {
+		for (var j = 0; j < 12; j++) {
+			win_string = data[i][j].toString()
+			loss_string = data[i+12][j].toString()
+			tie_string = data[i+24][j].toString()
+			record = win_string+'-'+loss_string+'-'+tie_string
+			mat[i][j]   = record
+		}
+	}
+}
+
 function NowParse_L(files) {
 	name1 = files[0]
 	filename1 = '../CSV Files/'+name1
@@ -74,4 +98,8 @@ function NowParse_L(files) {
 	name2 = files[1]
 	filename2 = '../CSV Files/'+name2
 	ParseData_L( CollectData_L_WP,filename2,WP_Mat)	
+
+	name3 = files[2]
+	filename2 = '../CSV Files/'+name3
+	ParseData_L( CollectData_L_AR,filename3,AllRecords)	
 }

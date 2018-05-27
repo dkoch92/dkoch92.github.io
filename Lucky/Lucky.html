@@ -149,6 +149,79 @@
 		</div>
 
 		<div class="Top_Lines_Header">
+			<u>Simulate Someone Else's Matchups</u>
+		</div>
+
+		<div class="Top_Lines_Info">
+			<ul>
+				<li class="Top_Lines_Text">See how your team would fair against all of the opponents someonelse else has faced</li>
+				<li class="Top_Lines_Text">Simulates a team's record, using all of the opponents' scorelines of another team</li>
+				<li class="Top_Lines_Text">*ignores instances where the chosen team and the opponent's team are the same, rather than counting as a tie</li>
+			</ul>
+		</div>
+
+		<div style="height:25px"></div>
+		
+		<div class="L_opp_buttons_container" align="center">
+			<button type="button" class="L_button_opp" id="opp1" onclick="DisplayOpp_L(0)";>Player Haters</button>
+			<button type="button" class="L_button_opp" id="opp2" onclick="DisplayOpp_L(1)";>Thunder Catz</button>
+			<button type="button" class="L_button_opp" id="opp3" onclick="DisplayOpp_L(2)";>Dicks Out</button>
+			<button type="button" class="L_button_opp" id="opp4" onclick="DisplayOpp_L(3)";>EZ Game EZ Life</button>
+			<button type="button" class="L_button_opp" id="opp5" onclick="DisplayOpp_L(4)";>Sexy Tyrian</button>
+			<button type="button" class="L_button_opp" id="opp6" onclick="DisplayOpp_L(5)";>Dumpster Fires</button>
+			<button type="button" class="L_button_opp" id="opp7" onclick="DisplayOpp_L(6)";>Confortably Numb</button>
+			<button type="button" class="L_button_opp" id="opp8" onclick="DisplayOpp_L(7)";>MN Islanders</button>
+			<button type="button" class="L_button_opp" id="opp9" onclick="DisplayOpp_L(8)";>Ozuna Matata</button>
+			<button type="button" class="L_button_opp" id="opp10" onclick="DisplayOpp_L(9)";>Ctrl Altuve Dlt</button>
+			<button type="button" class="L_button_opp" id="opp11" onclick="DisplayOpp_L(10)";>Johto Hoe-Ohs</button>
+			<button type="button" class="L_button_opp" id="opp12" onclick="DisplayOpp_L(11)";>Venture Gulls</button>
+		</div>
+
+
+		<div class="L_Prompt_container">
+			<div class="L_Prompt_Back" style="top:60px; left:390px;">
+				<img src="All_Records_Blank.png">
+			</div>
+			<div class="L_team_buttons_container1">
+				<button type="button" class="L_button_team" id='t0' onclick="DisplayTeam_L(0)";>Player Haters</button>
+				<button type="button" class="L_button_team" id='t1' onclick="DisplayTeam_L(1)";>Thunder Catz</button>
+				<button type="button" class="L_button_team" id='t2' onclick="DisplayTeam_L(2)";>Dicks Out</button>
+				<button type="button" class="L_button_team" id='t3' onclick="DisplayTeam_L(3)";>EZ Game EZ Life</button>
+				<button type="button" class="L_button_team" id='t4' onclick="DisplayTeam_L(4)";>Sexy Tyrian</button>
+				<button type="button" class="L_button_team" id='t5' onclick="DisplayTeam_L(5)";>Dumpster Fires</button>
+			</div>
+
+			<div class="L_team_buttons_container2">
+				<button type="button" class="L_button_team" id='t6' onclick="DisplayTeam_L(6)";>Confortably Numb</button>
+				<button type="button" class="L_button_team" id='t7' onclick="DisplayTeam_L(7)";>MN Islanders</button>
+				<button type="button" class="L_button_team" id='t8' onclick="DisplayTeam_L(8)";>Ozuna Matata</button>
+				<button type="button" class="L_button_team" id='t9' onclick="DisplayTeam_L(9)";>Ctrl Altuve Dlt</button>
+				<button type="button" class="L_button_team" id='t10' onclick="DisplayTeam_L(10)";>Johto Hoe-Ohs</button>
+				<button type="button" class="L_button_team" id='t11' onclick="DisplayTeam_L(11)";>Ventura Gulls</button>
+			</div>
+		
+			<div class="L_Prompt_img" style="top:70px; left:260px;">
+				<img id="prompt_team_img" src="../Team Images/Blank Pic.png">
+			</div>
+
+			<div class="L_opp_img" style="top:90px; left:470px;">
+				<img id="prompt_opp_img" src="../Team Images/Blank Pic.png">
+			</div>
+
+			<div class="L_Prompt_Labels" style="top:-100px; left:-10px;">Simulated</div>
+			<div class="L_Prompt_Labels" style="top:-70px; left:-10px;">Opponents:</div>
+			<div class="L_Prompt_Labels" style="top:10px; left:250px;"><u>Opponents</u></div>
+			<div class="L_Prompt_Labels" style="top:10px; left:475px;"><u>Record</u></div>
+
+			<div class="L_Prompt_Stats" id="L_prompt_stats" style="top:60px; left:475px;"></div>
+		</div>
+
+
+
+		<div style="height:65px"></div>
+
+
+		<div class="Top_Lines_Header">
 			<u>Win % By Categories</u>
 		</div>
 
