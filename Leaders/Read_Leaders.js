@@ -80,13 +80,15 @@ function ParseWeek( CallBack,w ){
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			CallBack(results.data,w)
+			CallBack(results.data)
 		}
 	})
 }
 
-function CollectWeek(data,w){
-	w = data[0]
+function CollectWeek(data){
+	console.log(data)
+	console.log(data[0])
+	week = data[0]
 }
 
 
