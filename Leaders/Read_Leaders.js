@@ -62,20 +62,14 @@ var week = 99
 ParseWeek( CollectWeek,week )
 
 setTimeout(function(){ 
-	console.log('week',week);
 	ParseAll_L(week,CSV_Names_L);},60)
 
 setTimeout(function(){ 	
-	console.log('week',week);
-	console.log('all_weeks',AllWeeks_L);
-	console.log(Week1_L);
 	AllWeeks_L = CombineAllWeeks_L(week);
 	AllPlaces_L = CombineAllPlaces_L(week);
-	console.log(AllWeeks_L,AllPlaces_L);},250)
 
 setTimeout(function(){ 	
-	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
-	console.log(MedalCount); },350)
+	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L); },350)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -92,12 +86,8 @@ function ParseWeek( CallBack,int ){
 }
 
 function CollectWeek(data,w){
-	console.log(data)
-	console.log(data[0][0])
 	w = data[0][0]
-	console.log(week)
 	week = data[0][0]
-	console.log(week)
 }
 
 
@@ -147,9 +137,6 @@ function GetMedalCount(){
 }
 
 function MedalCount(all_w,w,all_p){
-	console.log(all_w)
-	console.log(w)
-	console.log(all_p)
 	var medal_count = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
@@ -259,7 +246,6 @@ function NowParse_L(index,file) {
 function CombineAllWeeks_L(w){
 	var AllWeeks = []
 	for( var i = 0; i < w ;i++ ){
-		console.log(AllWeeks)
 		if(i==0){
 			AllWeeks.push(Week1_L)
 		}
