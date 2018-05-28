@@ -1,8 +1,8 @@
 // Setting all the Initial Components
 //----------------------------------------------------------------
-var week = 7
+var week = 99
+ParseWeek( CollectWeek,week )
 
-var height = 12*(week-1)
 
 var Top15 = []
 for( var i = 0 ; i < 15 ; i++ ){
@@ -10,19 +10,47 @@ for( var i = 0 ; i < 15 ; i++ ){
 	Top15.push( row )
 }
 
-var All_Top = []
-for( var i = 0 ; i < (height) ; i++ ){
-	row = [0,0,0,0,0,0,0]
-	All_Top.push( row )
-}
+
+var height
+var All_Top
+
+setTimeout(function(){ 
+	height = 12*(week-1);
+	All_Top = CreateAllTop(height);},60)
+
 
 var CSV_Names_TL = ["Top_Lines.csv","Top_Lines_Mat.csv"]
 
 setTimeout(function(){ 
-	ParseAll_TL(CSV_Names_TL);},150)
+	ParseAll_TL(CSV_Names_TL);},130)
 
 // Defining Functions
 //-----------------------------------------------------------------
+
+function CreateAllTop(h){
+	var all_top = []
+	for( var i = 0 ; i < (h) ; i++ ){
+		row = [0,0,0,0,0,0,0]
+		all_top.push( row )
+	}
+	return all_top
+}
+
+function ParseWeek( CallBack,int ){
+	Papa.parse('../CSV Files/Week.csv', {
+		download: true,
+		header: false,
+		dynamicTyping: true,
+		complete: function(results) {
+			CallBack(results.data,int)
+		}
+	})
+}
+
+function CollectWeek(data,w){
+	w = data[0][0]
+	week = data[0][0]
+}
 
 function GetAll_Top(){
 	return All_Top
