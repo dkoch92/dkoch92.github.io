@@ -37,7 +37,6 @@ var medals_ranked
 
 setTimeout(function(){ 
 	week = GetWeekNumber_L()
-	console.log(week)
 	AllWeeks = GetAllWeeks_L();
 	AllPlaces = GetAllPlaces_L();
 	Medals = GetMedalCount();

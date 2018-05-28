@@ -66,7 +66,7 @@ setTimeout(function(){
 
 setTimeout(function(){ 	
 	AllWeeks_L = CombineAllWeeks_L(week);
-	AllPlaces_L = CombineAllPlaces_L(week);
+	AllPlaces_L = CombineAllPlaces_L(week);},160)
 
 setTimeout(function(){ 	
 	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L); },350)
