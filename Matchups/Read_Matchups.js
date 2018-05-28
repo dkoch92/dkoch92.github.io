@@ -80,7 +80,8 @@ var Week20_M = [
 
 //  Setting all the Initial Components
 //----------------------------------------------------------------
-var week = 7
+var week = 99
+ParseWeek( CollectWeek,week )
 
 var CSV_Names_M = ["week_1_matchups.csv","week_2_matchups.csv","week_3_matchups.csv","week_4_matchups.csv","week_5_matchups.csv",
 				   "week_6_matchups.csv","week_7_matchups.csv","week_8_matchups.csv","week_9_matchups.csv","week_10_matchups.csv",
@@ -95,6 +96,22 @@ setTimeout(function(){
 
 // Defining Functions
 //-----------------------------------------------------------------
+
+function ParseWeek( CallBack,int ){
+	Papa.parse('../CSV Files/Week.csv', {
+		download: true,
+		header: false,
+		dynamicTyping: true,
+		complete: function(results) {
+			CallBack(results.data,int)
+		}
+	})
+}
+
+function CollectWeek(data,w){
+	w = data[0][0]
+	week = data[0][0]
+}
 
 function GetAllWeeks_M(){
 	return AllWeeks_M
