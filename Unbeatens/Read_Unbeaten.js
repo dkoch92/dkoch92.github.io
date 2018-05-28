@@ -43,7 +43,8 @@ var Week20_B = []
 
 //  Setting all the Initial Components
 //----------------------------------------------------------------
-var week = 7
+var week = 99
+ParseWeek( CollectWeek,week )
 
 var CSV_Names_U = ["week_1_unbeaten.csv","week_2_unbeaten.csv","week_3_unbeaten.csv","week_4_unbeaten.csv","week_5_unbeaten.csv",
 				   "week_6_unbeaten.csv","week_7_unbeaten.csv","week_8_unbeaten.csv","week_9_unbeaten.csv","week_10_unbeaten.csv",
@@ -62,6 +63,23 @@ setTimeout(function(){
 
 // Defining Functions
 //-----------------------------------------------------------------
+
+function ParseWeek( CallBack,int ){
+	Papa.parse('../CSV Files/Week.csv', {
+		download: true,
+		header: false,
+		dynamicTyping: true,
+		complete: function(results) {
+			CallBack(results.data,int)
+		}
+	})
+}
+
+function CollectWeek(data,w){
+	w = data[0][0]
+	week = data[0][0]
+}
+
 
 function GetAllWeeks_U(){
 	return AllWeeks_U
