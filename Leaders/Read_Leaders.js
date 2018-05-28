@@ -68,8 +68,9 @@ setTimeout(function(){
 	AllPlaces_L = CombineAllPlaces_L(week);},200)
 
 setTimeout(function(){ 	
+	console.log(AllWeeks_L,AllPlaces_L)
 	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
-	console.log(MedalCount); },280)
+	console.log(MedalCount); },340)
 
 // Defining Functions
 //-----------------------------------------------------------------
