@@ -65,10 +65,10 @@ setTimeout(function(){
 setTimeout(function(){ 	
 	console.log('week',week)
 	AllWeeks_L = CombineAllWeeks_L( week );
-	AllPlaces_L = CombineAllPlaces_L(week);},200)
+	AllPlaces_L = CombineAllPlaces_L(week);
+	console.log(AllWeeks_L,AllPlaces_L);},200)
 
 setTimeout(function(){ 	
-	console.log(AllWeeks_L,AllPlaces_L)
 	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
 	console.log(MedalCount); },340)
 
@@ -142,6 +142,9 @@ function GetMedalCount(){
 }
 
 function MedalCount(all_w,w,all_p){
+	console.log(all_w)
+	console.log(w)
+	console.log(all_p)
 	var medal_count = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 	for(var i = 0; i < w; i++){
 		for(var j = 0; j < 12; j++){
