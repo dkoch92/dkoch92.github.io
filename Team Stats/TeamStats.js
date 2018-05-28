@@ -7,6 +7,7 @@ var AvgMat
 
 setTimeout( function() { 
 	week = GetWeekNumber();
+	console.log('TeamStats week:',week)
 	StatsMat    = GetAllWeeks();
 	AllTeamsMat = AllTeamStats(StatsMat,week);
 	AvgMat      = GenerateAverages(StatsMat,week); } ,150)
