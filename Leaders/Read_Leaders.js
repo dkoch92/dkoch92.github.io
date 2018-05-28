@@ -64,6 +64,7 @@ setTimeout(function(){
 
 setTimeout(function(){ 	
 	console.log('week',week)
+	console.log('all_weeks',AllWeeks_L)
 	AllWeeks_L = CombineAllWeeks_L( week );
 	AllPlaces_L = CombineAllPlaces_L(week);
 	console.log(AllWeeks_L,AllPlaces_L);},200)
@@ -156,7 +157,6 @@ function MedalCount(all_w,w,all_p){
 			for(var k = 0; k < all_w[i][2*j].length ;k++){
 				team_index = DetermineTeam( all_w[i][2*j][k] )
 				p = all_p[i][j]
-				console.log(p)
 				if( k < p[0] ){
 					medal_count[team_index][0] = medal_count[team_index][0] + 1 
 					medal_count[team_index][x] = medal_count[team_index][x] + 1 
@@ -255,6 +255,7 @@ function NowParse_L(index,file) {
 function CombineAllWeeks_L(week){
 	var AllWeeks = []
 	for( var i = 0; i < week ;i++ ){
+		console.log(AllWeeks)
 		if(i==0){
 			AllWeeks.push(Week1_L)
 		}
