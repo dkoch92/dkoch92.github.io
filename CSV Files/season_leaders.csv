@@ -12,12 +12,12 @@ Allen,Josh,Will
 0.6612,0.6008,0.5797
 Mike,Brian,Mike
 88.0,87.0,84.0
-Brian,Nate,Cullen,Will,Josh,Cullen,Nate
-8.0,  , ,7.0, , , 
-Mike,Brian,Allen,Daniel,Matt,Nate,McD,Josh
-7.0, , , ,6.0, , , 
-Will,Will,McD
-1.381,1.867,2.109
+Brian,Nate,Cullen,Josh,Will,Josh,Cullen,Nate
+8.0,  , , ,7.0, , , 
+Mike,Brian,Allen,Daniel,Matt,Nate,McD,Josh,Allen
+7.0, , , ,6.0, , , , 
+Will,Will,Josh
+1.381,1.867,1.929
 Will,Charlie,Mike
 0.818,0.906,0.915
 Mike,Mike,Brian
@@ -29,8 +29,8 @@ Mike,Mike,Brian
 1.0,1.0,1.0
 1.0,1.0,1.0
 1.0,1.0,1.0
-3.0,4.0,0.0
 4.0,4.0,0.0
+4.0,5.0,0.0
 1.0,1.0,1.0
 1.0,1.0,1.0
 1.0,1.0,1.0
