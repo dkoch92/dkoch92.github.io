@@ -1,36 +1,36 @@
-Nate,Clint,Nate
-55.0,53.0,52.0
-Allen,Will,Josh,Will,Nate,Brian
-19.0,18.0,  ,17.0, , 
-Daniel,Daniel,Clint,Will,Daniel,Mike,Charlie,Allen,Matt
-56.0,54.0, ,50.0, , , , , 
+Nate,Clint,McD,Nate,Josh
+55.0,53.0, ,52.0, 
+Allen,Will,Josh,Will,Nate,Brian,Mike,Josh
+19.0,18.0,  ,17.0, , , , 
+Mike,Daniel,Daniel,Clint
+57.0,56.0,54.0, 
 Will,McD,McD,Josh,Cullen,Nate
 13.0,11.0,10.0, , , 
-Brian,Allen,Will
-0.4188,0.405,0.4
+Brian,Allen,Will,Josh
+0.4188,0.405,0.4, 
 Allen,Josh,Will
 0.6612,0.6008,0.5797
-Mike,Brian,Mike
-88.0,87.0,84.0
-Brian,Nate,Cullen,Josh,Will,Josh,Cullen,Nate
-8.0,  , , ,7.0, , , 
-Mike,Brian,Allen,Daniel,Matt,Nate,McD,Josh,Allen
-7.0, , , ,6.0, , , , 
+Mike,Cullen,Brian,Mike
+88.0, ,87.0,84.0
+Brian,Nate,Cullen,Josh
+8.0,  , , 
+Mike,Brian,Allen,Daniel
+7.0, , , 
 Will,Will,Josh
 1.381,1.867,1.929
 Will,Charlie,Mike
 0.818,0.906,0.915
 Mike,Mike,Brian
 12.061,11.874,11.471
-1.0,1.0,1.0
-1.0,2.0,3.0
-1.0,2.0,6.0
+1.0,2.0,2.0
+1.0,2.0,5.0
+1.0,1.0,2.0
 1.0,1.0,4.0
+1.0,1.0,2.0
 1.0,1.0,1.0
-1.0,1.0,1.0
-1.0,1.0,1.0
-4.0,4.0,0.0
-4.0,5.0,0.0
+2.0,1.0,1.0
+4.0,0.0,0.0
+4.0,0.0,0.0
 1.0,1.0,1.0
 1.0,1.0,1.0
 1.0,1.0,1.0
