@@ -1,2 +1,2 @@
 # dkoch92.github.io
-Daniel Koch's Girhub website,  with links to various projects
+Daniel Koch's Girhub website,  various fun side projects (non-academic)
