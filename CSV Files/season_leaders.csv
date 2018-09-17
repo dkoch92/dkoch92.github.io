@@ -1,36 +1,36 @@
-Nate,Clint,McD,Nate,Josh,Charlie
-55.0,53.0, ,52.0, , 
-Charlie,Allen,Will,Josh
-25.0,19.0,18.0,  
-Charlie,Mike,Daniel
-62.0,57.0,56.0
-Will,Josh,Daniel,McD
-13.0, ,12.0,11.0
-Brian,Allen,Will,Josh
-0.4188,0.405,0.4, 
+Nate,Clint,McD,Nate,Josh,Charlie,Matt
+55.0,53.0, ,52.0, , , 
+Charlie,Allen,Josh,Will,Josh,Charlie
+25.0,19.0, ,18.0,  , 
+Charlie,Mike,Daniel,Josh
+62.0,57.0,56.0, 
+Will,Josh,Daniel,McD,Will,Brian
+13.0, ,12.0,11.0, , 
+Brian,Nate,Allen
+0.4188,0.4051,0.405
 Allen,Charlie,Josh
 0.6612,0.6234,0.6008
-Nate,Nate,Will
-99.0,93.0,90.0
-Brian,Nate,Cullen,Josh,Mike,Will
-8.0,  , , , , 
-Allen,McD,Nate,Brian,Mike,Brian,Allen,Daniel,Nate
-8.0,  ,  , ,7.0, , , , 
-Will,Charlie,Will
-1.381,1.588,1.867
-Will,Charlie,Charlie
-0.818,0.882,0.906
-Mike,Charlie,Mike
-12.061,11.939,11.874
+Nate,Nate,Nate
+99.0,95.0,93.0
+Will,Charlie,Brian,Nate,Cullen,Josh,Mike,Will
+10.0,9.0,8.0,  , , , , 
+Allen,McD,Nate,Brian
+8.0,  ,  , 
+Will,Brian,Charlie
+1.381,1.561,1.588
+Will,Will,Mike
+0.818,0.836,0.867
+Mike,Mike,Charlie
+12.15,12.061,11.939
+1.0,2.0,4.0
 1.0,2.0,3.0
 1.0,1.0,2.0
-1.0,1.0,1.0
-2.0,1.0,1.0
-1.0,1.0,2.0
+2.0,1.0,3.0
 1.0,1.0,1.0
 1.0,1.0,1.0
-6.0,0.0,0.0
-4.0,5.0,0.0
+1.0,1.0,1.0
+1.0,1.0,6.0
+4.0,0.0,0.0
 1.0,1.0,1.0
 1.0,1.0,1.0
 1.0,1.0,1.0
