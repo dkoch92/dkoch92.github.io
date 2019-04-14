@@ -51,7 +51,7 @@ var CSV_Names_L = ["week_1_leaders.csv","week_2_leaders.csv","week_3_leaders.csv
 				   "week_11_leaders.csv","week_12_leaders.csv","week_13_leaders.csv","week_14_leaders.csv","week_15_leaders.csv",
 				   "week_16_leaders.csv","week_17_leaders.csv","week_18_leaders.csv","week_19_leaders.csv","week_20_leaders.csv","season_leaders.csv"]
 
-var Names = ['Will','Clint','Brian','Daniel','Mike','Cullen','Charlie','Allen','Josh','Matt','McD','Nate']
+var Names = ['Will','Clint','Brian','Daniel','Mike','Cullen','Ryan','Charlie','Allen','Josh','Matt','McD','Nate','Tim']
 
 
 var AllWeeks_L
