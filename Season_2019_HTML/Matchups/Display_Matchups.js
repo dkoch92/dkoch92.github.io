@@ -117,17 +117,15 @@ var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7
 function DisplayWeek(w){
 	if( w <= week ){
 		Mat = WeekMat(w-1)
-		console.log(Mat)
-		console.log(IdNames)
+		title  = Week_Titles[w-1]
+		document.getElementById('chart_title').innerHTML = title
 		for(var i = 0 ; i < 14 ; i++){
 			for(var j = 0 ; j < 6 ; j++){
 				id_tag = IdNames[i][j]
-				console.log(id_tag)
 				number = (Mat[i][j]).toString()
-				console.log(number)
-				title  = Week_Titles[w-1]
+				console.log(document.getElementById(id_tag))
+				console.log(document.getElementById(id_tag).innerHTML)
 				document.getElementById(id_tag).innerHTML = number
-				document.getElementById('chart_title').innerHTML = title
 			}
 		}
 	}
