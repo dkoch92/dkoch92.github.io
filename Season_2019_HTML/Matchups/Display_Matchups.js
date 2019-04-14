@@ -91,8 +91,8 @@ setTimeout(function(){
     week = GetWeekNumber_M();
     AllWeeks_M = GetAllWeeks_M();
     SetAllWeeks_M( AllWeeks_M,week );
-	//Season_M = GenerateSeason(AllWeeks_M,week);
-	//DisplaySeason(); 
+	Season_M = GenerateSeason(AllWeeks_M,week);
+	DisplaySeason(); 
 	}	,300)
 
 var IdNames = [
@@ -123,8 +123,6 @@ function DisplayWeek(w){
 			for(var j = 0 ; j < 6 ; j++){
 				id_tag = IdNames[i][j]
 				number = (Mat[i][j]).toString()
-				console.log(document.getElementById(id_tag))
-				console.log(document.getElementById(id_tag).innerHTML)
 				document.getElementById(id_tag).innerHTML = number
 			}
 		}
