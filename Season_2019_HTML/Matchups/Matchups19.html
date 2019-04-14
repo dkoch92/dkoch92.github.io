@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Matchups</title>
+		<link href="../Baseball.css" rel="stylesheet" type="text/css" />
+		<link href="Matchups.css" rel="stylesheet" type="text/css" />
+		<script src="../papaparse.min.js"></script>
+		<script src="Read_Matchups.js"></script>
+		<script src="Display_Matchups.js"></script>
+
+	</head>
+
+		<header>
+			<nav>
+				<ul class="Main_Nav_UL">
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Fantasy18_Home.html">Home</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" >Matchups</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Leaders/Leaders.html">Stat Leaders</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Unbeatens/Unbeaten.html">Unbeaten</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Team Stats/Team Stats.html">Team Stats</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Top Lines/Top Lines.html">Top Lines</a></li>
+					<li class="Main_Nav_LI"><a class="Main_Nav_A" href="../Lucky/Lucky.html">Lucky (or not)</a></li>
+				</ul>
+			</nav>
+		</header>
+
+	<body class="Baseball_Background">
+		
+		<div class="matchup_buttons_container" align="center">
+			<button type="button" class="matchup_button_season" onclick="DisplaySeason()";>Season</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(1)";>1</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(2)";>2</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(3)";>3</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(4)";>4</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(5)";>5</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(6)";>6</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(7)";>7</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(8)";>8</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(9)";>9</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(10)";>10</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(11)";>11</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(12)";>12</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(13)";>13</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(14)";>14</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(15)";>15</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(16)";>16</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(17)";>17</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(18)";>18</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(19)";>19</button>
+			<button type="button" class="matchup_button_week" onclick="DisplayWeek(20)";>20</button>
+		</div>
+
+		<div class="display_container">
+			<img src="Matchups_Blank.png">
+			<!-- Text Boxs That Do Not Change -->
+			<!-- Team Names -->
+			<div class="teamname_container" style="top:163px; left:238px;">Player Haters</div>
+			<div class="teamname_container" style="top:203px; left:238px;">Thunder Catz</div>
+			<div class="teamname_container" style="top:243px; left:238px;">Dicks Out</div>
+			<div class="teamname_container" style="top:283px; left:238px;">EZ Game EZ Life</div>
+			<div class="teamname_container" style="top:323px; left:238px;">Tall Sexy Tyrian</div>
+			<div class="teamname_container" style="top:363px; left:238px;">Dumpster Fires</div>
+			<div class="teamname_container" style="top:410px; left:238px;">Confortably Numb</div>
+			<div class="teamname_container" style="top:450px; left:238px;">MN Islanders</div>
+			<div class="teamname_container" style="top:490px; left:238px;">Ozuna Matata</div>
+			<div class="teamname_container" style="top:530px; left:238px;">Ctrl Altuve Dlt</div>
+			<div class="teamname_container" style="top:570px; left:238px;">Johto Hoe-Ohs</div>
+			<div class="teamname_container" style="top:610px; left:238px;">Ventura Gulls</div>
+			<!-- Division Names -->
+			<div class="division_container" style="top:243px; left:36px;">East</div>
+			<div class="division_container" style="top:283px; left:36px;">East</div>
+			<div class="division_container" style="top:490px; left:36px;">South</div>
+			<div class="division_container" style="top:530px; left:36px;">West</div>
+			<!-- Catagories -->
+			<div class="catagories_container" style="top:108px; left:432px;">Wins</div>
+			<div class="catagories_container" style="top:108px; left:522px;">Losses</div>
+			<div class="catagories_container" style="top:108px; left:611px;">Ties</div>
+			<div class="catagories_container" style="top:108px; left:736px;">W</div>
+			<div class="catagories_container" style="top:108px; left:826px;">L</div>
+			<div class="catagories_container" style="top:108px; left:916px;">T</div>
+
+
+			<!-- Text Boxs That Change Values-->
+			<!-- Week Title -->
+			<div class="title_container" id='chart_title'  style="top:52px; left:432px;"></div>
+			<!-- Matchups for East East -->
+			<div class="stat_container" id="M_1_W" style="top:163px; left:432px;"></div>
+			<div class="stat_container" id="M_1_L" style="top:163px; left:522px;"></div>
+			<div class="stat_container" id="M_1_T" style="top:163px; left:611px;"></div>
+			<div class="stat_container" id="M_2_W" style="top:203px; left:432px;"></div>
+			<div class="stat_container" id="M_2_L" style="top:203px; left:522px;"></div>
+			<div class="stat_container" id="M_2_T" style="top:203px; left:611px;"></div>
+			<div class="stat_container" id="M_3_W" style="top:243px; left:432px;"></div>
+			<div class="stat_container" id="M_3_L" style="top:243px; left:522px;"></div>
+			<div class="stat_container" id="M_3_T" style="top:243px; left:611px;"></div>
+			<div class="stat_container" id="M_4_W" style="top:283px; left:432px;"></div>
+			<div class="stat_container" id="M_4_L" style="top:283px; left:522px;"></div>
+			<div class="stat_container" id="M_4_T" style="top:283px; left:611px;"></div>
+			<div class="stat_container" id="M_5_W" style="top:323px; left:432px;"></div>
+			<div class="stat_container" id="M_5_L" style="top:323px; left:522px;"></div>
+			<div class="stat_container" id="M_5_T" style="top:323px; left:611px;"></div>
+			<div class="stat_container" id="M_6_W" style="top:363px; left:432px;"></div>
+			<div class="stat_container" id="M_6_L" style="top:363px; left:522px;"></div>
+			<div class="stat_container" id="M_6_T" style="top:363px; left:611px;"></div>
+			<!-- Matchups for East East -->
+			<div class="stat_container" id="M_7_W" style="top:410px; left:432px;"></div>
+			<div class="stat_container" id="M_7_L" style="top:410px; left:522px;"></div>
+			<div class="stat_container" id="M_7_T" style="top:410px; left:611px;"></div>
+			<div class="stat_container" id="M_8_W" style="top:450px; left:432px;"></div>
+			<div class="stat_container" id="M_8_L" style="top:450px; left:522px;"></div>
+			<div class="stat_container" id="M_8_T" style="top:450px; left:611px;"></div>
+			<div class="stat_container" id="M_9_W" style="top:490px; left:432px;"></div>
+			<div class="stat_container" id="M_9_L" style="top:490px; left:522px;"></div>
+			<div class="stat_container" id="M_9_T" style="top:490px; left:611px;"></div>
+			<div class="stat_container" id="M_10_W" style="top:530px; left:432px;"></div>
+			<div class="stat_container" id="M_10_L" style="top:530px; left:522px;"></div>
+			<div class="stat_container" id="M_10_T" style="top:530px; left:611px;"></div>
+			<div class="stat_container" id="M_11_W" style="top:570px; left:432px;"></div>
+			<div class="stat_container" id="M_11_L" style="top:570px; left:522px;"></div>
+			<div class="stat_container" id="M_11_T" style="top:570px; left:611px;"></div>
+			<div class="stat_container" id="M_12_W" style="top:610px; left:432px;"></div>
+			<div class="stat_container" id="M_12_L" style="top:610px; left:522px;"></div>
+			<div class="stat_container" id="M_12_T" style="top:610px; left:611px;"></div>
+		
+            <!-- WTL for East East -->
+			<div class="stat_container" id="wtl_1_W" style="top:163px; left:736px;"></div>
+			<div class="stat_container" id="wtl_1_L" style="top:163px; left:826px;"></div>
+			<div class="stat_container" id="wtl_1_T" style="top:163px; left:916px;"></div>
+			<div class="stat_container" id="wtl_2_W" style="top:203px; left:736px;"></div>
+			<div class="stat_container" id="wtl_2_L" style="top:203px; left:826px;"></div>
+			<div class="stat_container" id="wtl_2_T" style="top:203px; left:916px;"></div>
+			<div class="stat_container" id="wtl_3_W" style="top:243px; left:736px;"></div>
+			<div class="stat_container" id="wtl_3_L" style="top:243px; left:826px;"></div>
+			<div class="stat_container" id="wtl_3_T" style="top:243px; left:916px;"></div>
+			<div class="stat_container" id="wtl_4_W" style="top:283px; left:736px;"></div>
+			<div class="stat_container" id="wtl_4_L" style="top:283px; left:826px;"></div>
+			<div class="stat_container" id="wtl_4_T" style="top:283px; left:916px;"></div>
+			<div class="stat_container" id="wtl_5_W" style="top:323px; left:736px;"></div>
+			<div class="stat_container" id="wtl_5_L" style="top:323px; left:826px;"></div>
+			<div class="stat_container" id="wtl_5_T" style="top:323px; left:916px;"></div>
+			<div class="stat_container" id="wtl_6_W" style="top:363px; left:736px;"></div>
+			<div class="stat_container" id="wtl_6_L" style="top:363px; left:826px;"></div>
+			<div class="stat_container" id="wtl_6_T" style="top:363px; left:916px;"></div>
+			<!-- WTL for East East -->
+			<div class="stat_container" id="wtl_7_W" style="top:410px; left:736px;"></div>
+			<div class="stat_container" id="wtl_7_L" style="top:410px; left:826px;"></div>
+			<div class="stat_container" id="wtl_7_T" style="top:410px; left:916px;"></div>
+			<div class="stat_container" id="wtl_8_W" style="top:450px; left:736px;"></div>
+			<div class="stat_container" id="wtl_8_L" style="top:450px; left:826px;"></div>
+			<div class="stat_container" id="wtl_8_T" style="top:450px; left:916px;"></div>
+			<div class="stat_container" id="wtl_9_W" style="top:490px; left:736px;"></div>
+			<div class="stat_container" id="wtl_9_L" style="top:490px; left:826px;"></div>
+			<div class="stat_container" id="wtl_9_T" style="top:490px; left:916px;"></div>
+			<div class="stat_container" id="wtl_10_W" style="top:530px; left:736px;"></div>
+			<div class="stat_container" id="wtl_10_L" style="top:530px; left:826px;"></div>
+			<div class="stat_container" id="wtl_10_T" style="top:530px; left:916px;"></div>
+			<div class="stat_container" id="wtl_11_W" style="top:570px; left:736px;"></div>
+			<div class="stat_container" id="wtl_11_L" style="top:570px; left:826px;"></div>
+			<div class="stat_container" id="wtl_11_T" style="top:570px; left:916px;"></div>
+			<div class="stat_container" id="wtl_12_W" style="top:610px; left:736px;"></div>
+			<div class="stat_container" id="wtl_12_L" style="top:610px; left:826px;"></div>
+			<div class="stat_container" id="wtl_12_T" style="top:610px; left:916px;"></div>
+		</div>
+
+
+
+	</body>
+
+
+
+</html>
