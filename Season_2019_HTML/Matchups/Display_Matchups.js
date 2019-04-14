@@ -118,10 +118,13 @@ function DisplayWeek(w){
 	if( w <= week ){
 		Mat = WeekMat(w-1)
 		console.log(Mat)
+		console.log(IdNames)
 		for(var i = 0 ; i < 14 ; i++){
 			for(var j = 0 ; j < 6 ; j++){
 				id_tag = IdNames[i][j]
+				console.log(id_tag)
 				number = (Mat[i][j]).toString()
+				console.log(number)
 				title  = Week_Titles[w-1]
 				document.getElementById(id_tag).innerHTML = number
 				document.getElementById('chart_title').innerHTML = title
