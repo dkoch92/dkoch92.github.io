@@ -95,7 +95,7 @@ var AllWeeks_M
 
 setTimeout(function(){ 
 	ParseAll_M(week,CSV_Names_M);
-	AllWeeks_M = CombineAllWeeks_M( week );},100)
+	AllWeeks_M = CombineAllWeeks_M( week );},140)
 
 // Defining Functions
 //-----------------------------------------------------------------
