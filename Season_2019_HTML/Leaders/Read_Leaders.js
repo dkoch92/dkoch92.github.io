@@ -69,7 +69,8 @@ setTimeout(function(){
 	AllPlaces_L = CombineAllPlaces_L(week);},160)
 
 setTimeout(function(){ 	
-	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L); },350)
+	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
+	console.log(MdealCount) },350)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -167,7 +168,7 @@ function MedalCount(all_w,w,all_p){
 }
 
 function DetermineTeam(name){
-	for(var i = 0; i < 12; i++){
+	for(var i = 0; i < 14; i++){
 		if( name === Names[i] ){
 			return i
 		}

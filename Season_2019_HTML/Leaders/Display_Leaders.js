@@ -43,7 +43,7 @@ setTimeout(function(){
 	Medals = GetMedalCount();
 	DisplaySeasonLeader();
 	medals_ranked = RankMedalCount(Medals);
-	DisplayMedalCount(medals_ranked,Medals);}, 450)
+	DisplayMedalCount(medals_ranked,Medals);}, 550)
 
 
 // Defining Functions
