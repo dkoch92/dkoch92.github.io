@@ -117,6 +117,7 @@ var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7
 function DisplayWeek(w){
 	if( w <= week ){
 		Mat = WeekMat(w-1)
+		console.log(Mat)
 		for(var i = 0 ; i < 14 ; i++){
 			for(var j = 0 ; j < 6 ; j++){
 				id_tag = IdNames[i][j]
