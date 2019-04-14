@@ -92,8 +92,7 @@ setTimeout(function(){
     AllWeeks_M = GetAllWeeks_M();
     SetAllWeeks_M( AllWeeks_M,week );
 	Season_M = GenerateSeason(AllWeeks_M,week);
-	DisplaySeason(); 
-	}	,300)
+	DisplaySeason();}	,300)
 
 var IdNames = [
 ['M_1_W','M_1_L','M_1_T','wtl_1_W','wtl_1_L','wtl_1_T'],['M_2_W','M_2_L','M_2_T','wtl_2_W','wtl_2_L','wtl_2_T'],
@@ -133,12 +132,12 @@ function DisplayWeek(w){
 }
 
 function DisplaySeason(){
+	document.getElementById('chart_title').innerHTML = 'Season'
 	for(var i = 0 ; i < 14 ; i++){
 		for(var j = 0 ; j < 6 ; j++){
 			id_tag = IdNames[i][j]
 			number = (Season_M[i][j]).toString()
 			document.getElementById(id_tag).innerHTML = number
-			document.getElementById('chart_title').innerHTML = 'Season'
 		}
 	}
 }
