@@ -1,0 +1,99 @@
+.matchup_buttons_container{
+    position: relative;
+    margin: 0 auto;
+    width: 880px;
+    height: 40px; 
+}
+
+.display_container{
+    position: relative;
+    margin: 0 auto;
+    width: 1080px;
+    height: 720px; 
+}
+
+.display_container img{
+    position: relative;
+    width:100%;
+}
+
+.division_container{
+    position: absolute;
+    margin:0 auto;
+    padding:3px 0 0 0;
+    width:198px;
+    height:34px;
+    color: white;
+    font-size: 29px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.catagories_container{
+    position: absolute;
+    margin:0 auto;
+    padding:10px 0 0 0;
+    width:87px;
+    height:41px;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.teamname_container{
+    position: absolute;
+    margin:0 auto;
+    padding:5px 0 0 0;
+    width:190px;
+    height:34px;
+    font-size: 24px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.title_container{
+    position: absolute;
+    margin:0 auto;
+    padding:6px 0 0 0;
+    width:570px;
+    height:47px;
+    font-size: 36px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.stat_container{
+    position: absolute;
+    margin:0 auto;
+    padding:6px 0 0 0;
+    width:87px;
+    height:32px;
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.matchup_buttons_container{
+    padding-top: 20px;
+}
+
+.matchup_button_season{
+    background-color: rgba(0,0,0,.2); 
+    border: 1px solid black;
+    color: white; 
+    font-size: 15px;
+    height:25px;
+    width:75px;
+    cursor: pointer;
+    display: inline;
+}
+.matchup_button_week{
+    background-color: rgba(0,0,0,.2); 
+    border: 1px solid black;
+    color: white; 
+    font-size: 15px;
+    height:25px;
+    width:30px;
+    cursor: pointer;
+    display: inline;
+}

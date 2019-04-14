@@ -1,0 +1,292 @@
+.display_container{
+    position: relative;
+    width:1100px;
+    height:720px;
+}
+
+.division_container{
+    position: absolute;
+    margin:0 auto;
+    padding:3px 0 0 0;
+    width:198px;
+    height:34px;
+    color: white;
+    font-size: 29px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.catagories_container{
+    position: absolute;
+    margin:0 auto;
+    padding:10px 0 0 0;
+    width:87px;
+    height:41px;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.teamname_container{
+    position: absolute;
+    margin:0 auto;
+    padding:6px 0 0 0;
+    width:190px;
+    height:31px;
+    font-size: 24px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.opp_title_container{
+    position: absolute;
+    margin:0 auto;
+    padding:6px 0 0 0;
+    width:570px;
+    height:42px;
+    font-size: 36px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.opp_stats_container{
+    position: absolute;
+    height:488px;
+    width:574px;
+}
+
+.opp_stat{
+    position: absolute;
+    padding:6px 0 0 0;
+    width:88px;
+    height:32px;
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.Win_Percent_Header{
+    position: absolute;
+    margin:0 auto;
+    padding:6px 0 0 0;
+    width:190px;
+    height:120px;
+    color: white;
+    font-size: 64px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.Win_Percent_container{
+    position: relative;
+    height: 1550px;
+    width: 1650px;
+}
+
+.Win_Percent_container img{
+    padding-top: 120px;
+}
+
+.win_percent_catagories_container{
+    position: absolute;
+    margin:0 auto;
+    padding:6px 0 0 0;
+    width:120px;
+    height:40px;
+    font-size: 32px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.WP_stats_container{
+    position: absolute;
+    height:488px;
+    width:908px;
+}
+
+.WP_stat{
+    position: absolute;
+    padding:6px 0 0 0;
+    width:60px;
+    height:33px;
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+.WP_avg_container{
+    position: absolute;
+    height:488px;
+    width:160px;
+}
+
+.WP_avg{
+    position: absolute;
+    background: rgba(0, 200, 0, .15);
+    padding:6px 0 0 0;
+    width:78px;
+    height:33px;
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+}
+
+
+
+
+.L_opp_buttons_container{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 550px;
+    height: 90px; 
+}
+
+#opp3{
+    word-spacing: 13px;
+}
+
+.L_Prompt_container{
+    left:-60px;
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 242px; 
+}
+
+
+.L_week_buttons_container{
+    position: relative;
+    margin: 0 auto;
+    width: 1080px;
+    height: 40px; 
+}
+
+.L_Prompt_container{
+    left:-60px;
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 242px; 
+}
+
+.L_team_buttons_container1{
+    left:10px;
+    position: absolute;
+    margin: 0 auto;
+    width: 100px;
+    height: 240px; 
+}
+.L_team_buttons_container2{
+    left:112px;
+    position: absolute;
+    margin: 0 auto;
+    width: 100px;
+    height: 240px; 
+}
+
+.L_button_opp{
+    background-color: rgba(0,0,0,.3); 
+    border: 1px solid black;
+    color: white; 
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    height:40px;
+    width:80px;
+    cursor: pointer;
+    display: inline;
+}
+
+.L_button_team{
+    background-color: rgba(0,0,0,.4); 
+    border: 1px solid black;
+    color: white; 
+    font-size: 15px;
+    font-family: "Times New Roman", Times, serif;
+    height:40px;
+    width:100px;
+    cursor: pointer;
+    display: block;
+}
+
+.L_Prompt_img{
+    position:absolute;
+    margin:0 auto;
+    width:110px;
+    height:110px;
+}
+
+.L_Prompt_img img{
+    width:100%;
+    height:100%;
+}
+
+.L_opp_img{
+    position:absolute;
+    margin:0 auto;
+    width:60px;
+    height:60px;
+}
+
+.L_opp_img img{
+    width:100%;
+    height:100%;
+}
+
+.L_feelsbad_img{
+    position:absolute;
+    margin:0 auto;
+    width:75px;
+    height:75px;
+}
+
+.L_feelsbad_img img{
+    width:100%;
+    height:100%;
+}
+
+.L_out_of{
+    position:absolute;
+    font-size: 18px;
+    padding: 2px 0 0 0;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    width:130px;
+    height:20px;
+    text-align: center;
+}
+
+.L_Prompt_Labels{
+    position:absolute;
+    font-size: 26px;
+    padding: 12px 0 0 0;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    word-spacing: 70px;
+    width:90px;
+    height:30px;
+    text-align: center;
+}
+.L_Prompt_Stats{
+    position:absolute;
+    margin:0 auto;
+    padding: 34px 0 0 0;
+    font-size: 46px;
+    font-family: "Times New Roman", Times, serif;
+    width:500px;
+    height:75px;
+    text-align: center;
+}
+
+.L_Prompt_Back{
+    position:absolute;
+    margin:0 auto;
+    font-size: 36px;
+    width:500px;
+    height:130px;
+}
+
+.L_Prompt_Back img{
+    width:100%;
+    height:100%;
+}
