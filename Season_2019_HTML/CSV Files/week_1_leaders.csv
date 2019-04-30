@@ -1,11 +1,11 @@
-Clint,Tim,Danny,Josh
-72.0,66.0,60.0,  
+Tim,Danny,Josh,Mike,Charlie
+66.0,60.0,  ,58.0,  
 Cullen,Brian,Charlie,Allen
 24.0,21.0,  ,19.0
-Cullen,Brian,Clint
-85.0,71.0,65.0
-Will,Danny,Ryan,Charlie,Clint
-12.0,10.0,  ,  ,9.0
+Cullen,Brian,Tim
+85.0,71.0,60.0
+Danny,Ryan,Charlie,Mike,Josh,McD
+10.0,  ,  ,8.0,7.0,  
 Charlie,Ryan,Brian
 0.388,0.379,0.357
 Brian,Charlie,Tim
@@ -14,23 +14,23 @@ Josh,Nate,Charlie
 117.0,113.0,110.0
 Josh,Charlie,McD,Nate,Danny,Allen,Matt
 9.0,7.0,  ,  ,6.0,  ,  
-Will,Clint,Nate,Danny,Allen,Matt
-9.0,  ,7.0,6.0,  ,  
-Nate,Matt,Tim
-2.893,2.9,3.166
-Nate,McD,Matt
-0.991,1.076,1.078
-Will,Josh,Brian
-10.04,9.84,9.78
-1.0,1.0,2.0
+Nate,Danny,Allen,Matt,Brian,Mike,McD
+7.0,6.0,  ,  ,5.0,  ,  
+Will,Clint,Nate,Matt
+0.0,  ,2.893,2.9
+Will,Clint,Nate,McD
+0.0,  ,0.991,1.07595
+Josh,Brian,Tim
+9.84,9.78,9.59
+1.0,2.0,2.0
 1.0,2.0,1.0
 1.0,1.0,1.0
-1.0,3.0,1.0
+3.0,1.0,2.0
 1.0,1.0,1.0
 1.0,1.0,1.0
 1.0,1.0,1.0
 1.0,3.0,3.0
-2.0,1.0,3.0
-1.0,1.0,1.0
-1.0,1.0,1.0
+1.0,3.0,3.0
+2.0,1.0,1.0
+2.0,1.0,1.0
 1.0,1.0,1.0
