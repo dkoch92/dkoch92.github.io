@@ -42,6 +42,7 @@ var Week19_Places = []
 var Week20_Places = []
 var Season_Places = []
 
+var Medal_Count = []
 
 //  Setting all the Initial Components
 //----------------------------------------------------------------
@@ -60,6 +61,9 @@ var MedalCount
 
 var week = 99
 ParseWeek( CollectWeek,week )
+ParseMedals( CollectMedals,Medal_Count)
+
+console.log(Medal_Count)
 
 setTimeout(function(){ 
 	ParseAll_L(week,CSV_Names_L);},60)
@@ -86,11 +90,27 @@ function ParseWeek( CallBack,int ){
 	})
 }
 
+function ParseMedals( Callback,mat ){
+	Papa.parse('../CSV Files/medal_count.csv', {
+		download: true,
+		header: false,
+		dynamicTyping: true,
+		complete: function(results) {
+			CallBack(results.data,mat)
+		}
+	})
+}
+
 function CollectWeek(data,w){
 	w = data[0][0]
 	week = data[0][0]
 }
 
+function CollectMedals(data,mat){
+	for( var i = 0; i < 14; i++ ){
+		mat.push( data[i] )
+	}
+}
 
 function GetAllWeeks_L(){
 	return AllWeeks_L
@@ -137,35 +157,6 @@ function GetMedalCount(){
 	return MedalCount
 }
 
-function MedalCount(all_w,w,all_p){
-	var medal_count = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
-	for(var i = 0; i < w; i++){
-		for(var j = 0; j < 14; j++){
-			if( j < 6){
-				x = 3
-			}else{
-				x = 4
-			}
-			for(var k = 0; k < all_w[i][2*j].length ;k++){
-				team_index = DetermineTeam( all_w[i][2*j][k] )
-				p = all_p[i][j]
-				if( k < p[0] ){
-					medal_count[team_index][0] = medal_count[team_index][0] + 1 
-					medal_count[team_index][x] = medal_count[team_index][x] + 1 
-				}
-				if( (p[0] <= k) && (k < ( p[0] + p[1] )) ){
-					medal_count[team_index][1] = medal_count[team_index][1] + 1 
-					medal_count[team_index][x] = medal_count[team_index][x] + 1 
-				}
-				if( (( p[0] + p[1] ) <= k) && (k < ( p[0] + p[1] + p[2] )) ){
-					medal_count[team_index][2] = medal_count[team_index][2] + 1 
-					medal_count[team_index][x] = medal_count[team_index][x] + 1 
-				}
-			} 
-		}
-	}
-	return medal_count
-}
 
 function DetermineTeam(name){
 	for(var i = 0; i < 14; i++){
