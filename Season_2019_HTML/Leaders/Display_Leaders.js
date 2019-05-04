@@ -4,8 +4,8 @@
 var Leader_Pics = ['L_1.png','L_2.png','L_3.png','L_4.png','L_5.png','L_6.png']
 var Leader_Left = ['0px','168px','336px', '504px','672px','840px']
 
-var TeamPics = ['Will Pic.png','Clint Pic.png','Brian Pic.png','Daniel Pic.png','Mike Pic.png','Cullen Pic.png',
-				'Charlie Pic.png','Allen Pic.png','Josh Pic.png','Matt Pic.png','McD Pic.png','Nate Pic.png']
+var TeamPics = ['Will Pic.png','Clint Pic.png','Brian Pic.png','Daniel Pic.png','Mike Pic.png','Cullen Pic.png','Ryan Pic.png',
+				'Charlie Pic.png','Allen Pic.png','Josh Pic.png','Matt Pic.png','McD Pic.png','Nate Pic.png','Tim Pic.png']
 
 var Week_Titles = ['Week 1','Week 2','Week 3','Week 4','Week 5','Week 6','Week 7','Week 8','Week 9','Week 10'
                   ,'Week 11','Week 12','Week 13','Week 14','Week 15','Week 16','Week 17','Week 18','Week 19','Week 20']
@@ -18,13 +18,13 @@ var p_id = [['p1_1','p1_2','p1_3'],['p2_1','p2_2','p2_3'],['p3_1','p3_2','p3_3']
 
 var place_color = ['rgba(212,175,55,.45)','rgba(192,192,192,.45)','rgba(205,127,50,.45)']
 
-var medal_teams = ['1_img','2_img','3_img','4_img','5_img','6_img','7_img','8_img','9_img','10_img','11_img','12_img']
+var medal_teams = ['1_img','2_img','3_img','4_img','5_img','6_img','7_img','8_img','9_img','10_img','11_img','12_img','13_img','14_img']
 
-var medal_id = [['g1','s1','b1'],['g2','s2','b2'],['g3','s3','b3'],['g4','s4','b4'],['g5','s5','b5'],['g6','s6','b6'],
-				['g7','s7','b7'],['g8','s8','b8'],['g9','s9','b9'],['g10','s10','b10'],['g11','s11','b11'],['g12','s12','b12']]
+var medal_id = [['g1','s1','b1'],['g2','s2','b2'],['g3','s3','b3'],['g4','s4','b4'],['g5','s5','b5'],['g6','s6','b6'],['g7','s7','b7'],
+				['g8','s8','b8'],['g9','s9','b9'],['g10','s10','b10'],['g11','s11','b11'],['g12','s12','b12'],['g13','s13','b13'],['g14','s14','b14']]
 
-var medal_PH = [['1_h','1_p'],['2_h','2_p'],['3_h','3_p'],['4_h','4_p'],['5_h','5_p'],['6_h','6_p'],
-				['7_h','7_p'],['8_h','8_p'],['9_h','9_p'],['10_h','10_p'],['11_h','11_p'],['12_h','12_p']]
+var medal_PH = [['1_h','1_p'],['2_h','2_p'],['3_h','3_p'],['4_h','4_p'],['5_h','5_p'],['6_h','6_p'],['7_h','7_p'],
+				['8_h','8_p'],['9_h','9_p'],['10_h','10_p'],['11_h','11_p'],['12_h','12_p'],['13_h','13_p'],['14_h','14_p']]
 
 var H_array = CreateTextId('H')
 var P_array = CreateTextId('P')
@@ -44,7 +44,8 @@ setTimeout(function(){
 	console.log('In Display')
 	console.log(Medals)
 	console.log(Medals_R)
-	DisplaySeasonLeader();}, 550)
+	DisplaySeasonLeader();
+	DisplayMedalCount(Medals_R,Medals)}, 550)
 
 
 // Defining Functions
@@ -122,50 +123,9 @@ function CreateDisplay(Places){
 	}
 }
 
-function RankMedalCount(medals){
-	var rank = []
-	var total_medals = [0,0,0,0,0,0,0,0,0,0,0,0]
-	for(var i = 0; i < 12; i++){
-		total_medals[i] = medals[i][0]+ medals[i][1] + medals[i][2]
-	}
-	for(var j = 0; j <12; j++){
-		var top = 99
-		var top_medals = 0
-		for(var k = 0; k < 12 ;k++){
-			if( total_medals[k] > top_medals  ){
-				top = k
-				top_medals = total_medals[k]
-			}
-			if( total_medals[k] === top_medals ){
-				if(total_medals[k] !== 0){
-					if( medals[k][0] > medals[top][0] ){
-						top = k
-						top_medals = total_medals[k]
-					}
-					if( medals[k][0] === medals[top][0] ){
-						if(medals[k][1] > medals[top][1]){
-							top = k
-							top_medals = total_medals[k]
-						}
-						if( medals[k][1] === medals[top][1] ){
-							if(medals[k][2] > medals[top][2]){
-								top = k
-								top_medals = total_medals[k]
-							}
-						}
-					}
-				}
-			}
-		}
-		rank.push(top)
-		total_medals.splice(top,1,0)
-	}
-	return rank
-}
-
 function DisplayMedalCount(rank,medals){
 	console.log(rank,medals)
-	for(var i = 0; i < 12; i++){
+	for(var i = 0; i < 14; i++){
 		r = rank[i]
 		document.getElementById(medal_teams[i]).src='../Team Images/'+TeamPics[r]
 		document.getElementById(medal_id[i][0]).innerHTML = medals[r][0]

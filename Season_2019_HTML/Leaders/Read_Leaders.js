@@ -106,7 +106,7 @@ function CollectWeek(data,w){
 
 function CollectMedals(data,mat,vec){
 	for( var i = 0; i < 15; i++ ){
-		if( i < 13 ){
+		if( i < 14 ){
 			mat.push( data[i] )
 		}
 		else{
