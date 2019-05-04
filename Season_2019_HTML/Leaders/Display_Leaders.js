@@ -127,14 +127,12 @@ function DisplayMedalCount(rank,medals){
 	console.log(rank,medals)
 	for(var i = 0; i < 14; i++){
 		r = rank[0][i]
-		console.log('rank r',r)
-		console.log('medals[r]',medals[r])
 		document.getElementById(medal_teams[i]).src='../Team Images/'+TeamPics[r]
-		document.getElementById(medal_id[i][0]).innerHTML = medals[r][0]
-		document.getElementById(medal_id[i][1]).innerHTML = medals[r][1]
-		document.getElementById(medal_id[i][2]).innerHTML = medals[r][2]
-		document.getElementById(medal_PH[i][0]).innerHTML = medals[r][3]
-		document.getElementById(medal_PH[i][1]).innerHTML = medals[r][4]
+		document.getElementById(medal_id[i][0]).innerHTML = medals[i][0]
+		document.getElementById(medal_id[i][1]).innerHTML = medals[i][1]
+		document.getElementById(medal_id[i][2]).innerHTML = medals[i][2]
+		document.getElementById(medal_PH[i][0]).innerHTML = medals[i][3]
+		document.getElementById(medal_PH[i][1]).innerHTML = medals[i][4]
 	}
 }
 
