@@ -41,9 +41,6 @@ setTimeout(function(){
 	AllPlaces = GetAllPlaces_L();
 	Medals = GetMedalCount();
 	Medals_R = GetMedalRank();
-	console.log('In Display')
-	console.log(Medals)
-	console.log(Medals_R)
 	DisplaySeasonLeader();
 	DisplayMedalCount(Medals_R,Medals)}, 550)
 

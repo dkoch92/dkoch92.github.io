@@ -31,7 +31,7 @@ setTimeout(function(){
 
 function U_CreateId(letter){
 	id_array = []
-	for(var i = 0; i < 12; i++){
+	for(var i = 0; i < 14; i++){
 		row = []
 		for(var j = 0; j < 12 ; j++){
 			row.push( letter+'_'+(i+1)+'_'+(j+1) )
@@ -48,7 +48,7 @@ function DisplayWeekTitle(w,letter){
 }
 
 function U_DisplayColors(Mat,id){
-	for(var i = 0; i < 12; i++){
+	for(var i = 0; i < 14; i++){
 		for(var j = 0; j < 12 ; j++){
 			stat_tag = id[i][j]
 			if( Mat[i][j] === 0 ){
@@ -62,7 +62,7 @@ function U_DisplayColors(Mat,id){
 }
 
 function B_DisplayColors(Mat,id){
-	for(var i = 0; i < 12; i++){
+	for(var i = 0; i < 14; i++){
 		for(var j = 0; j < 12 ; j++){
 			stat_tag = id[i][j]
 			if( Mat[i][j] > 0 ){
