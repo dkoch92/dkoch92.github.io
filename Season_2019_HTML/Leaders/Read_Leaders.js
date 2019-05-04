@@ -43,6 +43,7 @@ var Week20_Places = []
 var Season_Places = []
 
 var Medal_Count = []
+var Medal_Rank = []
 
 //  Setting all the Initial Components
 //----------------------------------------------------------------
@@ -61,9 +62,10 @@ var MedalCount
 
 var week = 99
 ParseWeek( CollectWeek,week )
-ParseMedals( CollectMedals,Medal_Count)
+ParseMedals( CollectMedals,Medal_Count,Medal_Rank)
 
 console.log(Medal_Count)
+console.log(Medal_Rank)
 
 setTimeout(function(){ 
 	ParseAll_L(week,CSV_Names_L);},60)
@@ -86,13 +88,13 @@ function ParseWeek( CallBack,int ){
 	})
 }
 
-function ParseMedals( CallBack,mat ){
+function ParseMedals( CallBack,mat,vec ){
 	Papa.parse('../CSV Files/medal_count.csv', {
 		download: true,
 		header: false,
 		dynamicTyping: true,
 		complete: function(results) {
-			CallBack(results.data,mat)
+			CallBack(results.data,mat,vec)
 		}
 	})
 }
@@ -102,9 +104,14 @@ function CollectWeek(data,w){
 	week = data[0][0]
 }
 
-function CollectMedals(data,mat){
-	for( var i = 0; i < 14; i++ ){
-		mat.push( data[i] )
+function CollectMedals(data,mat,vec){
+	for( var i = 0; i < 15; i++ ){
+		if( i < 13 ){
+			mat.push( data[i] )
+		}
+		else{
+			vec.push( data[i] )
+		}
 	}
 }
 
@@ -153,6 +160,9 @@ function GetMedalCount(){
 	return Medal_Count
 }
 
+function GetMedalRank(){
+	return Medal_Rank
+}
 
 function DetermineTeam(name){
 	for(var i = 0; i < 14; i++){

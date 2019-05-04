@@ -40,10 +40,11 @@ setTimeout(function(){
 	AllWeeks = GetAllWeeks_L();
 	AllPlaces = GetAllPlaces_L();
 	Medals = GetMedalCount();
+	Medals_R = GetMedalRank();
+	console.log('In Display')
 	console.log(Medals)
-	DisplaySeasonLeader();
-	medals_ranked = RankMedalCount(Medals);
-	DisplayMedalCount(medals_ranked,Medals);}, 550)
+	console.log(Medals_R)
+	DisplaySeasonLeader();}, 550)
 
 
 // Defining Functions
