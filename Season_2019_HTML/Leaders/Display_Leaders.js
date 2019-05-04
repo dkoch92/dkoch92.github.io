@@ -127,6 +127,8 @@ function DisplayMedalCount(rank,medals){
 	console.log(rank,medals)
 	for(var i = 0; i < 14; i++){
 		r = rank[i]
+		console.log('rank r',r)
+		console.log('medals[r]',medals[r])
 		document.getElementById(medal_teams[i]).src='../Team Images/'+TeamPics[r]
 		document.getElementById(medal_id[i][0]).innerHTML = medals[r][0]
 		document.getElementById(medal_id[i][1]).innerHTML = medals[r][1]
