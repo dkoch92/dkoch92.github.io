@@ -72,10 +72,6 @@ setTimeout(function(){
 	AllWeeks_L = CombineAllWeeks_L(week);
 	AllPlaces_L = CombineAllPlaces_L(week);},160)
 
-setTimeout(function(){ 	
-	MedalCount = MedalCount(AllWeeks_L,week,AllPlaces_L);
-	console.log(MdealCount) },350)
-
 // Defining Functions
 //-----------------------------------------------------------------
 
@@ -90,7 +86,7 @@ function ParseWeek( CallBack,int ){
 	})
 }
 
-function ParseMedals( Callback,mat ){
+function ParseMedals( CallBack,mat ){
 	Papa.parse('../CSV Files/medal_count.csv', {
 		download: true,
 		header: false,
@@ -154,7 +150,7 @@ function GetWeekNumber_L(){
 }
 
 function GetMedalCount(){
-	return MedalCount
+	return Medal_Count
 }
 
 

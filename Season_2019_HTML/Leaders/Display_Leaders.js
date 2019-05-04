@@ -37,10 +37,10 @@ var medals_ranked
 
 setTimeout(function(){ 
 	week = GetWeekNumber_L()
-	console.log('Leaders week:',week)
 	AllWeeks = GetAllWeeks_L();
 	AllPlaces = GetAllPlaces_L();
 	Medals = GetMedalCount();
+	console.log(Medals)
 	DisplaySeasonLeader();
 	medals_ranked = RankMedalCount(Medals);
 	DisplayMedalCount(medals_ranked,Medals);}, 550)
