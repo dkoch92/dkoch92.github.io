@@ -1,4 +1,4 @@
-var Week1_U = []
+ var Week1_U = []
 var Week2_U = []
 var Week3_U = []
 var Week4_U = []
@@ -59,7 +59,9 @@ setTimeout(function(){
 
 setTimeout(function(){ 	
 	AllWeeks_U = CombineAllWeeks_U(week);
-	AllWeeks_B = CombineAllWeeks_B(week); },200)
+	AllWeeks_B = CombineAllWeeks_B(week);
+	console.log('Read AllWeeks_U',AllWeeks_U);
+	console.log('Read AllWeeks_B',AllWeeks_B) },200)
 
 // Defining Functions
 //-----------------------------------------------------------------
@@ -108,8 +110,8 @@ function ParseData_U( CallBack, file, WeekU_Mat, WeekB_Mat){
 }
 
 function CollectData_U( data, mat1, mat2 ) {
-	for (var i = 0; i < 24; i++) {
-		if( i < 12 ){
+	for (var i = 0; i < 28; i++) {
+		if( i < 14 ){
 			mat1.push( data[i] )
 		}
 		else{

@@ -14,7 +14,9 @@ var All_B
 setTimeout(function(){ 
 	week = GetWeekNumber_U();
 	All_U = GetAllWeeks_U();
-	All_B = GetAllWeeks_B();}, 400)
+	All_B = GetAllWeeks_B();
+	console.log('Display AllWeeks_U',AllWeeks_U);
+	console.log('Display AllWeeks_B',AllWeeks_B) }, 400)
 
 setTimeout(function(){ 
 	U_DisplayColors(All_U[week-1],U_id);
